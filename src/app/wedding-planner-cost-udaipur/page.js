@@ -1,0 +1,244 @@
+// pages/wedding-planner-cost-udaipur.jsx
+"use client";
+import Head from "next/head";
+
+export default function WeddingPlannerCostUdaipur() {
+    const handleWhatsAppSubmit = (e) => {
+        e.preventDefault();
+      
+        const form = e.target;
+      
+        const name = form.name.value;
+        const phone = form.phone.value;
+        const date = form.date.value;
+        const budget = form.budget.value;
+        const type = form.type.value;
+      
+        const message = `
+      New Wedding Inquiry 💍
+      
+      👤 Name: ${name}
+      📞 Phone: ${phone}
+      📅 Date: ${date}
+      💰 Budget: ${budget || "Not specified"}
+      🎊 Wedding Type: ${type || "Not specified"}
+      
+      From: JaipurWeddingPlanner.in
+      `;
+      
+        const whatsappNumber = "916378380535"; // ← your WhatsApp number (with country code)
+      
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+          message
+        )}`;
+      
+        window.open(url, "_blank");
+      };
+      
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the average cost of a wedding planner in Udaipur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average cost of hiring a wedding planner in Udaipur ranges from ₹50,000 to ₹10,00,000 or more, depending on the scale of the wedding, services included, and planner's experience. For basic services, expect ₹50,000-₹1,50,000; for full-service luxury weddings, it can go up to ₹3,00,000-₹10,00,000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What factors affect wedding planner costs in Udaipur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Factors include wedding size (guest count), venue type (local vs. destination), services required (partial vs. full planning), customization level, season (peak vs. off-peak), and the planner's reputation and experience."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are there affordable wedding planner packages in Udaipur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, many planners offer budget-friendly packages starting from ₹50,000 for coordination services. Full packages for mid-range weddings are around ₹1,50,000-₹3,00,000, while premium royal or destination weddings can cost ₹3,00,000-₹10,00,000+."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I get a free quote for wedding planning in Udaipur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Submit your requirements through our form, including budget, guest count, and wedding type. We'll connect you with verified planners for personalized quotes."
+        }
+      }
+    ]
+  };
+
+  return (
+    <>
+      <Head>
+        <title>Wedding Planner Cost in Udaipur | Packages & Pricing | UdaipurWeddingPlanner.in</title>
+        <meta
+          name="description"
+          content="Discover wedding planner costs in Udaipur, from budget packages to luxury services. Get average pricing, factors affecting costs, and free quotes from top planners."
+        />
+        <meta name="keywords" content="wedding planner cost Udaipur, Udaipur wedding planning prices, affordable wedding planners Udaipur, wedding packages Udaipur, wedding budget Udaipur" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      </Head>
+
+      <header className="hero">
+        <div className="hero-content">
+          <p className="hero-subtitle">Transparent Pricing for Your Dream Wedding</p>
+          <h1>Wedding Planner Cost in Udaipur</h1>
+          <p>
+            Planning a wedding in Udaipur? Understand the costs involved with professional wedding planners. From affordable packages to premium royal setups, get insights into pricing, factors, and how to budget effectively for your big day.
+          </p>
+          <div className="hero-actions">
+            <a href="#contact" className="btn-primary">
+              Get Free Cost Consultation
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section className="section">
+          <div className="container">
+            <h2>Understanding Wedding Planner Costs in Udaipur</h2>
+            <p>
+              Hiring a wedding planner in Udaipur can save you time and stress while ensuring a flawless event. Costs vary based on your needs, but expect transparent pricing from our verified partners.
+            </p>
+            <p className="highlight">
+              Average costs range from ₹50,000 for basic coordination to ₹10,00,000+ for full-service luxury weddings.
+            </p>
+            <ul className="list">
+              <li>✔ Basic Day-of Coordination: ₹50,000 - ₹1,50,000</li>
+              <li>✔ Partial Planning: ₹1,50,000 - ₹3,00,000</li>
+              <li>✔ Full-Service Planning: ₹3,00,000 - ₹7,00,000</li>
+              <li>✔ Destination/Royal Weddings: ₹5,00,000 - ₹10,00,000+</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="section light">
+          <div className="container">
+            <h2>Factors Affecting Wedding Planner Prices in Udaipur</h2>
+            <div className="grid">
+              <div className="service">👥 Guest Count: More guests mean higher coordination costs</div>
+              <div className="service">🏰 Venue Type: Palaces and lakeside venues add premium fees</div>
+              <div className="service">📅 Season: Peak wedding season (Oct-Feb) increases prices</div>
+              <div className="service">🎨 Customization: Themed décor and unique elements raise costs</div>
+              <div className="service">🛠️ Services: Full vs. partial planning impacts the quote</div>
+              <div className="service">⭐ Experience: Top-rated planners charge more for expertise</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2>Popular Wedding Planner Packages in Udaipur</h2>
+            <p>
+              Explore common packages offered by Udaipur's top planners. These are approximate and can be customized.
+            </p>
+            <div className="cards">
+              <div className="card">
+                <h3>Budget Package</h3>
+                <p>₹50,000 - ₹1,50,000: Basic planning, vendor coordination, and day-of management.</p>
+              </div>
+              <div className="card">
+                <h3>Standard Package</h3>
+                <p>₹1,50,000 - ₹3,00,000: Full planning including décor, catering, and entertainment.</p>
+              </div>
+              <div className="card">
+                <h3>Premium Package</h3>
+                <p>₹3,00,000 - ₹7,00,000: Luxury services with custom themes and VIP handling.</p>
+              </div>
+              <div className="card">
+                <h3>Royal/Destination Package</h3>
+                <p>₹5,00,000+: Palace venues, cultural shows, and international-level execution.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section light">
+          <div className="container">
+            <h2>Top Wedding Planners in Udaipur with Cost Insights</h2>
+            <div className="cards">
+              <div className="card">
+                <h3>Bhakti Events and Wedding Planners</h3>
+                <p>Starting at ₹2,00,000 for destination weddings.</p>
+              </div>
+              <div className="card">
+                <h3>Believe Happenings</h3>
+                <p>Packages from ₹2,00,000 with realistic budgeting.</p>
+              </div>
+              <div className="card">
+                <h3>The Shaadi Diary</h3>
+                <p>From ₹2,50,000, specializing in luxury setups.</p>
+              </div>
+              <div className="card">
+                <h3>Arisen Events</h3>
+                <p>Affordable options starting ₹2,00,000.</p>
+              </div>
+              <div className="card">
+                <h3>Nakoda Event & Tent Decor</h3>
+                <p>From ₹2,00,000 for theme-based weddings.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2>How to Budget for Your Wedding Planner in Udaipur</h2>
+            <ol className="steps">
+              <li>Determine your overall wedding budget (typically 10-15% for planning)</li>
+              <li>List must-have services and nice-to-haves</li>
+              <li>Get quotes from multiple planners via our platform</li>
+              <li>Compare packages and negotiate for best value</li>
+              <li>Book early to lock in prices and availability</li>
+            </ol>
+          </div>
+        </section>
+
+        <section className="section light" id="contact">
+          <div className="container">
+            <h2>Get Personalized Wedding Planner Quotes</h2>
+            <form className="form" onSubmit={handleWhatsAppSubmit}>
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="tel" name="phone" placeholder="Phone / WhatsApp" required />
+  <input type="date" name="date" required />
+  <input type="text" name="budget" placeholder="Approximate Budget" />
+  <select name="type">
+    <option value="">Type of Wedding</option>
+    <option>Destination</option>
+    <option>Local</option>
+    <option>Royal</option>
+    <option>Traditional</option>
+  </select>
+
+  <button type="submit" className="btn-primary">
+    Submit
+  </button>
+</form>
+          </div>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="container">
+          <p>📍 Udaipur, Rajasthan</p>
+          <p>📧 info@udaipurweddingplanner.in</p>
+          <p>📞 +91-XXXXXXXXXX</p>
+          <p className="copy">
+            © 2026 UdaipurWeddingPlanner.in — Smart Wedding Planning Starts Here.
+          </p>
+        </div>
+      </footer>
+    </>
+  );
+}

@@ -1,66 +1,254 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// pages/index.jsx
+"use client";
+import Head from "next/head";
+
 
 export default function Home() {
+  const handleWhatsAppSubmit = (e) => {
+    e.preventDefault();
+  
+    const form = e.target;
+  
+    const name = form.name.value;
+    const phone = form.phone.value;
+    const date = form.date.value;
+    const budget = form.budget.value;
+    const type = form.type.value;
+  
+    const message = `
+  New Wedding Inquiry 💍
+  
+  👤 Name: ${name}
+  📞 Phone: ${phone}
+  📅 Date: ${date}
+  💰 Budget: ${budget || "Not specified"}
+  🎊 Wedding Type: ${type || "Not specified"}
+  
+  From: JaipurWeddingPlanner.in
+  `;
+  
+    const whatsappNumber = "916378380535"; // ← your WhatsApp number (with country code)
+  
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+  
+    window.open(url, "_blank");
+  };
+  
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Head>
+        <title>Top Wedding Planners in Jaipur | JaipurWeddingPlanner.in</title>
+        <meta
+          name="description"
+          content="Plan your dream wedding with trusted wedding planners in Jaipur. Free consultation available."
         />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WeddingService",
+      "name": "Jaipur Wedding Planner",
+      "url": "https://jaipurweddingplanner.in",
+      "logo": "https://jaipurweddingplanner.in/logo.png",
+      "image": "https://jaipurweddingplanner.in/hero.jpg",
+      "description":
+        "Top wedding planners in Jaipur offering royal destination weddings, décor, catering, photography and full wedding management.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jaipur",
+        "addressRegion": "Rajasthan",
+        "addressCountry": "IN"
+      },
+      "areaServed": ["Jaipur", "Udaipur", "Rajasthan"],
+      "priceRange": "₹₹₹",
+      "sameAs": [
+        "https://www.instagram.com/jaipurweddingplanner",
+        "https://www.facebook.com/jaipurweddingplanner"
+      ]
+    })
+  }}
+/>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a wedding planner cost in Jaipur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text":
+              "Wedding planner costs in Jaipur typically range from ₹1.5 lakh to ₹10+ lakh depending on services, scale, and venue."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer royal destination weddings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text":
+              "Yes, we specialize in royal destination weddings at palaces and luxury venues across Jaipur and Udaipur."
+          }
+        }
+      ]
+    })
+  }}
+/>
+
+
+      </Head>
+
+      <header className="hero">
+        <div className="hero-content">
+          <p className="hero-subtitle">Your Royal Dream Wedding Awaits</p>
+          <h1>Top Wedding Planners in Jaipur</h1>
           <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+            Plan your dream wedding with trusted & experienced wedding planners
+            in Jaipur. Decoration, catering, photography & full management — all
+            in one place.
           </p>
+          <div className="hero-actions">
+            <a href="#contact" className="btn-primary">
+              Get Free Wedding Consultation
+            </a>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+      </header>
+
+      <main>
+
+
+        <section className="section light">
+          <div className="container">
+            <h2>Our Wedding Planning Services</h2>
+            <div className="grid">
+              <div className="service">💍 Complete Wedding Planning</div>
+              <div className="service">🎨 Decoration & Theme Design</div>
+              <div className="service">🍽️ Catering & Menu Planning</div>
+              <div className="service">🎶 Entertainment Management</div>
+              <div className="service">📸 Photography & Videography</div>
+              <div className="service">🏰 Destination Weddings in Jaipur</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2>Popular Wedding Planners in Jaipur</h2>
+            <div className="cards">
+              <div className="card">
+                <h3>Fiestro Events</h3>
+                <p>Luxury themes & creative setups with excellent reviews.</p>
+              </div>
+              <div className="card">
+                <h3>Shaandaar Events</h3>
+                <p>Personalized planning with stunning décor.</p>
+              </div>
+              <div className="card">
+                <h3>The Wedding Toli</h3>
+                <p>Highly rated full-service wedding planner.</p>
+              </div>
+              <div className="card">
+                <h3>Wedding Vision</h3>
+                <p>Bespoke weddings with strong customer satisfaction.</p>
+              </div>
+              <div className="card">
+                <h3>Dot&Dot Events</h3>
+                <p>Detail-focused planning with creative execution.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section light">
+          <div className="container">
+            <h2>Why Choose JaipurWeddingPlanner.in?</h2>
+            <ul className="list">
+              <li>✔ Local Jaipur wedding experts</li>
+              <li>✔ Customized wedding solutions</li>
+              <li>✔ Multiple planner options</li>
+              <li>✔ Save time & planning effort</li>
+              <li>✔ Free consultation</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2>How It Works</h2>
+            <ol className="steps">
+              <li>Submit your wedding requirement</li>
+              <li>Get connected with suitable planners</li>
+              <li>Discuss budget, vision & dates</li>
+              <li>Finalize and enjoy your big day</li>
+            </ol>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2>About Us</h2>
+            <p>
+              JaipurWeddingPlanner.in connects couples with professional and
+              verified wedding planners in Jaipur. From royal destination
+              weddings to traditional Rajasthani ceremonies, we help you find
+              the perfect experts for your big day.
+            </p>
+            <p className="highlight">
+              Our mission is simple: make wedding planning easy, stress-free and
+              unforgettable.
+            </p>
+          </div>
+        </section>
+
+        <section className="section light" id="contact">
+          <div className="container">
+            <h2>Get in Touch</h2>
+            <form className="form" onSubmit={handleWhatsAppSubmit}>
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="tel" name="phone" placeholder="Phone / WhatsApp" required />
+  <input type="date" name="date" required />
+  <input type="text" name="budget" placeholder="Approximate Budget" />
+  <select name="type">
+    <option value="">Type of Wedding</option>
+    <option>Destination</option>
+    <option>Local</option>
+    <option>Royal</option>
+    <option>Traditional</option>
+  </select>
+
+  <button type="submit" className="btn-primary">
+    Submit
+  </button>
+</form>
+
+          </div>
+        </section>
       </main>
-    </div>
+
+      <footer className="footer">
+        <div className="container">
+          <p>📍 Jaipur, Rajasthan</p>
+
+          <p className="copy">
+            © 2026 JaipurWeddingPlanner.in — Weddings made memorable.
+          </p>
+          <nav className="footer-nav">
+            <ul>
+              <li><a href="/destination-wedding-jaipur">Destination Wedding in Jaipur</a></li>
+              <li><a href="/royal-wedding-jaipur">Royal Wedding in Jaipur</a></li>
+              <li><a href="/wedding-planner-cost-jaipur">Wedding Planner Cost in Jaipur</a></li>
+              <li><a href="/wedding-planner-cost-udaipur">Wedding Planner Cost in Udaipur</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+    </>
   );
 }

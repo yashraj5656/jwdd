@@ -82,7 +82,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
 
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png" />
 
         {/* Local Business Schema (Site-wide) */}
         <script

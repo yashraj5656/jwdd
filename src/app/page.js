@@ -169,13 +169,16 @@ export default function Home() {
     <h2>Popular Wedding Planners in Jaipur</h2>
 
     <div className="cards">
+      
       <div className="card">
         <span className="ribbon">Featured</span>
         <h3>Fiestro Events</h3>
         <p>Luxury themes & creative setups with excellent reviews.</p>
         <a href="/fiestro-events" className="card-link">
           View Details →
-        </a>
+        </a><br></br><br></br>
+        <span className="badge verified"> Verified Planner</span>
+
       </div>
 
       <div className="card">
@@ -216,6 +219,25 @@ export default function Home() {
     </div>
   </div>
 </section>
+
+
+<section className="section light">
+  <div className="container">
+    <h2>What Couples Say</h2>
+
+    <div className="cards">
+      <div className="card">
+        ⭐⭐⭐⭐⭐
+        <p>
+          “Shaandaar Events managed our Jaipur wedding beautifully. Everything
+          was perfect!”
+        </p>
+        <strong>— Riya & Aman</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -298,6 +320,11 @@ export default function Home() {
               <li><a href="/royal-wedding-jaipur">Royal Wedding in Jaipur</a></li>
               <li><a href="/wedding-planner-cost-jaipur">Wedding Planner Cost in Jaipur</a></li>
               <li><a href="/wedding-planner-cost-udaipur">Wedding Planner Cost in Udaipur</a></li>
+              <li><a href="/about-us">About Us</a></li>
+<li><a href="/how-it-works">How It Works</a></li>
+<li><a href="/privacy-policy">Privacy Policy</a></li>
+<li><a href="/terms-and-conditions">Terms & Conditions</a></li>
+
             </ul>
           </nav>
         </div>

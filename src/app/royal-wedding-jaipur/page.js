@@ -148,33 +148,62 @@ export default function RoyalWeddingJaipur() {
           </div>
         </section>
 
-        <section className="section light">
-          <div className="container">
-            <h2>Top Royal Wedding Planners in Jaipur</h2>
-            <div className="cards">
-              <div className="card">
-                <h3>Fiestro Events</h3>
-                <p>Luxury royal themes with impeccable execution.</p>
-              </div>
-              <div className="card">
-                <h3>Shaandaar Events</h3>
-                <p>Specialists in palace weddings and royal décor.</p>
-              </div>
-              <div className="card">
-                <h3>The Wedding Toli</h3>
-                <p>Full-service for grand royal celebrations.</p>
-              </div>
-              <div className="card">
-                <h3>Wedding Vision</h3>
-                <p>Bespoke royal weddings with regal touches.</p>
-              </div>
-              <div className="card">
-                <h3>Dot&Dot Events</h3>
-                <p>Detail-oriented royal event planning.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <section className="section">
+  <div className="container">
+    <h2>Popular Wedding Planners in Jaipur</h2>
+
+    <div className="cards">
+      
+      <div className="card">
+        <span className="ribbon">Featured</span>
+        <h3>Fiestro Events</h3>
+        <p>Luxury themes & creative setups with excellent reviews.</p>
+        <a href="/fiestro-events" className="card-link">
+          View Details →
+        </a><br></br><br></br>
+        <span className="badge verified"> Verified Planner</span>
+
+      </div>
+
+      <div className="card">
+        <span className="ribbon">Featured</span>
+        <h3>Shaandaar Events</h3>
+        <p>Personalized planning with stunning décor.</p>
+        <a href="/shaandaar-events" className="card-link">
+          View Details →
+        </a>
+      </div>
+
+      <div className="card">
+        {/*<span className="ribbon">Featured</span>*/}
+        <h3>The Wedding Toli</h3>
+        <p>Highly rated full-service wedding planner.</p>
+       {/* <a href="/planners/the-wedding-toli" className="card-link">
+          View Details →
+        </a>*/}
+      </div>
+
+      <div className="card">
+       {/*<span className="ribbon">Featured</span>*/}
+        <h3>Wedding Vision</h3>
+        <p>Bespoke weddings with strong customer satisfaction.</p>
+       {/* <a href="/planners/wedding-vision" className="card-link">
+          View Details →
+        </a>*/}
+      </div>
+
+      <div className="card">
+       {/*<span className="ribbon">Featured</span>*/}
+        <h3>Dot&Dot Events</h3>
+        <p>Detail-focused planning with creative execution.</p>
+        {/*<a href="/planners/dot-and-dot-events" className="card-link">
+          View Details →
+        </a>*/}
+      </div>
+    </div>
+  </div>
+</section>
+
 
         <section className="section">
           <div className="container">

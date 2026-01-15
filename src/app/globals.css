@@ -773,3 +773,87 @@ p {
 .center {
   text-align: center;
 }
+
+/* ===============================
+   VERIFIED PLANNER BADGE
+================================ */
+
+.badge.verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+
+  color: #0f5132;
+  background: linear-gradient(135deg, #e6fff3, #c7f5df);
+  border: 1px solid #9fe0c2;
+  border-radius: 999px;
+
+  box-shadow:
+    0 6px 14px rgba(25, 135, 84, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Check icon polish */
+.badge.verified::before {
+  content: "✔";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 0.65rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Soft shine animation */
+.badge.verified::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: translateX(-120%);
+  animation: shine 4.5s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-120%);
+  }
+  60% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+/* Hover enhancement */
+.badge.verified:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 10px 22px rgba(25, 135, 84, 0.28),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+  .badge.verified::after {
+    animation: none;
+  }
+}

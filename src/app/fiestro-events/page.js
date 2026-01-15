@@ -15,7 +15,7 @@ export default function FiestroEvents() {
       {/* HERO */}
       <header className="planner-hero">
         <div className="planner-hero-content">
-          <span className="badge">Featured Planner</span>
+        <span className="badge verified"> Verified Planner</span>
           <h1>Fiestro Events</h1>
           <p>
             Luxury wedding planning with creative themes, premium décor, and
@@ -37,6 +37,26 @@ export default function FiestroEvents() {
             </p>
           </div>
         </section>
+
+        <section className="section rating-section">
+  <div className="container">
+    <div className="rating-box">
+      <div className="rating-left">
+        <span className="rating-score">4.9</span>
+        <span className="rating-stars">★★★★★</span>
+      </div>
+
+      <div className="rating-right">
+        <p>
+          Trusted by <strong>120+ happy couples</strong>
+        </p>
+        <span className="rating-source">
+          Average rating <strong>4.9/5</strong> based on real wedding experiences
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* SERVICES */}
         <section className="section light">
@@ -78,7 +98,7 @@ export default function FiestroEvents() {
             <p>
               Get expert guidance and a personalized wedding plan from one of
               Jaipur’s finest planners.
-            </p>
+            </p><br></br>
             <a href="/#contact" className="btn-primary">
               Get Free Consultation
             </a>

@@ -171,6 +171,7 @@ export default function Home() {
     <div className="cards">
       
       <div className="card">
+        
         <span className="ribbon">Featured</span>
         <h3>Fiestro Events</h3>
         <p>Luxury themes & creative setups with excellent reviews.</p>
@@ -221,22 +222,53 @@ export default function Home() {
 </section>
 
 
+
+
+
 <section className="section light">
   <div className="container">
-    <h2>What Couples Say</h2>
+    <h2>What Couples Say About Us</h2>
 
-    <div className="cards">
-      <div className="card">
-        ⭐⭐⭐⭐⭐
+    <div className="cards testimonials">
+      <div className="card testimonial-card">
+        <div className="stars">⭐⭐⭐⭐⭐</div>
         <p>
           “Shaandaar Events managed our Jaipur wedding beautifully. Everything
-          was perfect!”
+          was perfectly coordinated from décor to catering.”
         </p>
         <strong>— Riya & Aman</strong>
+      </div>
+
+      <div className="card testimonial-card">
+        <div className="stars">⭐⭐⭐⭐⭐</div>
+        <p>
+          “Fiestro Events gave us a royal destination wedding experience. The
+          décor and planning exceeded our expectations.”
+        </p>
+        <strong>— Neha & Karan</strong>
+      </div>
+
+      <div className="card testimonial-card">
+        <div className="stars">⭐⭐⭐⭐⭐</div>
+        <p>
+          “Thanks to JaipurWeddingPlanner.in, we found the perfect planner
+          within our budget. Highly recommended!”
+        </p>
+        <strong>— Pooja & Rohit</strong>
+      </div>
+
+      <div className="card testimonial-card">
+        <div className="stars">⭐⭐⭐⭐⭐</div>
+        <p>
+          “From first consultation to the wedding day, everything was smooth
+          and stress-free. Amazing service!”
+        </p>
+        <strong>— Anjali & Suresh</strong>
       </div>
     </div>
   </div>
 </section>
+
 
 
 
@@ -265,6 +297,89 @@ export default function Home() {
             </ol>
           </div>
         </section>
+
+
+
+
+        <section className="section planner-benefits">
+  <div className="container">
+    <h2>Why Wedding Planners Choose JaipurWeddingPlanner.in</h2>
+    <p className="planner-intro">
+      We help Jaipur-based wedding planners get discovered by couples who are
+      actively planning their wedding — not just browsing.
+    </p>
+
+    <div className="benefit-grid">
+      <div className="benefit-card">
+        <span className="benefit-icon">🎯</span>
+        <h3>High-Intent Leads</h3>
+        <p>
+          Couples visiting our platform are already searching for wedding
+          planners in Jaipur, meaning better quality inquiries and higher
+          conversions.
+        </p>
+      </div>
+
+      <div className="benefit-card">
+        <span className="benefit-icon">📍</span>
+        <h3>Local Jaipur Visibility</h3>
+        <p>
+          Rank higher for Jaipur-specific searches like “Wedding Planner in
+          Jaipur” without spending heavily on ads.
+        </p>
+      </div>
+
+      <div className="benefit-card">
+        <span className="benefit-icon">✅</span>
+        <h3>Verified Planner Badge</h3>
+        <p>
+          Stand out with a verified profile that builds instant trust with
+          couples comparing multiple planners.
+        </p>
+      </div>
+
+      <div className="benefit-card">
+        <span className="benefit-icon">📸</span>
+        <h3>Showcase Your Work</h3>
+        <p>
+          Display your portfolio, services, wedding photos, and testimonials —
+          all in one place.
+        </p>
+      </div>
+
+      <div className="benefit-card">
+        <span className="benefit-icon">📞</span>
+        <h3>Direct Inquiries</h3>
+        <p>
+          Receive direct WhatsApp and call inquiries — no middlemen or
+          commissions.
+        </p>
+      </div>
+
+      <div className="benefit-card">
+        <span className="benefit-icon">💰</span>
+        <h3>Affordable Listing Plans</h3>
+        <p>
+          One simple annual fee. No commissions per booking. No hidden charges.
+        </p>
+      </div>
+    </div>
+
+    <div className="planner-cta">
+      <a href="/list-your-business" className="btn-primary">
+        List Your Wedding Planning Business
+      </a>
+      <p className="cta-note">
+        Limited slots available for Jaipur planners
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
 
         <section className="section">
           <div className="container">

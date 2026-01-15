@@ -1,4 +1,5 @@
 import './globals.css';
+import Navbar from "@/components/Navbar";
 
 /* ================= SEO METADATA ================= */
 
@@ -111,6 +112,7 @@ export default function RootLayout({ children }) {
       </head>
 
       <body>
+      <Navbar />
         {/* Main Content */}
         <main id="main-content">{children}</main>
       </body>

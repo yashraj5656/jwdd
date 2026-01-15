@@ -857,3 +857,327 @@ p {
     animation: none;
   }
 }
+
+
+
+/* ===============================
+   TESTIMONIALS
+================================ */
+
+.testimonials {
+  margin-top: 40px;
+}
+
+.testimonial-card {
+  text-align: center;
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: "“";
+  font-size: 4rem;
+  color: var(--primary);
+  position: absolute;
+  top: 10px;
+  left: 18px;
+  opacity: 0.2;
+  font-family: serif;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin: 18px 0 14px;
+  color: var(--text-muted);
+}
+
+.testimonial-card strong {
+  color: var(--secondary);
+  font-size: 0.95rem;
+}
+
+.stars {
+  color: var(--primary);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+/* Subtle hover */
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* ===============================
+   RATING / TRUST SECTION
+================================ */
+
+.rating-section {
+  background: linear-gradient(
+    180deg,
+    #fffaf1,
+    #ffffff
+  );
+  text-align: center;
+}
+
+.rating-box {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+}
+
+/* Left */
+.rating-left {
+  text-align: center;
+}
+
+.rating-score {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--secondary);
+  line-height: 1;
+}
+
+.rating-stars {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #fbbc04;
+}
+
+/* Right */
+.rating-right {
+  text-align: left;
+}
+
+.rating-right p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+}
+
+.rating-source {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Hover */
+.rating-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 55px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .rating-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .rating-right {
+    text-align: center;
+  }
+}
+
+
+
+/* ===============================
+   PLANNER BENEFITS SECTION
+================================ */
+
+.planner-benefits {
+  background: linear-gradient(180deg, #ffffff, #fffaf1);
+  text-align: center;
+}
+
+.planner-intro {
+  max-width: 760px;
+  margin: 0 auto 40px;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* Grid */
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
+}
+
+/* Card */
+.benefit-card {
+  background: #ffffff;
+  padding: 34px 28px;
+  border-radius: 14px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon */
+.benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(184, 134, 11, 0.12);
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+}
+
+/* Heading */
+.benefit-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+
+/* Text */
+.benefit-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* CTA */
+.planner-cta {
+  margin-top: 50px;
+}
+
+.planner-cta .btn-primary {
+  padding: 16px 36px;
+  font-size: 1.05rem;
+}
+
+.cta-note {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .planner-intro {
+    padding: 0 12px;
+  }
+}
+
+
+
+/* ===============================
+   NAVBAR + HAMBURGER
+================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+/* Desktop Links */
+.nav-links {
+  display: flex;
+  gap: 26px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2px;
+  background: var(--secondary);
+  transition: all 0.3s ease;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 20px;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+}
+
+.mobile-menu a {
+  padding: 12px 0;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Active Mobile */
+.mobile-menu.show {
+  display: flex;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

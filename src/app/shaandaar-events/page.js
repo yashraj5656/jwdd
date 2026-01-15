@@ -15,7 +15,7 @@ export default function ShaandaarEvents() {
       {/* HERO */}
       <header className="planner-hero">
         <div className="planner-hero-content">
-          <span className="badge">Featured Planner</span>
+          
           <h1>Shaandaar Events</h1>
           <p>
             Personalized wedding planning with elegant décor, creativity, and
@@ -42,6 +42,25 @@ export default function ShaandaarEvents() {
             </p>
           </div>
         </section>
+        <section className="section rating-section">
+  <div className="container">
+    <div className="rating-box">
+      <div className="rating-left">
+        <span className="rating-score">4.1</span>
+        <span className="rating-stars">★★★★★</span>
+      </div>
+
+      <div className="rating-right">
+        <p>
+          Trusted by <strong>90+ happy couples</strong>
+        </p>
+        <span className="rating-source">
+          Average rating <strong>4.1/5</strong> based on real wedding experiences
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* SERVICES */}
         <section className="section light">
@@ -83,7 +102,7 @@ export default function ShaandaarEvents() {
             <p>
               Get a beautifully planned wedding experience with a team that
               truly understands your vision.
-            </p>
+            </p><br></br>
             <a href="/#contact" className="btn-primary">
               Get Free Consultation
             </a>

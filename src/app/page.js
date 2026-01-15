@@ -173,7 +173,7 @@ export default function Home() {
         <span className="ribbon">Featured</span>
         <h3>Fiestro Events</h3>
         <p>Luxury themes & creative setups with excellent reviews.</p>
-        <a href="/planners/fiestro-events" className="card-link">
+        <a href="/fiestro-events" className="card-link">
           View Details →
         </a>
       </div>
@@ -182,36 +182,36 @@ export default function Home() {
         <span className="ribbon">Featured</span>
         <h3>Shaandaar Events</h3>
         <p>Personalized planning with stunning décor.</p>
-        <a href="/planners/shaandaar-events" className="card-link">
+        <a href="/shaandaar-events" className="card-link">
           View Details →
         </a>
       </div>
 
       <div className="card">
-        <span className="ribbon">Featured</span>
+        {/*<span className="ribbon">Featured</span>*/}
         <h3>The Wedding Toli</h3>
         <p>Highly rated full-service wedding planner.</p>
-        <a href="/planners/the-wedding-toli" className="card-link">
+       {/* <a href="/planners/the-wedding-toli" className="card-link">
           View Details →
-        </a>
+        </a>*/}
       </div>
 
       <div className="card">
-        <span className="ribbon">Featured</span>
+       {/*<span className="ribbon">Featured</span>*/}
         <h3>Wedding Vision</h3>
         <p>Bespoke weddings with strong customer satisfaction.</p>
-        <a href="/planners/wedding-vision" className="card-link">
+       {/* <a href="/planners/wedding-vision" className="card-link">
           View Details →
-        </a>
+        </a>*/}
       </div>
 
       <div className="card">
-        <span className="ribbon">Featured</span>
+       {/*<span className="ribbon">Featured</span>*/}
         <h3>Dot&Dot Events</h3>
         <p>Detail-focused planning with creative execution.</p>
-        <a href="/planners/dot-and-dot-events" className="card-link">
+        {/*<a href="/planners/dot-and-dot-events" className="card-link">
           View Details →
-        </a>
+        </a>*/}
       </div>
     </div>
   </div>

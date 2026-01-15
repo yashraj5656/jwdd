@@ -232,11 +232,17 @@ export default function WeddingPlannerCostJaipur() {
       <footer className="footer">
         <div className="container">
           <p>📍 Jaipur, Rajasthan</p>
-          <p>📧 info@jaipurweddingplanner.in</p>
-          <p>📞 +91-XXXXXXXXXX</p>
+
           <p className="copy">
             © 2026 JaipurWeddingPlanner.in — Smart Wedding Planning Starts Here.
           </p>
+          <nav className="footer-nav">
+            <ul>
+              <li><a href="/destination-wedding-jaipur">Destination Wedding in Jaipur</a></li>
+              <li><a href="/royal-wedding-jaipur">Royal Wedding in Jaipur</a></li>
+              <li><a href="/wedding-planner-cost-udaipur">Wedding Planner Cost in Udaipur</a></li>
+            </ul>
+          </nav>
         </div>
       </footer>
     </>

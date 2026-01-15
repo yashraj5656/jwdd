@@ -219,6 +219,13 @@ export default function RoyalWeddingJaipur() {
           <p className="copy">
             © 2026 JaipurWeddingPlanner.in — Royal Weddings Made Eternal.
           </p>
+          <nav className="footer-nav">
+            <ul>
+              <li><a href="/destination-wedding-jaipur">Destination Wedding in Jaipur</a></li>
+              <li><a href="/wedding-planner-cost-jaipur">Wedding Planner Cost in Jaipur</a></li>
+              <li><a href="/wedding-planner-cost-udaipur">Wedding Planner Cost in Udaipur</a></li>
+            </ul>
+          </nav>
         </div>
       </footer>
     </>

@@ -1,0 +1,277 @@
+.premium-hero {
+    padding: 100px 20px;
+    background:
+      radial-gradient(circle at top, rgba(212,175,55,0.25), transparent 60%),
+      linear-gradient(180deg, #fffaf0, #ffffff);
+    text-align: center;
+  }
+
+  .premium-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #d4af37, #ffdf6c);
+    color: #2b1d0f;
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  
+  .premium-benefits {
+    padding: 70px 20px;
+    background: #fffaf0;
+  }
+  
+  .premium-benefits .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 26px;
+  }
+  
+  .benefit {
+    background: #fff;
+    padding: 26px;
+    border-radius: 16px;
+    box-shadow: 0 14px 40px rgba(0,0,0,.1);
+    transition: all .35s ease;
+  }
+  
+  .benefit:hover {
+    transform: translateY(-6px);
+  }
+  
+  .benefit strong {
+    display: block;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+  
+  .benefit span {
+    font-size: .9rem;
+    color: #666;
+  }
+  
+  .premium-form-section {
+    padding: 80px 20px;
+  }
+  
+  .premium-form {
+    max-width: 620px;
+    margin: auto;
+    display: grid;
+    gap: 16px;
+  }
+  
+  .premium-form input,
+  .premium-form select {
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: .95rem;
+  }
+  
+  .btn-premium {
+    background: linear-gradient(135deg, #d4af37, #ffdf6c);
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .35s ease;
+  }
+  
+  .btn-premium:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 45px rgba(212,175,55,.45);
+  }
+  
+  .form-note {
+    text-align: center;
+    font-size: .85rem;
+    color: #777;
+  }
+  .note{
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+
+  /* ===============================
+   PAYMENT CARD (STARTER)
+================================ */
+
+.payment-card {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 32px 28px;
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f9f9f9
+  );
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.5s ease;
+}
+
+/* Soft top highlight */
+.payment-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #cfa44a,
+    #f2d27d,
+    #cfa44a
+  );
+}
+
+/* Note text */
+.payment-note {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.payment-note strong {
+  color: #cfa44a;
+}
+
+/* Payment box */
+.payment-box {
+  padding: 26px 22px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+  transition: all 0.35s ease;
+}
+
+/* Hover effect */
+.payment-card:hover .payment-box {
+  border-color: #cfa44a;
+  box-shadow: 0 10px 25px rgba(207, 164, 74, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Secure text */
+.secure-text {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Entry animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .payment-card {
+    padding: 24px 18px;
+  }
+
+  .payment-note {
+    font-size: 1rem;
+  }
+}
+
+
+/* ===============================
+   PREMIUM BADGE
+================================ */
+
+.premium-badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 18px;
+  border-radius: 999px;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color: #3b2b10;
+  background: linear-gradient(
+    135deg,
+    #f7e7b4,
+    #d4af37,
+    #b8962e
+  );
+
+  border: 1px solid rgba(212, 175, 55, 0.7);
+
+  box-shadow:
+    0 6px 14px rgba(212, 175, 55, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gold shine animation */
+.premium-badges::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -60%;
+  width: 40%;
+  height: 180%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: premiumShine 3.8s ease-in-out infinite;
+}
+
+/* Hover effect */
+.premium-badges:hover {
+  transform: translateY(-1px) scale(1.05);
+  box-shadow:
+    0 10px 26px rgba(212, 175, 55, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Animation */
+@keyframes premiumShine {
+  0% {
+    left: -60%;
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  70% {
+    left: 120%;
+    opacity: 0;
+  }
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+}

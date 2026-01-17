@@ -169,15 +169,15 @@ export default function WeddingPlannerCostJaipur() {
             <h2>Top Wedding Planners in Jaipur with Cost Insights</h2>
             <div className="cards">
               <div className="card">
-                <h3>Fiestro Events</h3>
+                <h3>Atelier Events</h3>
                 <p>Affordable luxury starting at ₹1,00,000 for mid-scale weddings.</p>
               </div>
               <div className="card">
-                <h3>Shaandaar Events</h3>
+                <h3>GoldenVows Events</h3>
                 <p>Personalized packages from ₹1,50,000 with stunning value.</p>
               </div>
               <div className="card">
-                <h3>The Wedding Toli</h3>
+                <h3>Velour Toli</h3>
                 <p>Full-service from ₹2,00,000, great for budget-conscious couples.</p>
               </div>
               <div className="card">
@@ -229,22 +229,7 @@ export default function WeddingPlannerCostJaipur() {
         </section>
       </main>
 
-      <footer className="footer">
-        <div className="container">
-          <p>📍 Jaipur, Rajasthan</p>
 
-          <p className="copy">
-            © 2026 JaipurWeddingPlanner.in — Smart Wedding Planning Starts Here.
-          </p>
-          <nav className="footer-nav">
-            <ul>
-              <li><a href="/destination-wedding-jaipur">Destination Wedding in Jaipur</a></li>
-              <li><a href="/royal-wedding-jaipur">Royal Wedding in Jaipur</a></li>
-              <li><a href="/wedding-planner-cost-udaipur">Wedding Planner Cost in Udaipur</a></li>
-            </ul>
-          </nav>
-        </div>
-      </footer>
     </>
   );
 }

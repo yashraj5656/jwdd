@@ -1,0 +1,238 @@
+/* ===============================
+   PRICING SECTION – LUXURY EDITION
+================================ */
+
+.pricing-section {
+  background: linear-gradient(180deg, #fffaf0 0%, #ffffff 60%);
+  text-align: center;
+  padding: 80px 20px;
+}
+
+/* Intro */
+.pricing-intro {
+  max-width: 720px;
+  margin: 0 auto 60px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ===============================
+   GRID
+================================ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 34px;
+  align-items: stretch;
+}
+
+/* ===============================
+   CARD BASE
+================================ */
+.pricing-card {
+  background: linear-gradient(180deg, #ffffff, #fffdf8);
+  padding: 42px 30px;
+  border-radius: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle hover glow */
+.pricing-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(
+    135deg,
+    transparent,
+    var(--primary),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+/* Hover animation */
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.14),
+    0 0 0 1px rgba(212, 175, 55, 0.12);
+}
+
+.pricing-card:hover::before {
+  opacity: 1;
+}
+
+/* ===============================
+   FEATURED CARD (BEST SELLER)
+================================ */
+.pricing-card.featured {
+  border: 2px solid rgba(212, 175, 55, 0.6);
+  background: linear-gradient(180deg, #ffffff, #fff9ea);
+  transform: scale(1.05);
+  box-shadow:
+    0 40px 90px rgba(212, 175, 55, 0.25);
+}
+
+.pricing-card.featured:hover {
+  transform: scale(1.06) translateY(-8px);
+}
+
+/* Popular Tag */
+.popular-tag {
+  position: absolute;
+  top: 18px;
+  right: -42px;
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 6px 52px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  transform: rotate(45deg);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.45);
+}
+
+/* ===============================
+   PRICE
+================================ */
+.price {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 24px 0 6px;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.price-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* ===============================
+   FEATURES LIST
+================================ */
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 36px 0;
+  text-align: left;
+}
+
+.pricing-features li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Elegant check icon */
+.pricing-features li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: var(--primary);
+  font-size: 1.05rem;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 36px;
+  border-radius: 999px;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button shine effect */
+.btn-outline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 14px 40px rgba(212, 175, 55, 0.45);
+}
+
+.btn-outline:hover::after {
+  left: 120%;
+}
+
+/* ===============================
+   FOOTER NOTE
+================================ */
+.pricing-footer {
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.pricing-footer a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pricing-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================ */
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 60px 16px;
+  }
+
+  .pricing-card.featured {
+    transform: none;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-6px);
+  }
+}

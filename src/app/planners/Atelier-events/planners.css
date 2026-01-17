@@ -1,0 +1,244 @@
+/* ===============================
+   PREMIUM PLANNER PROFILE PAGE
+   Fiestro Events
+================================ */
+
+/* ---------- HERO ---------- */
+
+.planner-hero {
+  min-height: 60vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('/hero.jpg') center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.premium-hero {
+  position: relative;
+}
+
+.planner-hero-content {
+  max-width: 720px;
+  color: #fff;
+  padding: 20px;
+}
+
+
+.planner-hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.2rem;
+  color: #fff;
+  margin: 18px 0 12px;
+}
+
+.planner-hero-content p {
+  font-size: 1.1rem;
+  color: #f2f2f2;
+  line-height: 1.7;
+  margin-bottom: 34px;
+}
+
+
+/* ---------- HERO ACTIONS ---------- */
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #1a1a1a;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(212,175,55,0.45);
+}
+
+.btn-primary.large {
+  padding: 16px 36px;
+  font-size: 1rem;
+}
+
+.btn-outline {
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ---------- TRUST STRIP ---------- */
+
+.trust-strip {
+  background: #fff;
+  padding: 40px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 24px;
+  text-align: center;
+}
+
+.trust-grid strong {
+  font-size: 1.4rem;
+  color: var(--secondary);
+  display: block;
+}
+
+.trust-grid span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ---------- SECTIONS ---------- */
+
+.section {
+  padding: 80px 0;
+}
+
+.section.light {
+  background: #fafafa;
+}
+
+.section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 18px;
+  color: var(--secondary);
+}
+
+.section p {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+.container.center {
+  text-align: center;
+}
+
+/* ---------- RATING BOX ---------- */
+
+.rating-section {
+  padding-top: 40px;
+}
+
+.rating-box {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.rating-box.premium {
+  border: 1px solid rgba(212,175,55,0.4);
+  box-shadow: 0 18px 45px rgba(212,175,55,0.2);
+}
+
+.rating-left {
+  text-align: center;
+}
+
+.rating-score {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #d4af37;
+}
+
+.rating-stars {
+  color: #f4b400;
+  font-size: 1.1rem;
+}
+
+.rating-right p {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: var(--secondary);
+}
+
+.rating-source {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ---------- SERVICES ---------- */
+
+.premium-list {
+  max-width: 760px;
+  margin: 30px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.premium-list li {
+  background: #fff;
+  margin-bottom: 12px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  font-size: 0.95rem;
+}
+
+/* ---------- PORTFOLIO ---------- */
+
+.portfolio-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.portfolio-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+  .planner-hero-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .rating-box {
+    flex-direction: column;
+    text-align: center;
+  }
+}

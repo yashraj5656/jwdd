@@ -1,6 +1,7 @@
 // pages/index.jsx
 "use client";
 import Head from "next/head";
+import Link from "next/link";
 
 
 
@@ -115,8 +116,8 @@ export default function Home() {
             in one place.
           </p>
           <div className="hero-actions">
-            <a href="#contact" className="btn-primary">
-              Get Free Wedding Consultation
+            <a href="#planners" className="list-primary">
+              Explore Wedding Planners
             </a>
           </div>
         </div>
@@ -164,32 +165,36 @@ export default function Home() {
 </section>
 
 
-<section className="section">
+<section id="planners" className="section">
   <div className="container">
     <h2>Popular Wedding Planners in Jaipur</h2>
 
     <div className="cards">
+
+
+    <div className="card">
+        <span className="ribbon">Featured</span>
+        <h3>GoldenVows </h3>
+        <p>Personalized planning with stunning décor.</p>
+        <a href="/planners/GoldenVows-events" className="card-link">
+          View Details →
+        </a><br></br><br></br>
+        <span className="badge verified"> Verified Planner</span>
+      </div>
+
       
       <div className="card">
         
         <span className="ribbon">Featured</span>
-        <h3>Fiestro Events</h3>
+        <h3>Atelier Events</h3>
         <p>Luxury themes & creative setups with excellent reviews.</p>
-        <a href="/fiestro-events" className="card-link">
-          View Details →
-        </a><br></br><br></br>
-        <span className="badge verified"> Verified Planner</span>
-
-      </div>
-
-      <div className="card">
-        <span className="ribbon">Featured</span>
-        <h3>Shaandaar Events</h3>
-        <p>Personalized planning with stunning décor.</p>
-        <a href="/shaandaar-events" className="card-link">
+        <a href="/planners/Atelier-events" className="card-link">
           View Details →
         </a>
+
       </div>
+
+
 
       <div className="card">
         {/*<span className="ribbon">Featured</span>*/}
@@ -219,6 +224,12 @@ export default function Home() {
       </div>
     </div>
   </div>
+  <div className="home-planner-btn">
+  <Link href="/wedding-planner" className="list-primary">
+    View All Wedding Planners →
+  </Link>
+</div>
+
 </section>
 
 
@@ -233,7 +244,7 @@ export default function Home() {
       <div className="card testimonial-card">
         <div className="stars">⭐⭐⭐⭐⭐</div>
         <p>
-          “Shaandaar Events managed our Jaipur wedding beautifully. Everything
+          “GoldenVows Events managed our Jaipur wedding beautifully. Everything
           was perfectly coordinated from décor to catering.”
         </p>
         <strong>— Riya & Aman</strong>
@@ -242,7 +253,7 @@ export default function Home() {
       <div className="card testimonial-card">
         <div className="stars">⭐⭐⭐⭐⭐</div>
         <p>
-          “Fiestro Events gave us a royal destination wedding experience. The
+          “Atelier Events gave us a royal destination wedding experience. The
           décor and planning exceeded our expectations.”
         </p>
         <strong>— Neha & Karan</strong>
@@ -300,8 +311,7 @@ export default function Home() {
 
 
 
-
-        <section className="section planner-benefits">
+<section className="section planner-benefits">
   <div className="container">
     <h2>Why Wedding Planners Choose JaipurWeddingPlanner.in</h2>
     <p className="planner-intro">
@@ -366,15 +376,18 @@ export default function Home() {
     </div>
 
     <div className="planner-cta">
-      <a href="/list-your-business" className="btn-primary">
+      <a href="/list-your-business" className="list-primary">
         List Your Wedding Planning Business
       </a>
       <p className="cta-note">
-        Limited slots available for Jaipur planners
+      ✔ No commission • Direct leads • Jaipur focused
       </p>
     </div>
   </div>
 </section>
+
+
+
 
 
 
@@ -397,7 +410,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section light" id="contact">
+       {/* <section className="section light" id="contact">
           <div className="container">
             <h2>Get in Touch</h2>
             <form className="form" onSubmit={handleWhatsAppSubmit}>
@@ -419,31 +432,10 @@ export default function Home() {
 </form>
 
           </div>
-        </section>
+        </section>*/}
       </main>
 
-      <footer className="footer">
-        <div className="container">
-          <p>📍 Jaipur, Rajasthan</p>
 
-          <p className="copy">
-            © 2026 JaipurWeddingPlanner.in — Weddings made memorable.
-          </p>
-          <nav className="footer-nav">
-            <ul>
-              <li><a href="/destination-wedding-jaipur">Destination Wedding in Jaipur</a></li>
-              <li><a href="/royal-wedding-jaipur">Royal Wedding in Jaipur</a></li>
-              <li><a href="/wedding-planner-cost-jaipur">Wedding Planner Cost in Jaipur</a></li>
-              <li><a href="/wedding-planner-cost-udaipur">Wedding Planner Cost in Udaipur</a></li>
-              <li><a href="/about-us">About Us</a></li>
-<li><a href="/how-it-works">How It Works</a></li>
-<li><a href="/privacy-policy">Privacy Policy</a></li>
-<li><a href="/terms-and-conditions">Terms & Conditions</a></li>
-
-            </ul>
-          </nav>
-        </div>
-      </footer>
     </>
   );
 }

@@ -1,0 +1,483 @@
+/* Define color palette variables */
+:root {
+    --primary: #b8860b;       /* Gold for accents and buttons */
+    --primary-dark: #8c6a08;  /* Darker gold for hovers */
+    --secondary: #3a2a1f;     /* Deep brown for secondary elements */
+    --bg-light: #faf7f2;      /* Light beige background */
+    --text-dark: #222;        /* Dark text */
+    --text-muted: #666;       /* Muted text */
+    --white: #ffffff;         /* White for backgrounds/text */
+    
+    /* Additional variables for consistency */
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-premium: 0 6px 20px rgba(184, 134, 11, 0.15); /* Gold-tinted shadow for premium feel */
+    --border-radius: 8px;
+    --font-family: 'Arial', sans-serif; /* Replace with a premium font like 'Playfair Display' if available */
+  }
+  
+  /* General page styles */
+  body {
+    font-family: var(--font-family);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 10px;
+  }
+  
+  .page-intro {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+  }
+  
+  /* Section titles */
+  .section-title {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+  }
+  
+  /* Planner grid */
+  .planner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  /* General planner card */
+  .planner-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .planner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .planner-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .planner-content {
+    padding: 20px;
+  }
+  
+  .planner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .planner-header h2 {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    margin: 0;
+  }
+  
+  .badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .verified {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  
+  .planner-rating {
+    font-size: 1rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+  }
+  
+  .planner-rating span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  
+  .planner-desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+  }
+  
+  .planner-services {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .planner-services li {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .planner-services li::before {
+    content: '✓';
+    color: var(--primary);
+    margin-right: 8px;
+  }
+  
+  .planner-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn-primary,
+  .btn-outline {
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 1rem; /* Ensure touch-friendly size */
+  }
+  
+  .btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .btn-outline {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+  }
+  
+  .btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  
+  /* Featured section enhancements for elegant and premium feel */
+  .featured-section {
+    background-color: var(--bg-light);
+    padding: 40px 0;
+    border-bottom: 2px solid var(--primary);
+    margin-bottom: 40px;
+  }
+  
+  .featured-section .section-title {
+    font-size: 2.2rem;
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .featured-section .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary);
+    margin: 10px auto 0;
+  }
+  
+  .featured-section .section-subtitle {
+    text-align: center;
+    font-style: italic;
+    color: var(--text-dark);
+  }
+  
+  .featured-grid {
+    display: flex;
+    justify-content: center; /* Center the featured card */
+  }
+  
+  .planner-card.featured {
+    max-width: 600px; /* Wider for premium feel */
+    border: 1px solid var(--primary); /* Gold border */
+    box-shadow: var(--shadow-premium); /* Enhanced shadow */
+    position: relative;
+  }
+  
+  .planner-card.featured:hover {
+    box-shadow: 0 8px 24px rgba(184, 134, 11, 0.2);
+  }
+  
+  .gold-star-seal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .gold-star-seal::before {
+    content: '⭐';
+  }
+  
+  .planner-card.featured .planner-image img {
+    height: 300px; /* Taller image for premium */
+  }
+  
+  .planner-card.featured .planner-content {
+    padding: 30px; /* More padding */
+  }
+  
+  .planner-card.featured .planner-header h2 {
+    font-size: 1.8rem;
+    color: var(--primary-dark);
+  }
+  
+  .planner-card.featured .planner-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  
+  .planner-card.featured .planner-services li {
+    font-size: 1rem;
+  }
+  
+  /* Normal section */
+  .normal-section .section-title {
+    font-size: 2rem;
+    color: var(--secondary);
+  }
+  
+  /* Mobile-friendly adjustments */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .page-intro {
+      font-size: 1rem;
+    }
+  
+    .section-title {
+      font-size: 1.8rem;
+    }
+  
+    .section-subtitle {
+      font-size: 0.9rem;
+    }
+  
+    .planner-grid {
+      grid-template-columns: 1fr; /* Stack cards vertically */
+      gap: 15px;
+    }
+  
+    .planner-image img {
+      height: 180px; /* Slightly smaller for mobile */
+    }
+  
+    .planner-content {
+      padding: 15px;
+    }
+  
+    .planner-header {
+      flex-direction: column; /* Stack header elements if needed */
+      align-items: flex-start;
+    }
+  
+    .planner-header h2 {
+      font-size: 1.4rem;
+      margin-bottom: 5px;
+    }
+  
+    .planner-rating {
+      font-size: 0.95rem;
+    }
+  
+    .planner-desc {
+      font-size: 0.95rem;
+    }
+  
+    .planner-services li {
+      font-size: 0.9rem;
+    }
+  
+    .planner-actions {
+      flex-direction: column; /* Stack buttons vertically for easier touch */
+      gap: 10px;
+    }
+  
+    .btn-primary,
+    .btn-outline {
+      width: 100%; /* Full-width buttons for mobile */
+      text-align: center;
+      padding: 12px; /* Larger padding for touch */
+    }
+  
+    /* Featured section mobile adjustments */
+    .featured-section {
+      padding: 30px 0;
+    }
+  
+    .featured-section .section-title {
+      font-size: 2rem;
+    }
+  
+    .planner-card.featured {
+      max-width: 100%; /* Full width on mobile */
+    }
+  
+    .planner-card.featured .planner-image img {
+      height: 250px; /* Adjust height */
+    }
+  
+    .planner-card.featured .planner-content {
+      padding: 20px;
+    }
+  
+    .planner-card.featured .planner-header h2 {
+      font-size: 1.6rem;
+    }
+  
+    .planner-card.featured .planner-desc {
+      font-size: 1rem;
+    }
+  
+    .planner-card.featured .planner-services li {
+      font-size: 0.95rem;
+    }
+  
+    .gold-star-seal {
+      font-size: 0.85rem;
+      padding: 5px 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    .section-title {
+      font-size: 1.6rem;
+    }
+  
+    .planner-image img {
+      height: 160px;
+    }
+  
+    .btn-primary,
+    .btn-outline {
+      font-size: 0.95rem;
+    }
+  }
+
+
+  /* ===============================
+   Planner Action Buttons
+================================ */
+
+.planner-act {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+/* PRIMARY BUTTON – View Details */
+.btn-pri {
+  flex: 1;
+  text-align: center;
+  padding: 12px 20px;
+  background: linear-gradient(
+    135deg,
+    #d4af37,
+    #f3d57c
+  );
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  letter-spacing: 0.4px;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.btn-pri:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(212, 175, 55, 0.45);
+}
+
+/* OUTLINE BUTTON – WhatsApp */
+.btn-out {
+  flex: 1;
+  text-align: center;
+  padding: 11px 20px;
+  background: transparent;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1.5px solid #25d366;
+  color: #25d366;
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.btn-out:hover {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================ */
+
+@media (max-width: 480px) {
+  .planner-act {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-pri,
+  .btn-out {
+    font-size: 0.85rem;
+    padding: 11px 18px;
+  }
+}

@@ -1,5 +1,6 @@
 "use client";
 import Head from "next/head";
+import './lyb.css';
 
 export default function ListYourBusiness() {
   const handleSubmit = (e) => {
@@ -24,7 +25,7 @@ Wedding Planner Listing Request 📋
 From: JaipurWeddingPlanner.in
     `;
 
-    const whatsappNumber = "916378380535";
+    const whatsappNumber = "91";
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
       message
     )}`;
@@ -45,9 +46,9 @@ From: JaipurWeddingPlanner.in
       {/* Top Divider / Breadcrumb */}
       <section className="section light page-intro">
         <div className="container">
-          <p className="breadcrumb">
+          {/*<p className="breadcrumb">
             Home / <strong>List Your Business</strong>
-          </p>
+          </p>*/}
           <h1>List Your Wedding Planning Business</h1>
           <p className="intro-text">
             Get discovered by couples actively looking for wedding planners in
@@ -55,6 +56,82 @@ From: JaipurWeddingPlanner.in
           </p>
         </div>
       </section>
+
+
+
+      <section className="section pricing-section">
+  <div className="container">
+    <h2>Listing Plans for Wedding Planners</h2>
+    <p className="pricing-intro">
+      Choose a plan that fits your business size. No commissions. No hidden
+      charges.
+    </p>
+
+    <div className="pricing-grid">
+      {/* Starter */}
+      <div className="pricing-card">
+        <h3>Starter</h3>
+        <p className="price">₹799</p>
+        <p className="price-note">Per Year</p>
+
+        <ul className="pricing-features">
+          <li>Basic business listing</li>
+          <li>Business name & city</li>
+          <li>Listed under Jaipur planners</li>
+          <li>Business Profile Page</li>
+        </ul>
+
+        <a href="/list-your-business/starter" className="btn-outline">
+          Get Started
+        </a>
+      </div>
+
+      {/* Featured */}
+      <div className="pricing-card featured">
+        <span className="popular-tag">Most Popular</span>
+        <h3>Featured</h3>
+        <p className="price">₹4,999</p>
+        <p className="price-note">Per Year</p>
+
+        <ul className="pricing-features">
+          <li>Featured placement in listings</li>
+          <li>Featured planner badge</li>
+          <li>WhatsApp & call inquiries</li>
+          <li>Portfolio & gallery section</li>
+          <li>Priority support</li>
+        </ul>
+
+        <a href="/list-your-business/featured" className="btn-primary">
+          Get Featured
+        </a>
+      </div>
+
+      {/* Premium */}
+      <div className="pricing-card">
+        <h3>Premium</h3>
+        <p className="price">₹9,999</p>
+        <p className="price-note">Per Year</p>
+
+        <ul className="pricing-features">
+          <li>Top placement on homepage</li>
+          <li>Featured + Verified badge</li>
+          <li>Unlimited WhatsApp leads</li>
+          <li>SEO-optimized profile page</li>
+          <li>First Recommended</li>
+        </ul>
+
+        <a href="/list-your-business/premium" className="btn-outline">
+          Go Premium
+        </a>
+      </div>
+    </div>
+    {/*<p className="pricing-footer">
+      Not sure which plan is right?{" "}
+      <a href="/list-your-business">Talk to us on WhatsApp</a>
+    </p>*/}
+  </div>
+</section>
+
 
       {/* Benefits */}
       <section className="section">
@@ -100,6 +177,7 @@ From: JaipurWeddingPlanner.in
         </div>
       </section>
 
+
       {/* How it works for planners */}
       <section className="section light">
         <div className="container">
@@ -114,7 +192,7 @@ From: JaipurWeddingPlanner.in
         </div>
       </section>
 
-      {/* Form */}
+      {/* Form */}{/*}
       <section className="section" id="apply">
         <div className="container">
           <h2>Apply for Listing</h2>
@@ -161,7 +239,7 @@ From: JaipurWeddingPlanner.in
             </p>
           </form>
         </div>
-      </section>
+      </section>*/}
     </>
   );
 }

@@ -229,22 +229,7 @@ export default function WeddingPlannerCostUdaipur() {
         </section>
       </main>
 
-      <footer className="footer">
-        <div className="container">
-          <p>📍 Udaipur, Rajasthan</p>
 
-          <p className="copy">
-            © 2026 UdaipurWeddingPlanner.in — Smart Wedding Planning Starts Here.
-          </p>
-          <nav className="footer-nav">
-            <ul>
-              <li><a href="/destination-wedding-jaipur">Destination Wedding in Jaipur</a></li>
-              <li><a href="/royal-wedding-jaipur">Royal Wedding in Jaipur</a></li>
-              <li><a href="/wedding-planner-cost-jaipur">Wedding Planner Cost in Jaipur</a></li>
-            </ul>
-          </nav>
-        </div>
-      </footer>
     </>
   );
 }

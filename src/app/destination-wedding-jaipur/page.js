@@ -120,9 +120,9 @@ export default function DestinationWeddingJaipur() {
       
       <div className="card">
         <span className="ribbon">Featured</span>
-        <h3>Fiestro Events</h3>
+        <h3>Atelier Events</h3>
         <p>Luxury themes & creative setups with excellent reviews.</p>
-        <a href="/fiestro-events" className="card-link">
+        <a href="/Atelier-events" className="card-link">
           View Details →
         </a><br></br><br></br>
         <span className="badge verified"> Verified Planner</span>
@@ -131,16 +131,16 @@ export default function DestinationWeddingJaipur() {
 
       <div className="card">
         <span className="ribbon">Featured</span>
-        <h3>Shaandaar Events</h3>
+        <h3>GoldenVows Events</h3>
         <p>Personalized planning with stunning décor.</p>
-        <a href="/shaandaar-events" className="card-link">
+        <a href="/GoldenVows-events" className="card-link">
           View Details →
         </a>
       </div>
 
       <div className="card">
         {/*<span className="ribbon">Featured</span>*/}
-        <h3>The Wedding Toli</h3>
+        <h3>Velour Toli</h3>
         <p>Highly rated full-service wedding planner.</p>
        {/* <a href="/planners/the-wedding-toli" className="card-link">
           View Details →
@@ -206,22 +206,7 @@ export default function DestinationWeddingJaipur() {
         </section>
       </main>
 
-      <footer className="footer">
-        <div className="container">
-          <p>📍 Jaipur, Rajasthan</p>
-
-          <p className="copy">
-            © 2026 JaipurWeddingPlanner.in — Destination Weddings Made Magical.
-          </p>
-          <nav className="footer-nav">
-            <ul>
-              <li><a href="/royal-wedding-jaipur">Royal Wedding in Jaipur</a></li>
-              <li><a href="/wedding-planner-cost-jaipur">Wedding Planner Cost in Jaipur</a></li>
-              <li><a href="/wedding-planner-cost-udaipur">Wedding Planner Cost in Udaipur</a></li>
-            </ul>
-          </nav>
-        </div>
-      </footer>
+ 
     </>
   );
 }

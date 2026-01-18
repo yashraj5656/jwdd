@@ -1,8 +1,27 @@
 "use client";
 import Head from "next/head";
 import './lyb.css';
+import { useEffect, useState } from "react";
+
 
 export default function ListYourBusiness() {
+  const [visibility, setVisibility] = useState(10000);
+
+useEffect(() => {
+  let start = 100000;
+  const end = 199000;
+  const interval = setInterval(() => {
+    start += 30;
+    setVisibility(start);
+
+    if (start >= end) {
+      clearInterval(interval);
+    }
+  }, 900); // speed (ms)
+
+  return () => clearInterval(interval);
+}, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -61,6 +80,44 @@ From: JaipurWeddingPlanner.in
       </header>
      
  
+{/* VALUE METRICS STRIP */}
+<section className="value-metrics">
+  <div className="container metrics-grid">
+    
+    <div className="metric-card">
+      <span className="metric-number">3–5x</span>
+      <h3>More Leads</h3>
+      <p>
+        Get direct calls & WhatsApp inquiries from couples actively searching
+        for wedding planners in Jaipur.
+      </p>
+    </div>
+
+    <div className="metric-card">
+  <span className="metric-number">
+    {visibility.toLocaleString()}+
+  </span>
+  <h3>Monthly Visibility</h3>
+  <p>
+    Your business is showcased to thousands of high-intent couples every
+    month.
+  </p>
+</div>
+
+
+    <div className="metric-card">
+      <span className="metric-number">High ROI</span>
+      <h3>Maximum Returns</h3>
+      <p>
+        One-time yearly listing fee. No commissions. Keep 100% of your booking
+        revenue.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
 
 
 

@@ -277,3 +277,67 @@
     font-size: 2.0rem;
   }
 }
+/* VALUE METRICS SECTION */
+
+.value-metrics {
+  margin-top: -80px; /* creates premium overlap with hero */
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 5;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.metric-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  border: 1px solid rgba(201, 162, 77, 0.25);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 35px 80px rgba(201, 162, 77, 0.18);
+}
+
+.metric-number {
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #c9a24d;
+  margin-bottom: 12px;
+}
+
+.metric-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.metric-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+.metric-number {
+  animation: popIn 0.6s ease forwards;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

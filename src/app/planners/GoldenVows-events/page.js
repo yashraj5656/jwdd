@@ -16,7 +16,7 @@ export default function GoldenVowsEvents() {
       {/* HERO */}
       <header className="planner-hero premium-hero">
         <div className="planner-hero-content">
-          {/*<span className="badge verified"> Verified Planner</span>*/}
+          <span className="badge verified"> Verified Planner</span>
 
           <h1>GoldenVows Events</h1>
           <p>

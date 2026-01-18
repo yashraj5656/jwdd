@@ -89,16 +89,16 @@ export default function WeddingPlannerCostJaipur() {
         />
       </Head>
 
-      <header className="hero">
-        <div className="hero-content">
-          <p className="hero-subtitle">Transparent Pricing for Your Dream Wedding</p>
+      <header className="heroo">
+        <div className="hero-contenttt">
+          <p className="hero-subtitleee">Transparent Pricing for Your Dream Wedding</p>
           <h1>Wedding Planner Cost in Jaipur</h1>
           <p>
             Planning a wedding in Jaipur? Understand the costs involved with professional wedding planners. From affordable packages to premium royal setups, get insights into pricing, factors, and how to budget effectively for your big day.
           </p>
-          <div className="hero-actions">
-            <a href="#contact" className="btn-primary">
-              Get Free Cost Consultation
+          <div className="hero-actionsss">
+          <a href="/#planners" className="btn-primaryyy">
+              Explore Wedding Planners
             </a>
           </div>
         </div>
@@ -205,28 +205,7 @@ export default function WeddingPlannerCostJaipur() {
           </div>
         </section>
 
-        <section className="section light" id="contact">
-          <div className="container">
-            <h2>Get Personalized Wedding Planner Quotes</h2>
-            <form className="form" onSubmit={handleWhatsAppSubmit}>
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="tel" name="phone" placeholder="Phone / WhatsApp" required />
-  <input type="date" name="date" required />
-  <input type="text" name="budget" placeholder="Approximate Budget" />
-  <select name="type">
-    <option value="">Type of Wedding</option>
-    <option>Destination</option>
-    <option>Local</option>
-    <option>Royal</option>
-    <option>Traditional</option>
-  </select>
 
-  <button type="submit" className="btn-primary">
-    Submit
-  </button>
-</form>
-          </div>
-        </section>
       </main>
 
 

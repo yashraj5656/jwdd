@@ -46,16 +46,16 @@ export default function DestinationWeddingJaipur() {
         <meta name="keywords" content="destination wedding Jaipur, Jaipur destination wedding planners, royal weddings Jaipur, wedding venues Jaipur" />
       </Head>
 
-      <header className="hero">
-        <div className="hero-content">
-          <p className="hero-subtitle">Experience Royalty on Your Special Day</p>
+      <header className="heroo">
+        <div className="hero-contenttt">
+          <p className="hero-subtitleee">Experience Royalty on Your Special Day</p>
           <h1>Destination Wedding in Jaipur</h1>
           <p>
             Turn your dream wedding into a royal affair in the Pink City. With stunning palaces, forts, and heritage sites, Jaipur offers the perfect backdrop for your destination wedding. Our trusted planners handle everything from venue selection to décor and entertainment.
           </p>
-          <div className="hero-actions">
-            <a href="#contact" className="btn-primary">
-              Get Free Destination Wedding Consultation
+          <div className="hero-actionsss">
+          <a href="/#planners" className="btn-primaryyy">
+              Explore Wedding Planners
             </a>
           </div>
         </div>
@@ -182,28 +182,7 @@ export default function DestinationWeddingJaipur() {
           </div>
         </section>
 
-        <section className="section light" id="contact">
-          <div className="container">
-            <h2>Get Started with Your Jaipur Destination Wedding</h2>
-            <form className="form" onSubmit={handleWhatsAppSubmit}>
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="tel" name="phone" placeholder="Phone / WhatsApp" required />
-  <input type="date" name="date" required />
-  <input type="text" name="budget" placeholder="Approximate Budget" />
-  <select name="type">
-    <option value="">Type of Wedding</option>
-    <option>Destination</option>
-    <option>Local</option>
-    <option>Royal</option>
-    <option>Traditional</option>
-  </select>
 
-  <button type="submit" className="btn-primary">
-    Submit
-  </button>
-</form>
-          </div>
-        </section>
       </main>
 
  

@@ -43,19 +43,22 @@ From: JaipurWeddingPlanner.in
         />
       </Head>
 
-      {/* Top Divider / Breadcrumb */}
-      <section className="section light page-intro">
-        <div className="container">
-          {/*<p className="breadcrumb">
-            Home / <strong>List Your Business</strong>
-          </p>*/}
+      <header className="planner-hero premium-hero">
+        <div className="planner-hero-content">
+          {/*<span className="badge verified"> Verified Planner</span>*/}
+
           <h1>List Your Wedding Planning Business</h1>
-          <p className="intro-text">
-            Get discovered by couples actively looking for wedding planners in
-            Jaipur. No commissions. Direct inquiries. Real leads.
+          <p>
+          Get discovered by couples actively looking for <strong>wedding planners</strong> in
+          Jaipur. No commissions. Direct inquiries. Real leads.
           </p>
+
+
         </div>
-      </section>
+      </header>
+
+     
+ 
 
 
 

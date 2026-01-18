@@ -236,3 +236,44 @@
     transform: translateY(-6px);
   }
 }
+
+.planner-hero {
+  min-height: 60vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('/hero.jpg') center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.premium-hero {
+  position: relative;
+}
+
+.planner-hero-content {
+  max-width: 720px;
+  color: #fff;
+  padding: 20px;
+}
+
+
+.planner-hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.2rem;
+  color: #fff;
+  margin: 18px 0 12px;
+}
+
+.planner-hero-content p {
+  font-size: 1.1rem;
+  color: #f2f2f2;
+  line-height: 1.7;
+  margin-bottom: 34px;
+}
+@media (max-width: 768px) {
+  .planner-hero-content h1 {
+    font-size: 2.0rem;
+  }
+}

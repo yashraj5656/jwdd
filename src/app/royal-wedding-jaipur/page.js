@@ -82,16 +82,16 @@ export default function RoyalWeddingJaipur() {
         />
       </Head>
 
-      <header className="hero">
-        <div className="hero-content">
-          <p className="hero-subtitle">Live Your Fairy-Tale in the Pink City</p>
+      <header className="heroo">
+        <div className="hero-contenttt">
+          <p className="hero-subtitleee">Live Your Fairy-Tale in the Pink City</p>
           <h1>Royal Wedding in Jaipur</h1>
           <p>
             Embrace the grandeur of Rajasthan with a royal wedding in Jaipur. Our experienced planners transform historic palaces and forts into enchanting venues for your special day, complete with opulent décor, traditional rituals, and impeccable service.
           </p>
-          <div className="hero-actions">
-            <a href="#contact" className="btn-primary">
-              Get Free Royal Wedding Consultation
+          <div className="hero-actionsss">
+          <a href="/#planners" className="btn-primaryyy">
+              Explore Wedding Planners
             </a>
           </div>
         </div>
@@ -218,28 +218,7 @@ export default function RoyalWeddingJaipur() {
           </div>
         </section>
 
-        <section className="section light" id="contact">
-          <div className="container">
-            <h2>Get Started with Your Royal Wedding</h2>
-            <form className="form" onSubmit={handleWhatsAppSubmit}>
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="tel" name="phone" placeholder="Phone / WhatsApp" required />
-  <input type="date" name="date" required />
-  <input type="text" name="budget" placeholder="Approximate Budget" />
-  <select name="type">
-    <option value="">Type of Wedding</option>
-    <option>Destination</option>
-    <option>Local</option>
-    <option>Royal</option>
-    <option>Traditional</option>
-  </select>
-
-  <button type="submit" className="btn-primary">
-    Submit
-  </button>
-</form>
-          </div>
-        </section>
+ 
       </main>
 
 

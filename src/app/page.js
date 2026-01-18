@@ -106,17 +106,17 @@ export default function Home() {
 
       </Head>
 
-      <header className="hero">
-        <div className="hero-content">
-          <p className="hero-subtitle">Your Royal Dream Wedding Awaits</p>
+      <header className="heroo">
+        <div className="hero-contenttt">
+          <p className="hero-subtitleee">Your Royal Dream Wedding Awaits</p>
           <h1>Top Wedding Planners in Jaipur</h1>
           <p>
             Plan your dream wedding with trusted & experienced wedding planners
             in Jaipur. Decoration, catering, photography & full management — all
             in one place.
           </p>
-          <div className="hero-actions">
-            <a href="#planners" className="list-primary">
+          <div className="hero-actionsss">
+            <a href="#planners" className="btn-primaryyy">
               Explore Wedding Planners
             </a>
           </div>
@@ -225,7 +225,7 @@ export default function Home() {
     </div>
   </div>
   <div className="home-planner-btn">
-  <Link href="/wedding-planner" className="list-primary">
+  <Link href="/wedding-planner" className="btn-view-planners">
     View All Wedding Planners →
   </Link>
 </div>

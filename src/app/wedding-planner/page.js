@@ -14,13 +14,23 @@ export default function WeddingPlannerPage() {
         />
       </Head>
 
+      <header className="planner-hero premium-hero">
+        <div className="planner-hero-content">
+          
+
+          <h1>Wedding Planners in Jaipur</h1>
+          <p>
+          Compare <strong>verified wedding planners</strong> in Jaipur. View
+          services, ratings, portfolios & connect instantly.
+          </p>
+
+
+        </div>
+      </header>
+
   <section className="planner-page">
   <div className="container">
-    <h1>Wedding Planners in Jaipur</h1>
-    <p className="page-intro">
-      Compare <strong>verified wedding planners</strong> in Jaipur. View
-      services, ratings, portfolios & connect instantly.
-    </p>
+
 
     {/* =========================
         FEATURED PLANNERS

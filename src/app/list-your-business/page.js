@@ -177,7 +177,7 @@ From: JaipurWeddingPlanner.in
         <ul className="pricing-featuress">
           <li>Top placement on homepage</li>
           <li>Featured + Verified badge</li>
-          <li>Unlimited WhatsApp leads</li>
+          <li>Priority WhatsApp Leads</li>
           <li>SEO-optimized profile page</li>
           <li>First Recommended</li>
         </ul>

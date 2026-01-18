@@ -14,7 +14,7 @@ export default function WeddingPlannerPage() {
         />
       </Head>
 
-      <header className="heroo">
+      {/*<header className="heroo">
         <div className="hero-contenttt">
         <p className="hero-subtitleee"></p>
 
@@ -26,7 +26,7 @@ export default function WeddingPlannerPage() {
 
 
         </div>
-      </header>
+      </header>*/}
 
   <section className="planner-page">
   <div className="container">

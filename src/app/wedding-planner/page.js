@@ -14,8 +14,8 @@ export default function WeddingPlannerPage() {
         />
       </Head>
 
-      <header className="planner-hero premium-hero">
-        <div className="planner-hero-content">
+      <header className="heroo">
+        <div className="hero-contenttt">
           
 
           <h1>Wedding Planners in Jaipur</h1>

@@ -4,18 +4,39 @@
 ================================ */
 
 /* ---------- HERO ---------- */
-
-.planner-hero {
-  min-height: 60vh;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('/hero.jpg') center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.planner-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  z-index: 0;
+  animation: heroZoom 18s ease-in-out infinite alternate;
 }
-
+.planner-hero {
+  position: relative;
+  padding: 100px 20px 110px;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("/plannerhero/Atelier.jpg"); /* replace with your image */
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+.planner-hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(212, 175, 55, 0.25),
+    transparent 60%
+  );
+  pointer-events: none;
+}
 .premium-hero {
   position: relative;
 }

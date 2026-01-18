@@ -14,18 +14,16 @@ export default function GoldenVowsEvents() {
       </Head>
 
       {/* HERO */}
-      <header className="planner-hero premium-hero">
-        <div className="planner-hero-content">
-          <span className="badge verified"> Verified Planner</span>
-
+      <header className="planner-hero">
+        <div className="hero-contenttt">
+          <p className="hero-subtitleee"><span className="badge verified"> Verified Planner</span></p>
           <h1>GoldenVows Events</h1>
           <p>
             Jaipur’s trusted premium wedding planner for luxury, royal &
             destination weddings.
           </p>
-
           <div className="hero-actions">
-            <a
+          <a
               href="https://wa.me/91XXXXXXXXXX"
               target="_blank"
               className="btn-primary"
@@ -38,6 +36,7 @@ export default function GoldenVowsEvents() {
           </div>
         </div>
       </header>
+  
 
       <main>
         {/* TRUST STRIP */}

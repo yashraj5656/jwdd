@@ -43,26 +43,28 @@ From: JaipurWeddingPlanner.in
         />
       </Head>
 
-      <header className="planner-hero premium-hero">
-        <div className="planner-hero-content">
-          {/*<span className="badge verified"> Verified Planner</span>*/}
 
+      <header className="heroo">
+        <div className="hero-contenttt">
+          <p className="hero-subtitleee">Experience Royalty on Your Special Day</p>
           <h1>List Your Wedding Planning Business</h1>
           <p>
           Get discovered by couples actively looking for <strong>wedding planners</strong> in
           Jaipur. No commissions. Direct inquiries. Real leads.
           </p>
-
-
+          <div className="hero-actionsss">
+          <a href="#plans" className="btn-primaryyy">
+              List Your Business
+            </a>
+          </div>
         </div>
       </header>
-
      
  
 
 
 
-      <section className="section pricing-section">
+      <section id="plans" className="section pricing-section">
   <div className="container">
     <h2>Listing Plans for Wedding Planners</h2>
     <p className="pricing-intro">

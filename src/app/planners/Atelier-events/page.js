@@ -44,15 +44,15 @@ export default function AtelierEvents() {
         <section className="trust-strip">
           <div className="container trust-grid">
             <div>
-              <strong>120+</strong>
+              <strong>80+</strong>
               <span>Weddings Planned</span>
             </div>
             <div>
-              <strong>4.9 ★</strong>
+              <strong>4.1 ★</strong>
               <span>Average Rating</span>
             </div>
             <div>
-              <strong>10+ Years</strong>
+              <strong>7+ Years</strong>
               <span>Experience</span>
             </div>
             <div>
@@ -80,13 +80,13 @@ export default function AtelierEvents() {
           <div className="container">
             <div className="rating-box premium">
               <div className="rating-left">
-                <span className="rating-score">4.9</span>
+                <span className="rating-score">4.1</span>
                 <span className="rating-stars">★★★★★</span>
               </div>
 
               <div className="rating-right">
                 <p>
-                  Rated by <strong>120+ verified couples</strong>
+                  Rated by <strong>80+ verified couples</strong>
                 </p>
                 <span className="rating-source">
                   Based on real wedding experiences
@@ -116,9 +116,9 @@ export default function AtelierEvents() {
           <div className="container">
             <h2>Wedding Highlights</h2>
             <div className="portfolio-grid">
-              <img src="/hero.jpg" alt="Royal wedding Jaipur" />
-              <img src="/hero.jpg" alt="Luxury decor wedding" />
-              <img src="/hero.jpg" alt="Destination wedding Jaipur" />
+              <img src="/highlights/Atelier1.jpg" alt="Royal wedding Jaipur" />
+              <img src="/highlights/Atelier2.jpg" alt="Luxury decor wedding" />
+              <img src="/highlights/Atelier3.jpg" alt="Destination wedding Jaipur" />
             </div>
           </div>
         </section>
@@ -137,7 +137,7 @@ export default function AtelierEvents() {
               target="_blank"
               className="btn-primary large"
             >
-              Get Premium Consultation
+              Get Consultation
             </a>
           </div>
         </section>

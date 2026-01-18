@@ -2,14 +2,14 @@
    PRICING SECTION – LUXURY EDITION
 ================================ */
 
-.pricing-section {
+.pricing-sectionn {
   background: linear-gradient(180deg, #fffaf0 0%, #ffffff 60%);
   text-align: center;
   padding: 80px 20px;
 }
 
 /* Intro */
-.pricing-intro {
+.pricing-introo {
   max-width: 720px;
   margin: 0 auto 60px;
   color: var(--text-muted);
@@ -20,7 +20,7 @@
 /* ===============================
    GRID
 ================================ */
-.pricing-grid {
+.pricing-gridd {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 34px;
@@ -30,7 +30,7 @@
 /* ===============================
    CARD BASE
 ================================ */
-.pricing-card {
+.pricing-cardd {
   background: linear-gradient(180deg, #ffffff, #fffdf8);
   padding: 42px 30px;
   border-radius: 22px;
@@ -44,7 +44,7 @@
 }
 
 /* Subtle hover glow */
-.pricing-card::before {
+.pricing-cardd::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -68,21 +68,21 @@
 }
 
 /* Hover animation */
-.pricing-card:hover {
+.pricing-cardd:hover {
   transform: translateY(-10px);
   box-shadow:
     0 35px 80px rgba(0, 0, 0, 0.14),
     0 0 0 1px rgba(212, 175, 55, 0.12);
 }
 
-.pricing-card:hover::before {
+.pricing-cardd:hover::before {
   opacity: 1;
 }
 
 /* ===============================
    FEATURED CARD (BEST SELLER)
 ================================ */
-.pricing-card.featured {
+.pricing-cardd.featuredd {
   border: 2px solid rgba(212, 175, 55, 0.6);
   background: linear-gradient(180deg, #ffffff, #fff9ea);
   transform: scale(1.05);
@@ -90,7 +90,7 @@
     0 40px 90px rgba(212, 175, 55, 0.25);
 }
 
-.pricing-card.featured:hover {
+.pricing-cardd.featuredd:hover {
   transform: scale(1.06) translateY(-8px);
 }
 
@@ -112,7 +112,7 @@
 /* ===============================
    PRICE
 ================================ */
-.price {
+.pricee {
   font-size: 2.8rem;
   font-weight: 700;
   margin: 24px 0 6px;
@@ -121,7 +121,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.price-note {
+.price-notee {
   font-size: 0.9rem;
   color: var(--text-muted);
   margin-bottom: 24px;
@@ -130,14 +130,14 @@
 /* ===============================
    FEATURES LIST
 ================================ */
-.pricing-features {
+.pricing-featuress {
   list-style: none;
   padding: 0;
   margin: 36px 0;
   text-align: left;
 }
 
-.pricing-features li {
+.pricing-featuress li {
   position: relative;
   padding-left: 32px;
   margin-bottom: 18px;
@@ -147,7 +147,7 @@
 }
 
 /* Elegant check icon */
-.pricing-features li::before {
+.pricing-featuress li::before {
   content: "✦";
   position: absolute;
   left: 0;
@@ -159,7 +159,7 @@
 /* ===============================
    BUTTONS
 ================================ */
-.btn-outline {
+.btn-outlinee {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -175,7 +175,7 @@
 }
 
 /* Button shine effect */
-.btn-outline::after {
+.btn-outlinee::after {
   content: "";
   position: absolute;
   top: 0;
@@ -191,32 +191,32 @@
   transition: all 0.6s ease;
 }
 
-.btn-outline:hover {
+.btn-outlinee:hover {
   background: var(--primary);
   color: #fff;
   box-shadow: 0 14px 40px rgba(212, 175, 55, 0.45);
 }
 
-.btn-outline:hover::after {
+.btn-outlinee:hover::after {
   left: 120%;
 }
 
 /* ===============================
    FOOTER NOTE
 ================================ */
-.pricing-footer {
+.pricing-footerr {
   margin-top: 50px;
   font-size: 0.9rem;
   color: var(--text-muted);
 }
 
-.pricing-footer a {
+.pricing-footerr a {
   color: var(--primary);
   font-weight: 600;
   text-decoration: none;
 }
 
-.pricing-footer a:hover {
+.pricing-footerr a:hover {
   text-decoration: underline;
 }
 
@@ -224,15 +224,15 @@
    MOBILE OPTIMIZATION
 ================================ */
 @media (max-width: 768px) {
-  .pricing-section {
+  .pricing-sectionn {
     padding: 60px 16px;
   }
 
-  .pricing-card.featured {
+  .pricing-card.featuredd {
     transform: none;
   }
 
-  .pricing-card:hover {
+  .pricing-cardd:hover {
     transform: translateY(-6px);
   }
 }

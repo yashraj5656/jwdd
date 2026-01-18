@@ -16,7 +16,7 @@ export default function WeddingPlannerPage() {
 
       <header className="heroo">
         <div className="hero-contenttt">
-          
+        <p className="hero-subtitleee"></p>
 
           <h1>Wedding Planners in Jaipur</h1>
           <p>
@@ -46,10 +46,10 @@ export default function WeddingPlannerPage() {
       <div className="planner-grid featured-grid">
         {/* FEATURED CARD */}
         <div className="planner-card featured">
-        <span className="ribbon">Featured</span>
+         <span className="ribbon">Featured</span>
 
           <div className="planner-image">
-            <img src="/hero.jpg" alt="GoldenVows Events Jaipur" />
+            <img src="/plannerhero/GoldenVows.jpg" alt="GoldenVows Events Jaipur" />
           </div>
 
           <div className="planner-content">
@@ -84,8 +84,54 @@ export default function WeddingPlannerPage() {
             </div>
           </div>
         </div>
-      </div>
+</div>
+
+      
+<div className="planner-grid featured-grid" style={{marginTop:'2rem'}}>
+      <div className="planner-card featured">
+         <span className="ribbon">Featured</span>
+
+          <div className="planner-image">
+            <img src="/plannerhero/Atelierhero.jpg" alt="Atelier Events Jaipur" />
+          </div>
+
+          <div className="planner-content">
+            <div className="planner-header">
+              <h2>Atelier Events</h2>
+              {/*<span className="badge verified">Verified Planner</span>*/}
+            </div>
+
+            <div className="planner-rating">
+              ★★★★★ <span>4.1 • 80+ weddings</span>
+            </div>
+
+            <p className="planner-desc">
+              Luxury wedding planners specializing in royal destination
+              weddings, premium décor & flawless coordination.
+            </p>
+
+            <ul className="planner-services">
+              <li>💍 Complete Wedding Planning</li>
+              <li>🎨 Theme & Décor Design</li>
+              <li>🍽 Catering Management</li>
+              <li>🎶 Entertainment</li>
+            </ul>
+
+            <div className="planner-act">
+              <Link href="/planners/Atelier-events" className="btn-pri">
+                View Details
+              </Link>
+              <a href="https://wa.me/91XXXXXXXXXX" className="btn-out">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+
     </section>
+
+
 
     {/* =========================
         ALL PLANNERS
@@ -98,14 +144,14 @@ export default function WeddingPlannerPage() {
       <div className="planner-grid">
         <div className="planner-card">
           <div className="planner-image">
-            <img src="/hero.jpg" alt="Atelier Events Jaipur" />
+            <img src="/plannerhero/Atelier.jpg" alt="RajViva Events" />
           </div>
 
           <div className="planner-content">
-            <h2>Atelier Events</h2>
+            <h2>RajViva Events</h2>
 
             <div className="planner-rating">
-              ★★★★☆ <span>4.7 • 80+ weddings</span>
+              ★★★★☆ <span>3.8 • 60+ weddings</span>
             </div>
 
             <p className="planner-desc">
@@ -120,14 +166,175 @@ export default function WeddingPlannerPage() {
             </ul>
 
             <div className="planner-actions">
-              <Link href="/planners/Atelier-events" className="btn-primary">
+              <Link href="/planners/Profile/RajViva-Events" className="btn-primary">
                 View Details
               </Link>
             </div>
           </div>
         </div>
 
+
+
+
+        <div className="planner-card">
+          <div className="planner-image">
+            <img src="/plannerhero/Atelier.jpg" alt="Shaadi Sutra Co." />
+          </div>
+
+          <div className="planner-content">
+            <h2>Shaadi Sutra Co.</h2>
+
+            <div className="planner-rating">
+              ★★★★☆ <span>3.4 • 60+ weddings</span>
+            </div>
+
+            <p className="planner-desc">
+              Creative and budget-friendly wedding planning with a focus on
+              personalization.
+            </p>
+
+            <ul className="planner-services">
+              <li>🎊 Wedding Events</li>
+              <li>🎨 Décor</li>
+              <li>📋 Vendor Management</li>
+            </ul>
+
+            <div className="planner-actions">
+              <Link href="/planners/Profile/Shaadi-Sutra-Co" className="btn-primary">
+                View Details
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="planner-card">
+          <div className="planner-image">
+            <img src="/plannerhero/Atelier.jpg" alt="Anantara Wedding Co." />
+          </div>
+
+          <div className="planner-content">
+            <h2>Anantara Wedding Co.</h2>
+
+            <div className="planner-rating">
+              ★★★★☆ <span>3.4 • 80+ weddings</span>
+            </div>
+
+            <p className="planner-desc">
+              Creative and budget-friendly wedding planning with a focus on
+              personalization.
+            </p>
+
+            <ul className="planner-services">
+              <li>🎊 Wedding Events</li>
+              <li>🎨 Décor</li>
+              <li>📋 Vendor Management</li>
+            </ul>
+
+            <div className="planner-actions">
+              <Link href="/planners/Profile/Anantara-Wedding-Co" className="btn-primary">
+                View Details
+              </Link>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div className="planner-card">
+          <div className="planner-image">
+            <img src="/plannerhero/Atelier.jpg" alt="Saffron Aura Events" />
+          </div>
+
+          <div className="planner-content">
+            <h2>Saffron Aura Events</h2>
+
+            <div className="planner-rating">
+              ★★★★☆ <span>3.4 • 60+ weddings</span>
+            </div>
+
+            <p className="planner-desc">
+              Creative and budget-friendly wedding planning with a focus on
+              personalization.
+            </p>
+
+            <ul className="planner-services">
+              <li>🎊 Wedding Events</li>
+              <li>🎨 Décor</li>
+              <li>📋 Vendor Management</li>
+            </ul>
+
+            <div className="planner-actions">
+              <Link href="/planners/Profile/Saffron-Aura-Events" className="btn-primary">
+                View Details
+              </Link>
+            </div>
+          </div>
+        </div>
+
+
+        <div className="planner-card">
+          <div className="planner-image">
+            <img src="/plannerhero/Atelier.jpg" alt="Velvet Knot Weddings" />
+          </div>
+
+          <div className="planner-content">
+            <h2>Velvet Knot Weddings</h2>
+
+            <div className="planner-rating">
+              ★★★★☆ <span>3.4 • 60+ weddings</span>
+            </div>
+
+            <p className="planner-desc">
+              Creative and budget-friendly wedding planning with a focus on
+              personalization.
+            </p>
+
+            <ul className="planner-services">
+              <li>🎊 Wedding Events</li>
+              <li>🎨 Décor</li>
+              <li>📋 Vendor Management</li>
+            </ul>
+
+            <div className="planner-actions">
+              <Link href="/planners/Profile/Velvet-Knot-Weddings" className="btn-primary">
+                View Details
+              </Link>
+            </div>
+          </div>
+        </div>
+
+
         {/* More normal cards */}
+        <div className="planner-card">
+          <div className="planner-image">
+            <img src="/plannerhero/Atelier.jpg" alt="Mandap & Memories" />
+          </div>
+
+          <div className="planner-content">
+            <h2>Mandap & Memories</h2>
+
+            <div className="planner-rating">
+              ★★★★☆ <span>3.8 • 60+ weddings</span>
+            </div>
+
+            <p className="planner-desc">
+              Creative and budget-friendly wedding planning with a focus on
+              personalization.
+            </p>
+
+            <ul className="planner-services">
+              <li>🎊 Wedding Events</li>
+              <li>🎨 Décor</li>
+              <li>📋 Vendor Management</li>
+            </ul>
+
+            <div className="planner-actions">
+              <Link href="/planners/Profile/Mandap-&-Memories" className="btn-primary">
+                View Details
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>

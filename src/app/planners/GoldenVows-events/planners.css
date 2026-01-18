@@ -13,7 +13,7 @@
       rgba(0, 0, 0, 0.55),
       rgba(0, 0, 0, 0.55)
     ),
-    url("/hero.jpg"); /* replace with your image */
+    url("/plannerhero/GoldenVows.jpg"); /* replace with your image */
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -263,5 +263,175 @@
   .rating-box {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+
+.signature-styles {
+  background: linear-gradient(180deg, #fffaf3, #ffffff);
+  padding: 90px 0;
+}
+
+.signature-styles h2 {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.signature-styles h2::after {
+  content: "";
+  width: 70px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #d4af37, transparent);
+  display: block;
+  margin: 14px auto 0;
+}
+
+.style-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.style-grid > div {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+}
+
+.style-grid > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #d4af37, #f2d98b);
+  border-radius: 2px;
+}
+
+.style-grid > div:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 70px rgba(212, 175, 55, 0.18);
+}
+
+.style-grid h3 {
+  font-size: 1.25rem;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 14px;
+}
+
+.style-grid p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+.testimonials {
+  background: #fff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.3rem;
+  margin-bottom: 60px;
+}
+
+.testimonials blockquote {
+  max-width: 820px;
+  margin: 0 auto 40px;
+  padding: 40px 48px;
+  background: #fffaf3;
+  border-radius: 22px;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.07);
+  position: relative;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.testimonials blockquote::before {
+  content: "“";
+  position: absolute;
+  top: -22px;
+  left: 30px;
+  font-size: 5rem;
+  color: rgba(212, 175, 55, 0.3);
+  font-family: serif;
+}
+
+.testimonials span {
+  display: block;
+  margin-top: 18px;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+.process {
+  background: linear-gradient(180deg, #ffffff, #fffaf3);
+  padding: 90px 0;
+}
+
+.process h2 {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 2.3rem;
+  margin-bottom: 55px;
+}
+
+.process-steps {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.process-steps li {
+  counter-increment: step;
+  background: #ffffff;
+  padding: 26px 32px 26px 70px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
+  position: relative;
+  font-size: 1rem;
+}
+
+.process-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37, #f3dc95);
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .signature-styles h2,
+  .testimonials h2,
+  .process h2 {
+    font-size: 1.9rem;
+  }
+
+  .style-grid > div {
+    padding: 28px 24px;
+  }
+
+  .testimonials blockquote {
+    padding: 30px;
   }
 }

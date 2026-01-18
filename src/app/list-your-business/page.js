@@ -64,41 +64,41 @@ From: JaipurWeddingPlanner.in
 
 
 
-      <section id="plans" className="section pricing-section">
+      <section id="plans" className="pricing-sectionn">
   <div className="container">
     <h2>Listing Plans for Wedding Planners</h2>
-    <p className="pricing-intro">
+    <p className="pricing-introo">
       Choose a plan that fits your business size. No commissions. No hidden
       charges.
     </p>
 
-    <div className="pricing-grid">
+    <div className="pricing-gridd">
       {/* Starter */}
-      <div className="pricing-card">
+      <div className="pricing-cardd">
         <h3>Starter</h3>
-        <p className="price">₹799</p>
-        <p className="price-note">Per Year</p>
+        <p className="pricee">₹799</p>
+        <p className="price-notee">Per Year</p>
 
-        <ul className="pricing-features">
+        <ul className="pricing-featuress">
           <li>Basic business listing</li>
           <li>Business name & city</li>
           <li>Listed under Jaipur planners</li>
           <li>Business Profile Page</li>
         </ul>
 
-        <a href="/list-your-business/starter" className="btn-outline">
+        <a href="/list-your-business/starter" className="btn-outlinee">
           Get Started
         </a>
       </div>
 
       {/* Featured */}
-      <div className="pricing-card featured">
+      <div className="pricing-cardd featuredd">
         <span className="popular-tag">Most Popular</span>
         <h3>Featured</h3>
-        <p className="price">₹4,999</p>
-        <p className="price-note">Per Year</p>
+        <p className="pricee">₹4,999</p>
+        <p className="price-notee">Per Year</p>
 
-        <ul className="pricing-features">
+        <ul className="pricing-featuress">
           <li>Featured placement in listings</li>
           <li>Featured planner badge</li>
           <li>WhatsApp & call inquiries</li>
@@ -112,12 +112,12 @@ From: JaipurWeddingPlanner.in
       </div>
 
       {/* Premium */}
-      <div className="pricing-card">
+      <div className="pricing-cardd">
         <h3>Premium</h3>
-        <p className="price">₹9,999</p>
-        <p className="price-note">Per Year</p>
+        <p className="pricee">₹9,999</p>
+        <p className="price-notee">Per Year</p>
 
-        <ul className="pricing-features">
+        <ul className="pricing-featuress">
           <li>Top placement on homepage</li>
           <li>Featured + Verified badge</li>
           <li>Unlimited WhatsApp leads</li>
@@ -125,7 +125,7 @@ From: JaipurWeddingPlanner.in
           <li>First Recommended</li>
         </ul>
 
-        <a href="/list-your-business/premium" className="btn-outline">
+        <a href="/list-your-business/premium" className="btn-outlinee">
           Go Premium
         </a>
       </div>

@@ -198,29 +198,29 @@ export default function Home() {
 
       <div className="card">
         {/*<span className="ribbon">Featured</span>*/}
-        <h3>The Wedding Toli</h3>
+        <h3>RajViva Events</h3>
         <p>Highly rated full-service wedding planner.</p>
-       {/* <a href="/planners/the-wedding-toli" className="card-link">
+       <a href="/planners/Profile/RajViva-Events" className="card-link">
           View Details →
-        </a>*/}
+        </a>
       </div>
 
       <div className="card">
        {/*<span className="ribbon">Featured</span>*/}
-        <h3>Wedding Vision</h3>
+        <h3>Shaadi Sutra Co.</h3>
         <p>Bespoke weddings with strong customer satisfaction.</p>
-       {/* <a href="/planners/wedding-vision" className="card-link">
+       <a href="/planners/Profile/Shaadi-Sutra-Co" className="card-link">
           View Details →
-        </a>*/}
+        </a>
       </div>
 
       <div className="card">
        {/*<span className="ribbon">Featured</span>*/}
-        <h3>Dot&Dot Events</h3>
+        <h3>Mandap & Memories</h3>
         <p>Detail-focused planning with creative execution.</p>
-        {/*<a href="/planners/dot-and-dot-events" className="card-link">
+        <a href="/planners/Profile/Mandap-&-Memories" className="card-link">
           View Details →
-        </a>*/}
+        </a>
       </div>
     </div>
   </div>

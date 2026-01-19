@@ -51,7 +51,7 @@ export const metadata = {
     siteName: 'JaipurWeddingPlanner',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/hero.jpg',
         width: 1200,
         height: 630,
         alt: 'Royal Wedding Planner in Jaipur'
@@ -66,7 +66,7 @@ export const metadata = {
     title: 'Jaipur Wedding Planner | Royal & Destination Weddings',
     description:
       'Book top wedding planners in Jaipur for luxury, royal and destination weddings.',
-    images: ['/og-image.jpg']
+    images: ['/hero.jpg']
   },
 
   category: 'Wedding Services'

@@ -67,10 +67,7 @@ export default function VelvetKnotWeddings() {
           <div className="container">
             <h2>About Velvet Knot Weddings</h2>
             <p>
-              Velvet Knot Weddings is a premium wedding planning company in Jaipur,
-              known for elegant décor, royal venues, and seamless execution.
-              From intimate celebrations to grand palace weddings, they
-              deliver stress-free luxury experiences.
+              Velvet Knot Weddings specializes in high-end weddings, combining luxurious décor, royal locations, and expert coordination. From intimate celebrations to large-scale palace weddings, they create flawless, stress-free experiences.
             </p>
           </div>
         </section>

@@ -67,10 +67,7 @@ export default function AtelierEvents() {
           <div className="container">
             <h2>About Atelier Events</h2>
             <p>
-              Atelier Events is a premium wedding planning company in Jaipur,
-              known for elegant décor, royal venues, and seamless execution.
-              From intimate celebrations to grand palace weddings, they
-              deliver stress-free luxury experiences.
+              Atelier Events is a Jaipur-based luxury wedding planner known for modern elegance, premium décor, and meticulous execution. From minimalist weddings to extravagant palace celebrations, they manage every detail with perfection.
             </p>
           </div>
         </section>

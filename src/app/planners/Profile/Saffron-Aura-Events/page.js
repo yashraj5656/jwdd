@@ -67,10 +67,7 @@ export default function SaffronAuraEvents() {
           <div className="container">
             <h2>About Saffron Aura Events</h2>
             <p>
-              Saffron Aura Events is a premium wedding planning company in Jaipur,
-              known for elegant décor, royal venues, and seamless execution.
-              From intimate celebrations to grand palace weddings, they
-              deliver stress-free luxury experiences.
+              Saffron Aura Events is a leading Jaipur-based wedding planner specializing in grand aesthetics, signature décor, and seamless coordination. Whether it’s an intimate gathering or a majestic destination wedding, they deliver elegant, worry-free experiences.
             </p>
           </div>
         </section>

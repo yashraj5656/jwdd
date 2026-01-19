@@ -106,8 +106,7 @@ export default function WeddingPlannerPage() {
             </div>
 
             <p className="planner-desc">
-              Luxury wedding planners specializing in royal destination
-              weddings, premium décor & flawless coordination.
+            Elite wedding planners crafting regal destination weddings with bespoke décor and seamless execution.
             </p>
 
             <ul className="planner-services">
@@ -189,8 +188,7 @@ export default function WeddingPlannerPage() {
             </div>
 
             <p className="planner-desc">
-              Creative and budget-friendly wedding planning with a focus on
-              personalization.
+            Specialists in luxury destination weddings, offering opulent styling and end-to-end flawless planning.
             </p>
 
             <ul className="planner-services">
@@ -220,8 +218,7 @@ export default function WeddingPlannerPage() {
             </div>
 
             <p className="planner-desc">
-              Creative and budget-friendly wedding planning with a focus on
-              personalization.
+            Royal wedding experts delivering grand celebrations with premium décor and meticulous coordination.
             </p>
 
             <ul className="planner-services">
@@ -253,8 +250,7 @@ export default function WeddingPlannerPage() {
             </div>
 
             <p className="planner-desc">
-              Creative and budget-friendly wedding planning with a focus on
-              personalization.
+            High-end wedding planners known for elegant destination weddings and impeccable event management.
             </p>
 
             <ul className="planner-services">
@@ -285,8 +281,7 @@ export default function WeddingPlannerPage() {
             </div>
 
             <p className="planner-desc">
-              Creative and budget-friendly wedding planning with a focus on
-              personalization.
+            Creators of majestic weddings, blending royal aesthetics, luxury décor, and perfect execution.
             </p>
 
             <ul className="planner-services">
@@ -318,8 +313,7 @@ export default function WeddingPlannerPage() {
             </div>
 
             <p className="planner-desc">
-              Creative and budget-friendly wedding planning with a focus on
-              personalization.
+            Premium wedding planning services focused on destination weddings with refined décor and precision.
             </p>
 
             <ul className="planner-services">

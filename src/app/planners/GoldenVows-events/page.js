@@ -66,10 +66,7 @@ export default function GoldenVowsEvents() {
           <div className="container">
             <h2>About GoldenVows Events</h2>
             <p>
-              GoldenVows Events is a premium wedding planning company in Jaipur,
-              known for elegant décor, royal venues, and seamless execution.
-              From intimate celebrations to grand palace weddings, they
-              deliver stress-free luxury experiences.
+              GoldenVows Events is a trusted name in Jaipur for elegant wedding décor, venue styling, and complete planning services. Whether it’s a close-knit celebration or a grand royal affair, they deliver timeless and seamless weddings.
             </p>
           </div>
         </section>

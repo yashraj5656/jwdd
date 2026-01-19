@@ -67,10 +67,7 @@ export default function MandapAndMemories() {
           <div className="container">
             <h2>About Mandap & Memories</h2>
             <p>
-              Mandap & Memories is a premium wedding planning company in Jaipur,
-              known for elegant décor, royal venues, and seamless execution.
-              From intimate celebrations to grand palace weddings, they
-              deliver stress-free luxury experiences.
+              Mandap & Memories is known for crafting sophisticated weddings with artistic décor, iconic venues, and precision planning. From private ceremonies to lavish royal weddings, every event is executed with effortless luxury.
             </p>
           </div>
         </section>

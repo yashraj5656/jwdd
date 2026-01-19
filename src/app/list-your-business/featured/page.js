@@ -36,7 +36,7 @@ export default function FeaturedListing() {
           <span className="gold-star-seal">FEATURED LISTING</span>
           <h1>Featured Wedding Planner Plan</h1>
           <p>
-            Featured placement, verified badge, portfolio & priority support.
+            Featured placement, Featured badge, portfolio & priority support.
           </p>
         </div>
       </header>
@@ -45,7 +45,7 @@ export default function FeaturedListing() {
       <section className="featured-benefits">
         <div className="container benefits-grid">
           <div>⭐ Featured Placement</div>
-          <div>✅ Verified Badge</div>
+          <div>✅ Featured Badge</div>
           <div>📞 WhatsApp & Call Leads</div>
           <div>🖼 Portfolio Gallery</div>
           <div>⚡ Priority Support</div>

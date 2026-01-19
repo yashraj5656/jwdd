@@ -67,10 +67,7 @@ export default function AnantaraWeddingCo() {
           <div className="container">
             <h2>About Anantara Wedding Co.</h2>
             <p>
-              Anantara Wedding Co. is a premium wedding planning company in Jaipur,
-              known for elegant décor, royal venues, and seamless execution.
-              From intimate celebrations to grand palace weddings, they
-              deliver stress-free luxury experiences.
+              Anantara Wedding Co. is a premium Jaipur wedding planning company offering culturally rich décor, palace venues, and end-to-end execution. From small traditional functions to grand destination weddings, they ensure a smooth and memorable journey.
             </p>
           </div>
         </section>

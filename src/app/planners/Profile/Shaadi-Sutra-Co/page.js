@@ -68,10 +68,7 @@ export default function ShaadiSutraCo() {
           <div className="container">
             <h2>About Shaadi Sutra Co.</h2>
             <p>
-              Shaadi Sutra Co. is a premium wedding planning company in Jaipur,
-              known for elegant décor, royal venues, and seamless execution.
-              From intimate celebrations to grand palace weddings, they
-              deliver stress-free luxury experiences.
+              Shaadi Sutra Co. is a luxury wedding planning firm in Jaipur, celebrated for bespoke décor, heritage venues, and flawless management. From cozy family affairs to opulent palace weddings, they curate refined and stress-free celebrations.
             </p>
           </div>
         </section>

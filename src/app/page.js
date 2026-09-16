@@ -41,10 +41,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Top Wedding Planners in Jaipur | JaipurWeddingPlanner.in</title>
+        <title>Top Wedding Planners in Rajasthan | JaipurWeddingPlanner.in</title>
         <meta
           name="description"
-          content="Plan your dream wedding with trusted wedding planners in Jaipur. Free consultation available."
+          content="Plan your dream wedding with trusted wedding planners in Rajasthan. Free consultation available."
         />
         <script
   type="application/ld+json"
@@ -57,7 +57,7 @@ export default function Home() {
       "logo": "https://jaipurweddingplanner.in/logo.png",
       "image": "https://jaipurweddingplanner.in/hero.jpg",
       "description":
-        "Top wedding planners in Jaipur offering royal destination weddings, décor, catering, photography and full wedding management.",
+        "Top wedding planners in Rajasthan offering royal destination weddings, décor, catering, photography and full wedding management.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Jaipur",
@@ -67,7 +67,7 @@ export default function Home() {
       "areaServed": ["Jaipur", "Udaipur", "Rajasthan"],
       "priceRange": "₹₹₹",
       "sameAs": [
-        "https://www.instagram.com/jaipurweddingplanner",
+        "https://www.instagram.com/jaipurweddingplanner.in",
         "https://www.facebook.com/jaipurweddingplanner"
       ]
     })
@@ -109,10 +109,10 @@ export default function Home() {
       <header className="heroo">
         <div className="hero-contenttt">
           <p className="hero-subtitleee">Your Royal Dream Wedding Awaits</p>
-          <h1>Top Wedding Planners in Jaipur</h1>
+          <h1>Top Wedding Planners in Rajasthan</h1>
           <p>
             Plan your dream wedding with trusted & experienced wedding planners
-            in Jaipur. Decoration, catering, photography & full management — all
+            in Rajasthan. Decoration, catering, photography & full management — all
             in one place.
           </p>
           <div className="hero-actionsss">
@@ -167,7 +167,7 @@ export default function Home() {
 
 <section id="planners" className="section">
   <div className="container">
-    <h2>Popular Wedding Planners in Jaipur</h2>
+    <h2>Popular Wedding Planners in Rajasthan</h2>
 
     <div className="cards">
 
@@ -288,7 +288,7 @@ export default function Home() {
           <div className="container">
             <h2>Why Choose JaipurWeddingPlanner.in?</h2>
             <ul className="list">
-              <li>✔ Local Jaipur wedding experts</li>
+              <li>✔ Local wedding experts</li>
               <li>✔ Customized wedding solutions</li>
               <li>✔ Multiple planner options</li>
               <li>✔ Save time & planning effort</li>
@@ -315,7 +315,7 @@ export default function Home() {
   <div className="container">
     <h2>Why Wedding Planners Choose JaipurWeddingPlanner.in</h2>
     <p className="planner-intro">
-      We help Jaipur-based wedding planners get discovered by couples who are
+      We help Rajasthan-based wedding planners get discovered by couples who are
       actively planning their wedding — not just browsing.
     </p>
 
@@ -325,14 +325,14 @@ export default function Home() {
         <h3>High-Intent Leads</h3>
         <p>
           Couples visiting our platform are already searching for wedding
-          planners in Jaipur, meaning better quality inquiries and higher
+          planners in Rajasthan, meaning better quality inquiries and higher
           conversions.
         </p>
       </div>
 
       <div className="benefit-card">
         <span className="benefit-icon">📍</span>
-        <h3>Local Jaipur Visibility</h3>
+        <h3>Local Visibility</h3>
         <p>
           Rank higher for Jaipur-specific searches like “Wedding Planner in
           Jaipur” without spending heavily on ads.
@@ -370,7 +370,7 @@ export default function Home() {
         <span className="benefit-icon">💰</span>
         <h3>Affordable Listing Plans</h3>
         <p>
-          One simple annual fee. No commissions per booking. No hidden charges.
+          One simple monthly fee. No commissions per booking. No hidden charges.
         </p>
       </div>
     </div>
@@ -378,9 +378,9 @@ export default function Home() {
     <div className="planner-cta">
       <a href="/list-your-business" className="list-primary">
         List Your Wedding Planning Business
-      </a>
+      </a><br></br><br></br>
       <p className="cta-note">
-      ✔ No commission • Direct leads • Jaipur focused
+      ✔ No commission • Direct leads • Rajasthan focused
       </p>
     </div>
   </div>

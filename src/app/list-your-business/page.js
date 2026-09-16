@@ -58,7 +58,7 @@ From: JaipurWeddingPlanner.in
         <title>List Your Wedding Planning Business | JaipurWeddingPlanner.in</title>
         <meta
           name="description"
-          content="List your wedding planning business on JaipurWeddingPlanner.in and get high-quality leads from couples planning weddings in Jaipur."
+          content="List your wedding planning business on JaipurWeddingPlanner.in and get high-quality leads from couples planning weddings in Rajasthan."
         />
       </Head>
 
@@ -69,7 +69,7 @@ From: JaipurWeddingPlanner.in
           <h1>List Your Wedding Planning Business</h1>
           <p>
           Get discovered by couples actively looking for <strong>wedding planners</strong> in
-          Jaipur. No commissions. Direct inquiries. Real leads.
+          Rajasthan. No commissions. Direct inquiries. Real leads.
           </p>
           <div className="hero-actionsss">
           <a href="#plans" className="btn-primaryyy">
@@ -89,7 +89,7 @@ From: JaipurWeddingPlanner.in
       <h3>More Leads</h3>
       <p>
         Get direct calls & WhatsApp inquiries from couples actively searching
-        for wedding planners in Jaipur.
+        for wedding planners in Rajasthan.
       </p>
     </div>
 
@@ -134,12 +134,12 @@ From: JaipurWeddingPlanner.in
       <div className="pricing-cardd">
         <h3>Starter</h3>
         <p className="pricee">₹799</p>
-        <p className="price-notee">Per Year</p>
+        <p className="price-notee">Per Month</p>
 
         <ul className="pricing-featuress">
           <li>Basic business listing</li>
           <li>Business name & city</li>
-          <li>Listed under Jaipur planners</li>
+          <li>Listed under Rajasthan planners</li>
           <li>Business Profile Page</li>
         </ul>
 
@@ -153,7 +153,7 @@ From: JaipurWeddingPlanner.in
         <span className="popular-tag">Most Popular</span>
         <h3>Featured</h3>
         <p className="pricee">₹4,999</p>
-        <p className="price-notee">Per Year</p>
+        <p className="price-notee">Per Month</p>
 
         <ul className="pricing-featuress">
           <li>Featured placement in listings</li>
@@ -172,7 +172,7 @@ From: JaipurWeddingPlanner.in
       <div className="pricing-cardd">
         <h3>Premium</h3>
         <p className="pricee">₹9,999</p>
-        <p className="price-notee">Per Year</p>
+        <p className="price-notee">Per Month</p>
 
         <ul className="pricing-featuress">
           <li>Top placement on homepage</li>
@@ -212,7 +212,7 @@ From: JaipurWeddingPlanner.in
 
             <div className="benefit-card">
               📍
-              <h3>Jaipur-Focused Exposure</h3>
+              <h3>Rajasthan-Focused Exposure</h3>
               <p>
                 Rank for local searches like “Wedding Planner in Jaipur” without
                 heavy ad spending.

@@ -13,7 +13,7 @@ export default function HowItWorks() {
 
       <main className="section">
         <div className="container">
-          <h1>How It Works</h1>
+          {/*<h1>How It Works</h1>*/}
 
           <h2>For Couples</h2>
           <ol className="steps">
@@ -24,6 +24,7 @@ export default function HowItWorks() {
             <li>Choose the planner that fits your vision & budget</li>
           </ol>
 
+          <br></br>
           <h2>For Wedding Planners</h2>
           <ol className="steps">
             <li>List your wedding planning business</li>
@@ -33,6 +34,7 @@ export default function HowItWorks() {
             <li>Grow your brand visibility in Jaipur</li>
           </ol>
 
+          <br></br>
           <p className="highlight">
             We focus on quality leads, transparency, and long-term growth for
             both couples and wedding planners.

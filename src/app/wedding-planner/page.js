@@ -7,10 +7,10 @@ export default function WeddingPlannerPage() {
   return (
     <>
       <Head>
-        <title>Wedding Planners in Jaipur | Verified & Trusted Experts</title>
+        <title>Wedding Planners in Rajasthan | Verified & Trusted Experts</title>
         <meta
           name="description"
-          content="Explore verified wedding planners in Jaipur with services, ratings, photos and direct WhatsApp contact."
+          content="Explore verified wedding planners in Rajasthan with services, ratings, photos and direct WhatsApp contact."
         />
       </Head>
 
@@ -40,7 +40,7 @@ export default function WeddingPlannerPage() {
          Featured Planners
       </h2>
       <p className="section-subtitle">
-        Handpicked premium planners trusted by couples across Jaipur
+        Handpicked premium planners trusted by couples across Rajasthan
       </p>
 
       <div className="planner-grid featured-grid">

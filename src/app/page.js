@@ -310,7 +310,7 @@ export default function Home() {
         </section>
 
 
-
+{/*
 <section className="section planner-benefits">
   <div className="container">
     <h2>Why Wedding Planners Choose JaipurWeddingPlanner.in</h2>
@@ -385,7 +385,7 @@ export default function Home() {
     </div>
   </div>
 </section>
-
+*/}
 
 
 

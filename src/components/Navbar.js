@@ -16,7 +16,7 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <nav className="nav-links">
         <Link href="/wedding-planner">Planners</Link>
-          {/*<Link href="/list-your-business">List Your Business</Link>*/}
+          <Link href="/list-your-business">List Your Business</Link>
           <Link href="/privacy-policy">Privacy</Link>
           <Link href="/terms-and-conditions">Terms</Link>
         </nav>
@@ -37,9 +37,9 @@ export default function Navbar() {
       <div className={`mobile-menu ${open ? "show" : ""}`}>
         <Link href="/" onClick={() => setOpen(false)}>Home</Link>
         <Link href="/wedding-planner" onClick={() => setOpen(false)}>Planners</Link>
-        {/*<Link href="/list-your-business" onClick={() => setOpen(false)}>
+        <Link href="/list-your-business" onClick={() => setOpen(false)}>
           List Your Business
-        </Link>*/}
+        </Link>
         <Link href="/about-us" onClick={() => setOpen(false)}>About</Link>
         <Link href="/how-it-works" onClick={() => setOpen(false)}>How It Works</Link>
         <Link href="/privacy-policy" onClick={() => setOpen(false)}>Privacy Policy</Link>

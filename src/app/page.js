@@ -158,7 +158,7 @@ export default function Home() {
 
       <div className="service">
         <img src="/services/destination.jpg" alt="Destination Weddings in Jaipur" />
-        <h3>Destination Weddings in Jaipur</h3>
+        <h3>Destination Weddings in Rajasthan</h3>
       </div>
     </div>
   </div>
@@ -310,7 +310,7 @@ export default function Home() {
         </section>
 
 
-{/*
+
 <section className="section planner-benefits">
   <div className="container">
     <h2>Why Wedding Planners Choose JaipurWeddingPlanner.in</h2>
@@ -385,7 +385,7 @@ export default function Home() {
     </div>
   </div>
 </section>
-*/}
+
 
 
 

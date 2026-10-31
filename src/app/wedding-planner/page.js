@@ -8,6 +8,9 @@ export const metadata = {
   title: "Wedding Planners in Rajasthan | Verified & Trusted Experts",
   description:
     "Explore verified wedding planners in Rajasthan with services, ratings, photos and direct WhatsApp contact.",
+    alternates: {
+      canonical: 'https://jaipurweddingplanner.in/wedding-planner',
+    },
 };
 
 const toArray = (str) =>

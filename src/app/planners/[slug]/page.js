@@ -32,6 +32,9 @@ export async function generateMetadata({ params }) {
     description:
       listing.reason ||
       `${listing.name} is a wedding planner in ${listing.city}.`,
+      alternates: {
+        canonical: `https://jaipurweddingplanner.in/planners/${listing.slug}`,
+      },
     openGraph: {
       title: `${listing.name} – Wedding Planner in ${listing.city}`,
       description:

@@ -1,527 +1,567 @@
-/* Define color palette variables */
-:root {
-    --primary: #b8860b;       /* Gold for accents and buttons */
-    --primary-dark: #8c6a08;  /* Darker gold for hovers */
-    --secondary: #3a2a1f;     /* Deep brown for secondary elements */
-    --bg-light: #faf7f2;      /* Light beige background */
-    --text-dark: #222;        /* Dark text */
-    --text-muted: #666;       /* Muted text */
-    --white: #ffffff;         /* White for backgrounds/text */
-    
-    /* Additional variables for consistency */
-    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.1);
-    --shadow-premium: 0 6px 20px rgba(184, 134, 11, 0.15); /* Gold-tinted shadow for premium feel */
-    --border-radius: 8px;
-    --font-family: 'Arial', sans-serif; /* Replace with a premium font like 'Playfair Display' if available */
-  }
-  
-  /* General page styles */
-  body {
-    font-family: var(--font-family);
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    color: var(--secondary);
-    margin-bottom: 10px;
-  }
-  
-  .page-intro {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin-bottom: 40px;
-  }
-  
-  /* Section titles */
-  .section-title {
-    font-size: 2rem;
-    color: var(--secondary);
-    margin-bottom: 10px;
-    position: relative;
-  }
-  
-  .section-subtitle {
-    font-size: 1rem;
-    color: var(--text-muted);
-    margin-bottom: 30px;
-  }
-  
-  /* Planner grid */
-  .planner-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
-  /* General planner card */
-  .planner-card {
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .planner-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-soft);
-  }
-  
-  .planner-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .planner-content {
-    padding: 20px;
-  }
-  
-  .planner-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .planner-header h2 {
-    font-size: 1.5rem;
-    color: var(--secondary);
-    margin: 0;
-  }
-  
-  .badge {
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-  }
-  
-  .verified {
-    background-color: var(--primary);
-    color: var(--white);
-  }
-  
-  .planner-rating {
-    font-size: 1rem;
-    color: var(--primary);
-    margin-bottom: 10px;
-  }
-  
-  .planner-rating span {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-  }
-  
-  .planner-desc {
-    font-size: 1rem;
-    color: var(--text-muted);
-    margin-bottom: 15px;
-  }
-  
-  .planner-services {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
-  }
-  
-  .planner-services li {
-    font-size: 0.95rem;
-    color: var(--text-dark);
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .planner-services li::before {
-    content: '✓';
-    color: var(--primary);
-    margin-right: 8px;
-  }
-  
-  .planner-actions {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .btn-primary,
-  .btn-outline {
-    padding: 10px 20px;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    font-size: 1rem; /* Ensure touch-friendly size */
-  }
-  
-  .btn-primary {
-    background-color: var(--primary);
-    color: var(--white);
-  }
-  
-  .btn-primary:hover {
-    background-color: var(--primary-dark);
-  }
-  
-  .btn-outline {
-    border: 1px solid var(--primary);
-    color: var(--primary);
-  }
-  
-  .btn-outline:hover {
-    background-color: var(--primary);
-    color: var(--white);
-  }
-  
-  /* Featured section enhancements for elegant and premium feel */
-  .featured-section {
-    background-color: var(--bg-light);
-    padding: 40px 0;
-    border-bottom: 2px solid var(--primary);
-    margin-bottom: 40px;
-  }
-  
-  .featured-section .section-title {
-    font-size: 2.2rem;
-    color: var(--primary-dark);
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  
-  .featured-section .section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--primary);
-    margin: 10px auto 0;
-  }
-  
-  .featured-section .section-subtitle {
-    text-align: center;
-    font-style: italic;
-    color: var(--text-dark);
-  }
-  
-  .featured-grid {
-    display: flex;
-    justify-content: center; /* Center the featured card */
-  }
-  
-  .planner-card.featured {
-    max-width: 600px; /* Wider for premium feel */
-    border: 1px solid var(--primary); /* Gold border */
-    box-shadow: var(--shadow-premium); /* Enhanced shadow */
-    position: relative;
-  }
-  
-  .planner-card.featured:hover {
-    box-shadow: 0 8px 24px rgba(184, 134, 11, 0.2);
-  }
-  
-  .gold-star-seal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-  
-  .gold-star-seal::before {
-    content: '⭐';
-  }
-  
-  .planner-card.featured .planner-image img {
-    height: 300px; /* Taller image for premium */
-  }
-  
-  .planner-card.featured .planner-content {
-    padding: 30px; /* More padding */
-  }
-  
-  .planner-card.featured .planner-header h2 {
-    font-size: 1.8rem;
-    color: var(--primary-dark);
-  }
-  
-  .planner-card.featured .planner-desc {
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
-  
-  .planner-card.featured .planner-services li {
-    font-size: 1rem;
-  }
-  
-  /* Normal section */
-  .normal-section .section-title {
-    font-size: 2rem;
-    color: var(--secondary);
-  }
-  
-  /* Mobile-friendly adjustments */
-  @media (max-width: 768px) {
-    .container {
-      padding: 15px;
-    }
-  
-    h1 {
-      font-size: 2rem;
-    }
-  
-    .page-intro {
-      font-size: 1rem;
-    }
-  
-    .section-title {
-      font-size: 1.8rem;
-    }
-  
-    .section-subtitle {
-      font-size: 0.9rem;
-    }
-  
-    .planner-grid {
-      grid-template-columns: 1fr; /* Stack cards vertically */
-      gap: 15px;
-    }
-  
-    .planner-image img {
-      height: 180px; /* Slightly smaller for mobile */
-    }
-  
-    .planner-content {
-      padding: 15px;
-    }
-  
-    .planner-header {
-      flex-direction: column; /* Stack header elements if needed */
-      align-items: flex-start;
-    }
-  
-    .planner-header h2 {
-      font-size: 1.4rem;
-      margin-bottom: 5px;
-    }
-  
-    .planner-rating {
-      font-size: 0.95rem;
-    }
-  
-    .planner-desc {
-      font-size: 0.95rem;
-    }
-  
-    .planner-services li {
-      font-size: 0.9rem;
-    }
-  
-    .planner-actions {
-      flex-direction: column; /* Stack buttons vertically for easier touch */
-      gap: 10px;
-    }
-  
-    .btn-primary,
-    .btn-outline {
-      width: 100%; /* Full-width buttons for mobile */
-      text-align: center;
-      padding: 12px; /* Larger padding for touch */
-    }
-  
-    /* Featured section mobile adjustments */
-    .featured-section {
-      padding: 30px 0;
-    }
-  
-    .featured-section .section-title {
-      font-size: 2rem;
-    }
-  
-    .planner-card.featured {
-      max-width: 100%; /* Full width on mobile */
-    }
-  
-    .planner-card.featured .planner-image img {
-      height: 250px; /* Adjust height */
-    }
-  
-    .planner-card.featured .planner-content {
-      padding: 20px;
-    }
-  
-    .planner-card.featured .planner-header h2 {
-      font-size: 1.6rem;
-    }
-  
-    .planner-card.featured .planner-desc {
-      font-size: 1rem;
-    }
-  
-    .planner-card.featured .planner-services li {
-      font-size: 0.95rem;
-    }
-  
-    .gold-star-seal {
-      font-size: 0.85rem;
-      padding: 5px 10px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 1.8rem;
-    }
-  
-    .section-title {
-      font-size: 1.6rem;
-    }
-  
-    .planner-image img {
-      height: 160px;
-    }
-  
-    .btn-primary,
-    .btn-outline {
-      font-size: 0.95rem;
-    }
-  }
+/* =====================================================
+   planner.css — Wedding Planner page
+   Aligned with the JaipurWeddingPlanner home page styling
+   ===================================================== */
 
+   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap');
 
-  /* ===============================
-   Planner Action Buttons
-================================ */
-
-.planner-act {
-  display: flex;
-  gap: 14px;
-  margin-top: 18px;
-  flex-wrap: wrap;
-}
-
-/* PRIMARY BUTTON – View Details */
-.btn-pri {
-  flex: 1;
-  text-align: center;
-  padding: 12px 20px;
-  background: linear-gradient(
-    135deg,
-    #d4af37,
-    #f3d57c
-  );
-  color: #1a1a1a;
-  font-weight: 600;
-  font-size: 0.9rem;
-  border-radius: 999px;
-  text-decoration: none;
-  letter-spacing: 0.4px;
-  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
-  transition: all 0.25s ease;
-}
-
-/* Hover effect */
-.btn-pri:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(212, 175, 55, 0.45);
-}
-
-/* OUTLINE BUTTON – WhatsApp */
-.btn-out {
-  flex: 1;
-  text-align: center;
-  padding: 11px 20px;
-  background: transparent;
-  color: #1a1a1a;
-  font-weight: 600;
-  font-size: 0.9rem;
-  border-radius: 999px;
-  text-decoration: none;
-  border: 1.5px solid #25d366;
-  color: #25d366;
-  transition: all 0.25s ease;
-}
-
-/* Hover effect */
-.btn-out:hover {
-  background: #25d366;
-  color: #ffffff;
-  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
-  transform: translateY(-2px);
-}
-
-/* ===============================
-   MOBILE OPTIMIZATION
-================================ */
-
-@media (max-width: 480px) {
-  .planner-act {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .btn-pri,
-  .btn-out {
-    font-size: 0.85rem;
-    padding: 11px 18px;
-  }
-}
-
-.planner-hero {
-  min-height: 60vh;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('/hero.jpg') center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.planner-hero strong{
-  color:#b8860b;
-}
-.premium-hero {
-  position: relative;
-}
-
-.planner-hero-content {
-  max-width: 720px;
-  color: #fff;
-  padding: 20px;
-}
-
-
-.planner-hero-content h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 3.2rem;
-  color: #fff;
-  margin: 18px 0 12px;
-}
-
-.planner-hero-content p {
-  font-size: 1.1rem;
-  color: #f2f2f2;
-  line-height: 1.7;
-  margin-bottom: 34px;
-}
-@media (max-width: 768px) {
-  .planner-hero-content h1 {
-    font-size: 2.0rem;
-  }
-}
-
+   /* Reuse the same tokens as the home page */
+   :root {
+     --primary: #b8860b;
+     --primary-dark: #8c6a08;
+     --secondary: #3a2a1f;
+     --bg-light: #faf7f2;
+     --text-dark: #222;
+     --text-muted: #666;
+     --white: #ffffff;
+   }
+   
+   .jwp-planners-page {
+     color: var(--text-dark);
+     background: var(--bg-light);
+     font-family: 'Poppins', sans-serif;
+     overflow: hidden;
+   }
+   
+   .jwp-planners-page *,
+   .jwp-planners-page *::before,
+   .jwp-planners-page *::after {
+     box-sizing: border-box;
+   }
+   
+   .jwp-planners-page .jwp-container {
+     width: min(1160px, calc(100% - 48px));
+     margin: 0 auto;
+   }
+   
+   .jwp-planners-page .jwp-eyebrow {
+     display: inline-block;
+     color: var(--primary-dark);
+     font-size: 10px;
+     font-weight: 600;
+     letter-spacing: 3px;
+     line-height: 1.8;
+     text-transform: uppercase;
+   }
+   
+   /* ---------- Compact page hero ---------- */
+   .jwp-page-hero {
+     position: relative;
+     display: flex;
+     align-items: center;
+     color: var(--white);
+     background:
+       linear-gradient(90deg, rgba(25, 17, 12, 0.9) 0%, rgba(35, 24, 17, 0.72) 50%, rgba(35, 24, 17, 0.32) 100%),
+       linear-gradient(0deg, rgba(24, 16, 11, 0.4), transparent 50%),
+       url('/hero.jpg') center 40% / cover no-repeat,
+       var(--secondary);
+     min-height: 480px;
+   }
+   
+   .jwp-page-hero-overlay {
+     position: absolute;
+     inset: 18px;
+     border: 1px solid rgba(255, 255, 255, 0.22);
+     pointer-events: none;
+   }
+   
+   .jwp-page-hero-inner {
+     position: relative;
+     z-index: 1;
+     padding: 90px 0 80px;
+   }
+   
+   .jwp-page-hero .jwp-hero-eyebrow {
+     color: #e5c77d;
+   }
+   
+   .jwp-page-hero .jwp-hero-rule {
+     display: block;
+     width: 58px;
+     height: 1px;
+     margin: 22px 0;
+     background: var(--primary);
+   }
+   
+   .jwp-page-hero h1 {
+     margin: 0;
+     max-width: 760px;
+     font-family: 'Playfair Display', serif;
+     font-weight: 500;
+     letter-spacing: -0.8px;
+     font-size: clamp(40px, 5.2vw, 66px);
+     line-height: 1.1;
+   }
+   
+   .jwp-page-hero h1 em {
+     color: var(--primary);
+     font-weight: 500;
+   }
+   
+   .jwp-page-hero p {
+     max-width: 600px;
+     margin: 20px 0 0;
+     color: rgba(255, 255, 255, 0.82);
+     font-size: 13px;
+     font-weight: 300;
+     line-height: 1.95;
+   }
+   
+   /* ---------- Intro strip ---------- */
+   .jwp-intro-strip {
+     background: #f0e9de;
+     border-bottom: 1px solid #e6dccd;
+   }
+   
+   .jwp-intro-inner {
+     min-height: 94px;
+     display: flex;
+     align-items: center;
+     gap: 18px;
+   }
+   
+   .jwp-intro-mark {
+     color: var(--primary);
+     font-size: 28px;
+   }
+   
+   .jwp-intro-inner p {
+     margin: 0;
+     color: var(--secondary);
+     font: 500 17px 'Playfair Display', serif;
+   }
+   
+   .jwp-intro-inner p strong {
+     color: var(--primary-dark);
+     font-weight: 600;
+   }
+   
+   .jwp-intro-location {
+     margin-left: auto;
+     color: var(--text-muted);
+     font-size: 9px;
+     letter-spacing: 1.2px;
+     text-transform: uppercase;
+   }
+   
+   /* ---------- Section rhythm ---------- */
+   .jwp-planners-page .jwp-section {
+     padding: 100px 0;
+   }
+   
+   .jwp-planners-page .jwp-section-light {
+     background: var(--bg-light);
+   }
+   
+   .jwp-planners-page .jwp-planners-section {
+     background: #f0e9de;
+   }
+   
+   .jwp-planners-page .jwp-section-heading {
+     max-width: 700px;
+     margin: 0 auto 52px;
+     text-align: center;
+   }
+   
+   .jwp-planners-page .jwp-section-heading h2 {
+     margin: 12px 0 0;
+     color: var(--secondary);
+     font-family: 'Playfair Display', serif;
+     font-weight: 500;
+     letter-spacing: -0.6px;
+     font-size: clamp(32px, 3.8vw, 46px);
+     line-height: 1.2;
+   }
+   
+   .jwp-planners-page .jwp-section-heading h2 em {
+     color: var(--primary);
+     font-weight: 500;
+   }
+   
+   .jwp-planners-page .jwp-section-heading > p {
+     max-width: 590px;
+     margin: 16px auto 0;
+     color: var(--text-muted);
+     font-size: 12px;
+     line-height: 1.9;
+     font-weight: 300;
+   }
+   
+   /* ---------- Buttons (shared with home) ---------- */
+   .jwp-planners-page .jwp-button {
+     min-height: 50px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     gap: 16px;
+     padding: 0 22px;
+     border: 1px solid transparent;
+     text-decoration: none;
+     font: 500 11px 'Poppins', sans-serif;
+     letter-spacing: 0.7px;
+     transition: 0.25s ease;
+     cursor: pointer;
+   }
+   
+   .jwp-planners-page .jwp-button-gold {
+     color: #fff;
+     background: var(--primary);
+     border-color: var(--primary);
+   }
+   .jwp-planners-page .jwp-button-gold:hover {
+     background: var(--primary-dark);
+     border-color: var(--primary-dark);
+     transform: translateY(-2px);
+   }
+   
+   .jwp-planners-page .jwp-button-outline {
+     color: var(--secondary);
+     background: transparent;
+     border-color: var(--primary);
+   }
+   .jwp-planners-page .jwp-button-outline:hover {
+     color: #fff;
+     background: var(--primary);
+   }
+   
+   /* ---------- Featured planner layout ---------- */
+   .jwp-featured-grid {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 26px;
+   }
+   
+   .jwp-planner-feature {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     background: rgba(255, 255, 255, 0.78);
+     border: 1px solid #e8dece;
+     overflow: hidden;
+     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+   }
+   
+   .jwp-planner-feature:hover {
+     transform: translateY(-5px);
+     border-color: rgba(184, 134, 11, 0.55);
+     box-shadow: 0 18px 40px rgba(58, 42, 31, 0.1);
+   }
+   
+   .jwp-planner-feature .jwp-planner-number {
+     position: absolute;
+     top: 18px;
+     right: 22px;
+     z-index: 2;
+     color: rgba(255, 255, 255, 0.85);
+     font: 500 14px 'Playfair Display', serif;
+     letter-spacing: 1px;
+     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+   }
+   
+   .jwp-planner-feature-image {
+     position: relative;
+     height: 260px;
+     overflow: hidden;
+     background: #e9dfd1;
+   }
+   
+   .jwp-planner-feature-image img {
+     width: 100%;
+     height: 100%;
+     display: block;
+     object-fit: cover;
+     transition: transform 0.55s ease;
+   }
+   
+   .jwp-planner-feature:hover .jwp-planner-feature-image img {
+     transform: scale(1.055);
+   }
+   
+   .jwp-planner-feature .jwp-image-corner {
+     position: absolute;
+     right: 14px;
+     bottom: 14px;
+     width: 34px;
+     height: 34px;
+     display: grid;
+     place-items: center;
+     color: var(--white);
+     background: var(--primary);
+     font-size: 18px;
+   }
+   
+   .jwp-planner-feature-body {
+     padding: 30px 30px 32px;
+     display: flex;
+     flex-direction: column;
+     flex: 1;
+   }
+   
+   .jwp-planner-feature-head {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 12px;
+     margin-bottom: 8px;
+   }
+   
+   .jwp-planner-feature-body h3 {
+     margin: 0;
+     color: var(--secondary);
+     font: 600 26px 'Playfair Display', serif;
+     letter-spacing: -0.4px;
+   }
+   
+   .jwp-planner-rating {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     margin: 10px 0 14px;
+   }
+   
+   .jwp-stars {
+     color: var(--primary);
+     font-size: 13px;
+     letter-spacing: 3px;
+   }
+   
+   .jwp-rating-meta {
+     color: var(--text-muted);
+     font-size: 10px;
+     letter-spacing: 0.4px;
+   }
+   
+   .jwp-planner-desc {
+     margin: 0 0 18px;
+     color: var(--text-muted);
+     font-size: 12px;
+     line-height: 1.85;
+     font-weight: 300;
+   }
+   
+   /* ---------- Services list ---------- */
+   .jwp-planner-services {
+     list-style: none;
+     margin: 0 0 24px;
+     padding: 16px 0 0;
+     border-top: 1px solid #e8dece;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 8px 18px;
+   }
+   
+   .jwp-planner-services li {
+     display: flex;
+     align-items: flex-start;
+     gap: 8px;
+     color: #5d554e;
+     font-size: 10.5px;
+     line-height: 1.6;
+   }
+   
+   .jwp-planner-services li span {
+     color: var(--primary);
+     font-size: 12px;
+     flex-shrink: 0;
+   }
+   
+   /* ---------- Actions ---------- */
+   .jwp-planner-actions {
+     margin-top: auto;
+     display: flex;
+     gap: 10px;
+     flex-wrap: wrap;
+   }
+   
+   .jwp-planner-actions .jwp-button {
+     min-height: 44px;
+     padding: 0 18px;
+     font-size: 10px;
+   }
+   
+   /* ---------- All planners grid ---------- */
+   .jwp-planner-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 18px;
+   }
+   
+   .jwp-planner-card {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     padding: 34px 30px 28px;
+     background: rgba(255, 255, 255, 0.72);
+     border: 1px solid #e8dece;
+     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+   }
+   
+   .jwp-planner-card:hover {
+     transform: translateY(-5px);
+     border-color: rgba(184, 134, 11, 0.55);
+     box-shadow: 0 15px 35px rgba(58, 42, 31, 0.08);
+   }
+   
+   .jwp-planner-card .jwp-planner-number {
+     position: absolute;
+     top: 20px;
+     right: 22px;
+     color: #d8cbb8;
+     font: 500 13px 'Playfair Display', serif;
+   }
+   
+   .jwp-planner-ornament {
+     margin: 0 0 8px;
+     color: var(--primary);
+     font-size: 22px;
+   }
+   
+   .jwp-planner-card h3 {
+     margin: 0;
+     color: var(--secondary);
+     font: 600 22px 'Playfair Display', serif;
+     letter-spacing: -0.3px;
+   }
+   
+   .jwp-planner-card > p {
+     margin: 12px 0 16px;
+     color: var(--text-muted);
+     font-size: 11px;
+     line-height: 1.8;
+     font-weight: 300;
+   }
+   
+   .jwp-planner-card .jwp-planner-services {
+     grid-template-columns: 1fr;
+     padding-top: 14px;
+     margin-bottom: 20px;
+   }
+   
+   .jwp-card-link {
+     margin-top: auto;
+     align-self: flex-start;
+     color: var(--primary-dark);
+     font-size: 10px;
+     font-weight: 600;
+     letter-spacing: 0.5px;
+     text-decoration: none;
+     border-bottom: 1px solid #d7c18d;
+     padding-bottom: 6px;
+     transition: color 0.2s ease;
+   }
+   
+   .jwp-card-link:hover {
+     color: var(--primary);
+   }
+   
+   .jwp-card-link span {
+     margin-left: 8px;
+   }
+   
+   /* Verified badge */
+   .jwp-verified {
+     color: #58734a;
+     font-size: 9px;
+     letter-spacing: 0.5px;
+     white-space: nowrap;
+   }
+   
+   /* Centered CTA */
+   .jwp-planners-page .jwp-centered-action {
+     margin-top: 42px;
+     text-align: center;
+   }
+   
+   /* ---------- Responsive ---------- */
+   @media (max-width: 900px) {
+     .jwp-featured-grid {
+       grid-template-columns: 1fr;
+     }
+     .jwp-planner-grid {
+       grid-template-columns: repeat(2, 1fr);
+     }
+     .jwp-page-hero {
+       min-height: 440px;
+     }
+     .jwp-planners-page .jwp-section {
+       padding: 80px 0;
+     }
+   }
+   
+   @media (max-width: 600px) {
+     .jwp-planners-page .jwp-container {
+       width: min(100% - 34px, 480px);
+     }
+     .jwp-page-hero {
+       min-height: 420px;
+       background-position: 58% center;
+     }
+     .jwp-page-hero-overlay {
+       inset: 10px;
+     }
+     .jwp-page-hero-inner {
+       padding: 76px 0 64px;
+     }
+     .jwp-page-hero h1 {
+       font-size: clamp(36px, 10vw, 50px);
+     }
+     .jwp-page-hero p {
+       font-size: 12px;
+       line-height: 1.9;
+     }
+     .jwp-intro-inner {
+       min-height: 90px;
+       gap: 11px;
+     }
+     .jwp-intro-inner p {
+       font-size: 14px;
+       line-height: 1.5;
+     }
+     .jwp-intro-location {
+       display: none;
+     }
+     .jwp-planners-page .jwp-section {
+       padding: 68px 0;
+     }
+     .jwp-planners-page .jwp-section-heading {
+       margin-bottom: 34px;
+     }
+     .jwp-planners-page .jwp-section-heading h2 {
+       font-size: 34px;
+     }
+     .jwp-planner-feature-image {
+       height: 210px;
+     }
+     .jwp-planner-feature-body {
+       padding: 24px 22px 26px;
+     }
+     .jwp-planner-feature-body h3 {
+       font-size: 22px;
+     }
+     .jwp-planner-services {
+       grid-template-columns: 1fr;
+     }
+     .jwp-planner-grid {
+       grid-template-columns: 1fr;
+       gap: 13px;
+     }
+     .jwp-planner-card {
+       padding: 28px 24px 24px;
+     }
+     .jwp-planner-actions {
+       flex-direction: column;
+     }
+     .jwp-planner-actions .jwp-button {
+       width: 100%;
+     }
+   }
+   
+   /* Reduced motion */
+   @media (prefers-reduced-motion: reduce) {
+     .jwp-planners-page *,
+     .jwp-planners-page *::before,
+     .jwp-planners-page *::after {
+       transition-duration: 0.01ms !important;
+       animation-duration: 0.01ms !important;
+     }
+   }

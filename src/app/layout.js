@@ -1,5 +1,6 @@
 import './globals.css';
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 /* ================= SEO METADATA ================= */
 
@@ -114,28 +115,9 @@ export default function RootLayout({ children }) {
       <body>
       <Navbar />
         {/* Main Content */}
-        <main id="main-content">{children}</main>      <footer className="footerr">
-        <div className="containerr">
-          <p>📍 Jaipur, Rajasthan</p>
+        <main id="main-content">{children}</main> 
+        <Footer />     
 
-          <p className="copyy">
-            © 2026 JaipurWeddingPlanner.in — Weddings made memorable.
-          </p>
-          <nav className="footer-navl">
-            <ul>
-              <li><a href="/destination-wedding-jaipur">Destination Wedding in Jaipur</a></li>
-              <li><a href="/royal-wedding-jaipur">Royal Wedding in Jaipur</a></li>
-              <li><a href="/wedding-planner-cost-jaipur">Wedding Planner Cost in Jaipur</a></li>
-              <li><a href="/wedding-planner-cost-udaipur">Wedding Planner Cost in Udaipur</a></li>
-              <li><a href="/about-us">About Us</a></li>
-<li><a href="/how-it-works">How It Works</a></li>
-<li><a href="/privacy-policy">Privacy Policy</a></li>
-<li><a href="/terms-and-conditions">Terms & Conditions</a></li>
-
-            </ul>
-          </nav>
-        </div>
-      </footer>
       </body>
     </html>
   );

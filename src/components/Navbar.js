@@ -1,51 +1,83 @@
 "use client";
+
 import { useState } from "react";
 import Link from "next/link";
+import "./Navbar.css";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const closeMenu = () => setOpen(false);
+
+  const links = [
+    { href: "/wedding-planner", label: "Planners" },
+    { href: "/about-us", label: "About" },
+    { href: "/how-it-works", label: "How It Works" },
+    { href: "/privacy-policy", label: "Privacy" },
+    { href: "/terms-and-conditions", label: "Terms" },
+    { href: "/list-your-business", label: "List Your Business", featured: true },
+  ];
+
   return (
-    <header className="site-header">
-      <div className="nav-container">
-        {/* Logo */}
-        <Link href="/" className="logo">
-          Jaipur<span>WeddingPlanner</span>
-        </Link>
+    <header className="jwp-header">
+      <div className="jwp-nav-shell">
+        <div className="jwp-nav-container">
+          <Link href="/" className="jwp-logo" onClick={closeMenu} aria-label="Jaipur Wedding Planner home">
+            <span className="jwp-logo-symbol" aria-hidden="true">✧</span>
+            <span className="jwp-logo-copy">
+              <span className="jwp-logo-main">Jaipur</span>
+              <span className="jwp-logo-sub">Wedding Planner</span>
+            </span>
+          </Link>
 
-        {/* Desktop Nav */}
-        <nav className="nav-links">
-        <Link href="/wedding-planner">Planners</Link>
-          <Link href="/list-your-business">List Your Business</Link>
-          <Link href="/privacy-policy">Privacy</Link>
-          <Link href="/terms-and-conditions">Terms</Link>
-        </nav>
+          <nav className="jwp-desktop-nav" aria-label="Main navigation">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={link.featured ? "jwp-nav-cta" : "jwp-nav-link"}
+              >
+                {link.label}
+                {link.featured && <span aria-hidden="true">↗</span>}
+              </Link>
+            ))}
+          </nav>
 
-        {/* Hamburger */}
-        <button
-          className={`hamburger ${open ? "active" : ""}`}
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          <button
+            type="button"
+            className={`jwp-menu-toggle ${open ? "is-open" : ""}`}
+            onClick={() => setOpen((value) => !value)}
+            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={open}
+            aria-controls="jwp-mobile-menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`mobile-menu ${open ? "show" : ""}`}>
-        <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-        <Link href="/wedding-planner" onClick={() => setOpen(false)}>Planners</Link>
-        <Link href="/list-your-business" onClick={() => setOpen(false)}>
-          List Your Business
-        </Link>
-        <Link href="/about-us" onClick={() => setOpen(false)}>About</Link>
-        <Link href="/how-it-works" onClick={() => setOpen(false)}>How It Works</Link>
-        <Link href="/privacy-policy" onClick={() => setOpen(false)}>Privacy Policy</Link>
-        <Link href="/terms-and-conditions" onClick={() => setOpen(false)}>
-          Terms & Conditions
-        </Link>
+      <div
+        id="jwp-mobile-menu"
+        className={`jwp-mobile-menu ${open ? "is-visible" : ""}`}
+        aria-hidden={!open}
+      >
+        <nav aria-label="Mobile navigation">
+          <Link href="/" onClick={closeMenu}>Home</Link>
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={closeMenu}
+              className={link.featured ? "jwp-mobile-cta" : ""}
+            >
+              {link.label}
+              {link.featured && <span aria-hidden="true">↗</span>}
+            </Link>
+          ))}
+          <div className="jwp-mobile-note">Thoughtfully planned celebrations. Unforgettable beginnings.</div>
+        </nav>
       </div>
     </header>
   );

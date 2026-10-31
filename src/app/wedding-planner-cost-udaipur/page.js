@@ -1,214 +1,454 @@
 // pages/wedding-planner-cost-udaipur.jsx
 "use client";
+
 import Head from "next/head";
+import Link from "next/link";
 
 export default function WeddingPlannerCostUdaipur() {
-    const handleWhatsAppSubmit = (e) => {
-        e.preventDefault();
-      
-        const form = e.target;
-      
-        const name = form.name.value;
-        const phone = form.phone.value;
-        const date = form.date.value;
-        const budget = form.budget.value;
-        const type = form.type.value;
-      
-        const message = `
-      New Wedding Inquiry 💍
-      
-      👤 Name: ${name}
-      📞 Phone: ${phone}
-      📅 Date: ${date}
-      💰 Budget: ${budget || "Not specified"}
-      🎊 Wedding Type: ${type || "Not specified"}
-      
-      From: JaipurWeddingPlanner.in
-      `;
-      
-        const whatsappNumber = "916378380535"; // ← your WhatsApp number (with country code)
-      
-        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-          message
-        )}`;
-      
-        window.open(url, "_blank");
-      };
-      
-  const schema = {
+  const handleWhatsAppSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const name = form.name.value;
+    const phone = form.phone.value;
+    const date = form.date.value;
+    const budget = form.budget.value;
+    const type = form.type.value;
+
+    const message = `
+New Wedding Inquiry 💍
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+📅 Date: ${date}
+💰 Budget: ${budget || "Not specified"}
+🎊 Wedding Type: ${type || "Not specified"}
+
+From: JaipurWeddingPlanner.in — Wedding Planner Cost Udaipur
+`;
+
+    const whatsappNumber = "916378380535";
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+  };
+
+  const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
+    mainEntity: [
       {
         "@type": "Question",
-        "name": "What is the average cost of a wedding planner in Udaipur?",
-        "acceptedAnswer": {
+        name: "What is the average cost of a wedding planner in Udaipur?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "The average cost of hiring a wedding planner in Udaipur ranges from ₹50,000 to ₹10,00,000 or more, depending on the scale of the wedding, services included, and planner's experience. For basic services, expect ₹50,000-₹1,50,000; for full-service luxury weddings, it can go up to ₹3,00,000-₹10,00,000."
-        }
+          text: "The average cost of hiring a wedding planner in Udaipur ranges from ₹50,000 to ₹10,00,000 or more, depending on the scale of the wedding, services included, and planner's experience. For basic services, expect ₹50,000–₹1,50,000; for full-service luxury weddings, it can go up to ₹3,00,000–₹10,00,000.",
+        },
       },
       {
         "@type": "Question",
-        "name": "What factors affect wedding planner costs in Udaipur?",
-        "acceptedAnswer": {
+        name: "What factors affect wedding planner costs in Udaipur?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "Factors include wedding size (guest count), venue type (local vs. destination), services required (partial vs. full planning), customization level, season (peak vs. off-peak), and the planner's reputation and experience."
-        }
+          text: "Factors include wedding size (guest count), venue type (local vs. destination), services required (partial vs. full planning), customization level, season (peak vs. off-peak), and the planner's reputation and experience.",
+        },
       },
       {
         "@type": "Question",
-        "name": "Are there affordable wedding planner packages in Udaipur?",
-        "acceptedAnswer": {
+        name: "Are there affordable wedding planner packages in Udaipur?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "Yes, many planners offer budget-friendly packages starting from ₹50,000 for coordination services. Full packages for mid-range weddings are around ₹1,50,000-₹3,00,000, while premium royal or destination weddings can cost ₹3,00,000-₹10,00,000+."
-        }
+          text: "Yes, many planners offer budget-friendly packages starting from ₹50,000 for coordination services. Full packages for mid-range weddings are around ₹1,50,000–₹3,00,000, while premium royal or destination weddings can cost ₹3,00,000–₹10,00,000+.",
+        },
       },
       {
         "@type": "Question",
-        "name": "How can I get a free quote for wedding planning in Udaipur?",
-        "acceptedAnswer": {
+        name: "How can I get a free quote for wedding planning in Udaipur?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "Submit your requirements through our form, including budget, guest count, and wedding type. We'll connect you with verified planners for personalized quotes."
-        }
-      }
-    ]
+          text: "Submit your requirements through our form, including budget, guest count, and wedding type. We'll connect you with verified planners for personalized quotes.",
+        },
+      },
+    ],
   };
+
+  const priceTiers = [
+    "Basic Day-of Coordination: ₹50,000 – ₹1,50,000",
+    "Partial Planning: ₹1,50,000 – ₹3,00,000",
+    "Full-Service Planning: ₹3,00,000 – ₹7,00,000",
+    "Destination / Royal Weddings: ₹5,00,000 – ₹10,00,000+",
+  ];
+
+  const factors = [
+    { icon: "👥", title: "Guest Count", description: "More guests mean higher coordination and logistics costs." },
+    { icon: "🏰", title: "Venue Type", description: "Palaces and lakeside venues add premium fees." },
+    { icon: "📅", title: "Season", description: "Peak wedding season (Oct–Feb) increases prices." },
+    { icon: "🎨", title: "Customization", description: "Themed décor and unique elements raise costs." },
+    { icon: "🛠️", title: "Services", description: "Full vs. partial planning impacts the final quote." },
+    { icon: "⭐", title: "Experience", description: "Top-rated planners charge more for their expertise." },
+  ];
+
+  const packages = [
+    { name: "Budget Package", price: "₹50,000 – ₹1,50,000", description: "Basic planning, vendor coordination, and day-of management." },
+    { name: "Standard Package", price: "₹1,50,000 – ₹3,00,000", description: "Full planning including décor, catering, and entertainment." },
+    { name: "Premium Package", price: "₹3,00,000 – ₹7,00,000", description: "Luxury services with custom themes and VIP handling." },
+    { name: "Royal / Destination", price: "₹5,00,000+", description: "Palace venues, cultural shows, and international-level execution." },
+  ];
+
+  const planners = [
+    { name: "Atelier Events", description: "Luxury themes & creative setups with excellent reviews.", href: "/planners/atelier-events", featured: true, verified: true },
+    { name: "GoldenVows Events", description: "Personalized planning with stunning décor.", href: "/planners/goldenvows-events", featured: true, verified: false },
+    { name: "Shaadi Sutra Co.", description: "Highly rated full-service wedding planner.", href: "/planners/shaadi-sutra-co" },
+    { name: "Anantara Wedding Co.", description: "Bespoke weddings with strong customer satisfaction.", href: "/planners/anantara-wedding-co" },
+    { name: "Velvet Knot Weddings", description: "Detail-focused planning with creative execution.", href: "/planners/velvet-knot-weddings" },
+    { name: "RajViva Events", description: "Highly rated full-service wedding planner.", href: "/planners/rajviva-events" },
+  ];
+
+  const steps = [
+    "Determine your overall wedding budget (typically 10–15% for planning)",
+    "List must-have services and nice-to-haves",
+    "Get quotes from multiple planners via our platform",
+    "Compare packages and negotiate for best value",
+    "Book early to lock in prices and availability",
+  ];
+
+  const testimonials = [
+    { quote: "“The cost breakdown was fully transparent — we planned our Udaipur wedding without a single surprise.”", couple: "— Divya & Karan" },
+    { quote: "“We compared multiple quotes through the platform and saved significantly on our lakeside wedding.”", couple: "— Sneha & Aakash" },
+    { quote: "“Found a full-service planner well within our budget for a beautiful Udaipur celebration.”", couple: "— Ishita & Pranav" },
+    { quote: "“Honest pricing and flawless execution. Everything was worth every rupee.”", couple: "— Naina & Siddharth" },
+  ];
+
+  const benefits = [
+    { icon: "✧", title: "High-Intent Leads", description: "Couples comparing pricing are close to booking — they convert faster." },
+    { icon: "⌖", title: "Local Visibility", description: "Rank higher for “wedding planner cost Udaipur” searches without heavy ad spend." },
+    { icon: "✓", title: "Verified Planner Badge", description: "Stand out with a verified profile that builds trust when couples compare quotes." },
+    { icon: "▧", title: "Showcase Your Work", description: "Display your portfolio, services, and testimonials in one place." },
+    { icon: "↗", title: "Direct Inquiries", description: "Receive direct WhatsApp and call inquiries — no middlemen or commissions." },
+    { icon: "₹", title: "Affordable Listing Plans", description: "One simple monthly fee. No commissions per booking. No hidden charges." },
+  ];
 
   return (
     <>
       <Head>
-        <title>Wedding Planner Cost in Udaipur | Packages & Pricing | UdaipurWeddingPlanner.in</title>
+        <title>Wedding Planner Cost in Udaipur | Packages &amp; Pricing | UdaipurWeddingPlanner.in</title>
         <meta
           name="description"
           content="Discover wedding planner costs in Udaipur, from budget packages to luxury services. Get average pricing, factors affecting costs, and free quotes from top planners."
         />
-        <meta name="keywords" content="wedding planner cost Udaipur, Udaipur wedding planning prices, affordable wedding planners Udaipur, wedding packages Udaipur, wedding budget Udaipur" />
+        <meta
+          name="keywords"
+          content="wedding planner cost Udaipur, Udaipur wedding planning prices, affordable wedding planners Udaipur, wedding packages Udaipur, wedding budget Udaipur"
+        />
+        <meta name="theme-color" content="#faf7f2" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WeddingService",
+              name: "Wedding Planner Cost Udaipur",
+              url: "https://jaipurweddingplanner.in/wedding-planner-cost-udaipur",
+              description:
+                "Transparent wedding planner pricing in Udaipur — from budget packages to luxury palace weddings.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Udaipur",
+                addressRegion: "Rajasthan",
+                addressCountry: "IN",
+              },
+              areaServed: ["Udaipur", "Rajasthan"],
+              priceRange: "₹₹₹",
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://jaipurweddingplanner.in/" },
+                { "@type": "ListItem", position: 2, name: "Wedding Planner Cost Udaipur", item: "https://jaipurweddingplanner.in/wedding-planner-cost-udaipur" },
+              ],
+            }),
+          }}
         />
       </Head>
 
-      <header className="heroo">
-        <div className="hero-contenttt">
-        <p className="hero-subtitleee">Transparent Pricing for Your Dream Wedding</p>
-          <h1>Wedding Planner Cost in Udaipur</h1>
-          <p>
-            Planning a wedding in Udaipur? Understand the costs involved with professional wedding planners. From affordable packages to premium royal setups, get insights into pricing, factors, and how to budget effectively for your big day.
-          </p>
-          <div className="hero-actionsss">
-          <a href="/#planners" className="btn-primaryyy">
-              Explore Wedding Planners
-            </a>
-          </div>
-        </div>
-      </header>
-
-      <main>
-        <section className="section">
-          <div className="container">
-            <h2>Understanding Wedding Planner Costs in Udaipur</h2>
+      <div className="jwp-home">
+        {/* ---------- Hero ---------- */}
+        <header className="jwp-hero">
+          <div className="jwp-hero-overlay" />
+          <div className="jwp-hero-content">
+            <span className="jwp-eyebrow jwp-hero-eyebrow">Transparent Pricing for Your Dream Wedding</span>
+            <span className="jwp-hero-rule" />
+            <h1>Wedding Planner Cost <em>in Udaipur</em></h1>
             <p>
-              Hiring a wedding planner in Udaipur can save you time and stress while ensuring a flawless event. Costs vary based on your needs, but expect transparent pricing from our verified partners.
+              Planning a wedding in Udaipur? Understand the costs involved with professional wedding
+              planners. From affordable packages to premium royal setups, get insights into pricing,
+              factors, and how to budget effectively for your big day.
             </p>
-            <p className="highlight">
-              Average costs range from ₹50,000 for basic coordination to ₹10,00,000+ for full-service luxury weddings.
-            </p>
-            <ul className="list">
-              <li>✔ Basic Day-of Coordination: ₹50,000 - ₹1,50,000</li>
-              <li>✔ Partial Planning: ₹1,50,000 - ₹3,00,000</li>
-              <li>✔ Full-Service Planning: ₹3,00,000 - ₹7,00,000</li>
-              <li>✔ Destination/Royal Weddings: ₹5,00,000 - ₹10,00,000+</li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="section light">
-          <div className="container">
-            <h2>Factors Affecting Wedding Planner Prices in Udaipur</h2>
-            <div className="grid">
-              <div className="service">👥 Guest Count: More guests mean higher coordination costs</div>
-              <div className="service">🏰 Venue Type: Palaces and lakeside venues add premium fees</div>
-              <div className="service">📅 Season: Peak wedding season (Oct-Feb) increases prices</div>
-              <div className="service">🎨 Customization: Themed décor and unique elements raise costs</div>
-              <div className="service">🛠️ Services: Full vs. partial planning impacts the quote</div>
-              <div className="service">⭐ Experience: Top-rated planners charge more for expertise</div>
+            <div className="jwp-hero-actions">
+              <a href="#planners" className="jwp-button jwp-button-gold">
+                Explore Wedding Planners <span>↗</span>
+              </a>
+              <a href="#inquiry" className="jwp-text-link">
+                Get a free quote <span>→</span>
+              </a>
+            </div>
+            <div className="jwp-hero-footnote">
+              <span /> Transparent packages · Verified planners · Udaipur
             </div>
           </div>
-        </section>
+          <div className="jwp-hero-side-note">UDAIPUR · PRICING · PACKAGES</div>
+        </header>
 
-        <section className="section">
-          <div className="container">
-            <h2>Popular Wedding Planner Packages in Udaipur</h2>
-            <p>
-              Explore common packages offered by Udaipur's top planners. These are approximate and can be customized.
-            </p>
-            <div className="cards">
-              <div className="card">
-                <h3>Budget Package</h3>
-                <p>₹50,000 - ₹1,50,000: Basic planning, vendor coordination, and day-of management.</p>
+        <main>
+          {/* ---------- Intro strip ---------- */}
+          <section className="jwp-intro-strip">
+            <div className="jwp-container jwp-intro-inner">
+              <span className="jwp-intro-mark">✧</span>
+              <p>
+                Know what you’ll pay. <strong>Plan with confidence.</strong>
+              </p>
+              <span className="jwp-intro-location">A pricing guide to Udaipur’s wedding planners</span>
+            </div>
+          </section>
+
+          {/* ---------- Understanding costs (split layout) ---------- */}
+          <section className="jwp-section jwp-why-section">
+            <div className="jwp-container jwp-why-layout">
+              <div className="jwp-why-heading">
+                <span className="jwp-eyebrow">What to expect</span>
+                <h2>Understanding Wedding Planner <em>Costs in Udaipur</em></h2>
+                <p>
+                  Hiring a wedding planner in Udaipur saves you time and stress while ensuring a
+                  flawless event. Costs vary based on your needs, but expect transparent pricing from
+                  our verified partners.
+                </p>
+                <blockquote className="jwp-destination-quote--inline">
+                  Average costs range from ₹50,000 for basic coordination to ₹10,00,000+ for
+                  full-service luxury weddings.
+                </blockquote>
               </div>
-              <div className="card">
-                <h3>Standard Package</h3>
-                <p>₹1,50,000 - ₹3,00,000: Full planning including décor, catering, and entertainment.</p>
+              <ul className="jwp-check-list">
+                {priceTiers.map((tier) => (
+                  <li key={tier}>
+                    <span>✓</span> {tier}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* ---------- Factors ---------- */}
+          <section className="jwp-section jwp-section-light" id="factors">
+            <div className="jwp-container">
+              <div className="jwp-section-heading">
+                <span className="jwp-eyebrow">What shapes the quote</span>
+                <h2>Factors Affecting Wedding Planner <em>Prices in Udaipur</em></h2>
+                <p>
+                  Every wedding is different — these are the six biggest drivers of what your planner
+                  will quote.
+                </p>
               </div>
-              <div className="card">
-                <h3>Premium Package</h3>
-                <p>₹3,00,000 - ₹7,00,000: Luxury services with custom themes and VIP handling.</p>
-              </div>
-              <div className="card">
-                <h3>Royal/Destination Package</h3>
-                <p>₹5,00,000+: Palace venues, cultural shows, and international-level execution.</p>
+              <div className="jwp-planner-grid jwp-services-as-cards">
+                {factors.map((factor, index) => (
+                  <article className="jwp-planner-card" key={factor.title}>
+                    <div className="jwp-planner-number">0{index + 1}</div>
+                    <div className="jwp-planner-ornament">{factor.icon}</div>
+                    <h3>{factor.title}</h3>
+                    <p>{factor.description}</p>
+                  </article>
+                ))}
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="section light">
-          <div className="container">
-            <h2>Top Wedding Planners in Udaipur with Cost Insights</h2>
-            <div className="cards">
-              <div className="card">
-                <h3>Bhakti Events and Wedding Planners</h3>
-                <p>Starting at ₹2,00,000 for destination weddings.</p>
+          {/* ---------- Packages (price cards) ---------- */}
+          <section className="jwp-section jwp-planners-section" id="packages">
+            <div className="jwp-container">
+              <div className="jwp-section-heading">
+                <span className="jwp-eyebrow">Common packages</span>
+                <h2>Popular Wedding Planner <em>Packages in Udaipur</em></h2>
+                <p>
+                  Typical packages offered by Udaipur’s top planners. These are approximate and can be
+                  customized to your needs.
+                </p>
               </div>
-              <div className="card">
-                <h3>Believe Happenings</h3>
-                <p>Packages from ₹2,00,000 with realistic budgeting.</p>
-              </div>
-              <div className="card">
-                <h3>The Shaadi Diary</h3>
-                <p>From ₹2,50,000, specializing in luxury setups.</p>
-              </div>
-              <div className="card">
-                <h3>Arisen Events</h3>
-                <p>Affordable options starting ₹2,00,000.</p>
-              </div>
-              <div className="card">
-                <h3>Nakoda Event & Tent Decor</h3>
-                <p>From ₹2,00,000 for theme-based weddings.</p>
+              <div className="jwp-planner-grid">
+                {packages.map((pkg, index) => (
+                  <article className="jwp-planner-card jwp-price-card" key={pkg.name}>
+                    <div className="jwp-planner-number">0{index + 1}</div>
+                    <div className="jwp-planner-ornament">✧</div>
+                    <h3>{pkg.name}</h3>
+                    <strong className="jwp-price">{pkg.price}</strong>
+                    <p>{pkg.description}</p>
+                  </article>
+                ))}
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="section">
-          <div className="container">
-            <h2>How to Budget for Your Wedding Planner in Udaipur</h2>
-            <ol className="steps">
-              <li>Determine your overall wedding budget (typically 10-15% for planning)</li>
-              <li>List must-have services and nice-to-haves</li>
-              <li>Get quotes from multiple planners via our platform</li>
-              <li>Compare packages and negotiate for best value</li>
-              <li>Book early to lock in prices and availability</li>
-            </ol>
-          </div>
-        </section>
+          {/* ---------- Top planners with cost insights ---------- */}
+          <section className="jwp-section jwp-section-light" id="planners">
+            <div className="jwp-container">
+              <div className="jwp-section-heading">
+                <span className="jwp-eyebrow">A handpicked place to begin</span>
+                <h2>Top Wedding Planners in Udaipur <em>with Cost Insights</em></h2>
+                <p>
+                  Compare approximate starting prices from verified planners on our platform.
+                </p>
+              </div>
+              <div className="jwp-planner-grid">
+                {planners.map((planner, index) => (
+                  <article className="jwp-planner-card" key={planner.name}>
+                    <div className="jwp-planner-number">0{index + 1}</div>
+                    {planner.featured && <span className="jwp-featured">Featured</span>}
+                    <div className="jwp-planner-ornament">✧</div>
+                    <h3>{planner.name}</h3>
+                    <strong className="jwp-price">{planner.cost}</strong>
+                    <p>{planner.description}</p>
+                    {planner.href && (
+                      <Link href={planner.href} className="jwp-card-link">
+                        View Details <span>→</span>
+                      </Link>
+                    )}
+                    {planner.verified && <span className="jwp-verified">✓ Verified Planner</span>}
+                  </article>
+                ))}
+              </div>
+              <div className="jwp-centered-action">
+                <Link href="/wedding-planner" className="jwp-button jwp-button-outline">
+                  View All Wedding Planners <span>→</span>
+                </Link>
+              </div>
+            </div>
+          </section>
 
-  
-      </main>
+          {/* ---------- Testimonials ---------- */}
+          <section className="jwp-section jwp-testimonials-section">
+            <div className="jwp-container">
+              <div className="jwp-section-heading">
+                <span className="jwp-eyebrow">Kind words, lasting memories</span>
+                <h2>What Couples <em>Say About Us</em></h2>
+              </div>
+              <div className="jwp-testimonial-grid">
+                {testimonials.map((item) => (
+                  <article className="jwp-testimonial-card" key={item.couple}>
+                    <div className="jwp-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span className="jwp-quote-mark">“</span>
+                    <p>{item.quote}</p>
+                    <strong>{item.couple}</strong>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
 
+          {/* ---------- How to budget (5-step row) ---------- */}
+          <section className="jwp-section jwp-process-section">
+            <div className="jwp-container">
+              <div className="jwp-section-heading">
+                <span className="jwp-eyebrow">Plan your budget</span>
+                <h2>How to Budget for Your <em>Wedding Planner in Udaipur</em></h2>
+              </div>
+              <ol className="jwp-steps jwp-steps--five">
+                {steps.map((step, index) => (
+                  <li key={step}>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <p>{step}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </section>
 
+          {/* ---------- Benefits for planners ---------- */}
+          <section className="jwp-section jwp-benefits-section">
+            <div className="jwp-container">
+              <div className="jwp-section-heading">
+                <span className="jwp-eyebrow">For Rajasthan’s wedding professionals</span>
+                <h2>Why Wedding Planners Choose <em>JaipurWeddingPlanner.in</em></h2>
+                <p className="jwp-planner-intro">
+                  We help Rajasthan-based wedding planners get discovered by couples actively
+                  comparing wedding planning costs in Udaipur.
+                </p>
+              </div>
+              <div className="jwp-benefit-grid">
+                {benefits.map((benefit) => (
+                  <article className="jwp-benefit-card" key={benefit.title}>
+                    <span className="jwp-benefit-icon">{benefit.icon}</span>
+                    <h3>{benefit.title}</h3>
+                    <p>{benefit.description}</p>
+                  </article>
+                ))}
+              </div>
+              <div className="jwp-planner-cta">
+                <span className="jwp-eyebrow">Grow your wedding business</span>
+                <h3>Let more couples discover your work.</h3>
+                <a href="/list-your-business" className="jwp-button jwp-button-gold">
+                  List Your Wedding Planning Business <span>↗</span>
+                </a>
+                <p>✓ No commission • Direct leads • Rajasthan focused</p>
+              </div>
+            </div>
+          </section>
+
+          {/* ---------- Inquiry form ---------- */}
+          <section className="jwp-section jwp-section-light" id="inquiry">
+            <div className="jwp-container">
+              <div className="jwp-section-heading">
+                <span className="jwp-eyebrow">Get a free quote</span>
+                <h2>Request a <em>Personalized Quote</em></h2>
+                <p>
+                  Share a few details and we’ll connect you with planners who fit your vision and
+                  budget.
+                </p>
+              </div>
+              <form className="jwp-form" onSubmit={handleWhatsAppSubmit}>
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="tel" name="phone" placeholder="Phone / WhatsApp" required />
+                <input type="date" name="date" required />
+                <input type="text" name="budget" placeholder="Approximate Budget (e.g. ₹5–15 lakh)" />
+                <select name="type" defaultValue="">
+                  <option value="">Type of Wedding</option>
+                  <option>Destination</option>
+                  <option>Royal</option>
+                  <option>Local</option>
+                  <option>Traditional</option>
+                </select>
+                <button type="submit" className="jwp-button jwp-button-gold">
+                  Get My Quote <span>↗</span>
+                </button>
+              </form>
+              <p className="jwp-centered-action jwp-form-note">
+                ✓ Direct WhatsApp inquiry · No commission
+              </p>
+            </div>
+          </section>
+
+          {/* ---------- About ---------- */}
+          <section className="jwp-about-section">
+            <div className="jwp-about-inner">
+              <span className="jwp-eyebrow">A little about us</span>
+              <h2>About <em>Us</em></h2>
+              <p>
+                JaipurWeddingPlanner.in connects couples with professional and verified wedding
+                planners in Rajasthan. From transparent pricing in Udaipur to royal palace weddings
+                in Jaipur, we help you find the perfect experts for your big day — within your budget.
+              </p>
+              <p className="jwp-about-highlight">
+                Our mission is simple: make wedding planning easy, transparent and unforgettable.
+              </p>
+              <span className="jwp-about-flourish">✧</span>
+            </div>
+          </section>
+        </main>
+      </div>
     </>
   );
 }

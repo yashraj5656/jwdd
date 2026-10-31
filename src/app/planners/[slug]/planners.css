@@ -1,0 +1,723 @@
+/* =====================================================
+   planners.css — Planner detail page
+   Aligned with the JaipurWeddingPlanner home page styling
+   ===================================================== */
+
+   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap');
+
+   :root {
+     --primary: #b8860b;
+     --primary-dark: #8c6a08;
+     --secondary: #3a2a1f;
+     --bg-light: #faf7f2;
+     --text-dark: #222;
+     --text-muted: #666;
+     --white: #ffffff;
+   }
+   
+   .jwp-planner-detail {
+     color: var(--text-dark);
+     background: var(--bg-light);
+     font-family: 'Poppins', sans-serif;
+     overflow: hidden;
+   }
+   
+   .jwp-planner-detail *,
+   .jwp-planner-detail *::before,
+   .jwp-planner-detail *::after {
+     box-sizing: border-box;
+   }
+   
+   
+   .jwp-planner-detail .jwp-container {
+     width: min(1160px, calc(100% - 48px));
+     margin: 0 auto;
+   }
+   
+   .jwp-planner-detail .jwp-eyebrow {
+     display: inline-block;
+     color: var(--primary-dark);
+     font-size: 10px;
+     font-weight: 600;
+     letter-spacing: 3px;
+     line-height: 1.8;
+     text-transform: uppercase;
+   }
+   
+   /* ---------- Hero ---------- */
+   /*
+     FIXED:
+     - Removed hard-coded background image so the Cloudinary <img> in HeroSection
+       is the only image layer.
+     - Kept min-height + overflow hidden so the <img> fills the space.
+     - Fallback solid color shows while the image loads or if it fails entirely.
+   */
+   .jwp-planner-hero {
+     position: relative;
+     display: flex;
+     align-items: center;
+     color: var(--white);
+     min-height: 610px;
+     overflow: hidden;
+     background: var(--secondary);
+   }
+   
+   /*
+     FIXED:
+     - Was border-only (inset: 22px, 1px border). Now the overlay actually
+       darkens the hero so white text is readable over bright Cloudinary images.
+     - Matches the original look: dark left side → lighter right side.
+   */
+   .jwp-planner-hero-overlay {
+     position: absolute;
+     inset: 0;
+     background: linear-gradient(
+       90deg,
+       rgba(25, 17, 12, 0.88) 0%,
+       rgba(35, 24, 17, 0.65) 47%,
+       rgba(35, 24, 17, 0.25) 100%
+     );
+     pointer-events: none;
+     z-index: 1;
+   }
+   
+   /* Decorative inset frame (optional — add <div class="jwp-planner-hero-frame" /> if you want it) */
+   .jwp-planner-hero-frame {
+     position: absolute;
+     inset: 22px;
+     border: 1px solid rgba(255, 255, 255, 0.25);
+     pointer-events: none;
+     z-index: 3;
+   }
+   
+   .jwp-planner-hero-inner {
+     position: relative;
+     z-index: 2;
+     width: min(780px, calc(100% - 64px));
+     margin: 0 auto;
+     padding: 105px 0 90px;
+   }
+   
+   .jwp-planner-detail .jwp-hero-eyebrow {
+     color: #e5c77d;
+   }
+   
+   .jwp-planner-detail .jwp-hero-rule {
+     display: block;
+     width: 58px;
+     height: 1px;
+     margin: 24px 0;
+     background: var(--primary);
+   }
+   
+   .jwp-planner-hero h1 {
+     margin: 0;
+     max-width: 760px;
+     font-family: 'Playfair Display', serif;
+     font-weight: 500;
+     letter-spacing: -0.8px;
+     font-size: clamp(48px, 6vw, 76px);
+     line-height: 1.08;
+   }
+   
+   .jwp-planner-hero h1 em {
+     color: var(--primary);
+     font-weight: 500;
+   }
+   
+   .jwp-planner-hero p {
+     max-width: 570px;
+     margin: 24px 0 0;
+     color: rgba(255, 255, 255, 0.82);
+     font-size: 14px;
+     font-weight: 300;
+     line-height: 2;
+   }
+   
+   .jwp-planner-detail .jwp-hero-actions {
+     display: flex;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 28px;
+     margin-top: 34px;
+   }
+   
+   .jwp-planner-detail .jwp-hero-footnote {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     margin-top: 55px;
+     color: rgba(255, 255, 255, 0.65);
+     font-size: 9px;
+     letter-spacing: 1.2px;
+     text-transform: uppercase;
+   }
+   
+   .jwp-planner-detail .jwp-hero-footnote span {
+     width: 25px;
+     height: 1px;
+     background: var(--primary);
+   }
+   
+   .jwp-planner-detail .jwp-hero-side-note {
+     position: absolute;
+     right: 43px;
+     bottom: 55px;
+     color: rgba(255, 255, 255, 0.68);
+     font-size: 9px;
+     letter-spacing: 3px;
+     writing-mode: vertical-rl;
+     z-index: 3;
+   }
+   
+   /* ---------- Buttons ---------- */
+   .jwp-planner-detail .jwp-button {
+     min-height: 52px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     gap: 22px;
+     padding: 0 25px;
+     border: 1px solid transparent;
+     text-decoration: none;
+     font: 500 11px 'Poppins', sans-serif;
+     letter-spacing: 0.7px;
+     transition: 0.25s ease;
+     cursor: pointer;
+   }
+   
+   .jwp-planner-detail .jwp-button-gold {
+     color: #fff;
+     background: var(--primary);
+     border-color: var(--primary);
+   }
+   .jwp-planner-detail .jwp-button-gold:hover {
+     background: var(--primary-dark);
+     border-color: var(--primary-dark);
+     transform: translateY(-2px);
+   }
+   
+   .jwp-planner-detail .jwp-text-link {
+     color: #fff;
+     font-size: 11px;
+     text-decoration: none;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+     padding-bottom: 7px;
+   }
+   .jwp-planner-detail .jwp-text-link span {
+     color: #e5c77d;
+     margin-left: 8px;
+   }
+   
+   /* ---------- Trust strip ---------- */
+   .jwp-planner-stats {
+     background: #f0e9de;
+     border-bottom: 1px solid #e6dccd;
+   }
+   .jwp-planner-stats-inner {
+     min-height: 118px;
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+   }
+   .jwp-stat {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     padding: 10px 24px;
+     border-left: 1px solid #e0d4c0;
+   }
+   .jwp-stat:first-child {
+     border-left: none;
+   }
+   .jwp-stat strong {
+     color: var(--secondary);
+     font: 600 26px 'Playfair Display', serif;
+     letter-spacing: -0.3px;
+   }
+   .jwp-stat span {
+     margin-top: 6px;
+     color: var(--text-muted);
+     font-size: 9px;
+     letter-spacing: 1.2px;
+     text-transform: uppercase;
+   }
+   
+   /* ---------- Section rhythm ---------- */
+   .jwp-planner-detail .jwp-section {
+     padding: 105px 0;
+   }
+   .jwp-planner-detail .jwp-section-light {
+     background: var(--bg-light);
+   }
+   .jwp-planner-detail .jwp-planners-section {
+     background: #f0e9de;
+   }
+   .jwp-planner-detail .jwp-process-section {
+     background: #f0e9de;
+   }
+   .jwp-planner-detail .jwp-testimonials-section {
+     background: var(--white);
+   }
+   
+   .jwp-planner-detail .jwp-section-heading {
+     max-width: 700px;
+     margin: 0 auto 52px;
+     text-align: center;
+   }
+   .jwp-planner-detail .jwp-section-heading h2 {
+     margin: 12px 0 0;
+     color: var(--secondary);
+     font-family: 'Playfair Display', serif;
+     font-weight: 500;
+     letter-spacing: -0.6px;
+     font-size: clamp(32px, 3.8vw, 46px);
+     line-height: 1.2;
+   }
+   .jwp-planner-detail .jwp-section-heading h2 em {
+     color: var(--primary);
+     font-weight: 500;
+   }
+   .jwp-planner-detail .jwp-section-heading > p {
+     max-width: 590px;
+     margin: 16px auto 0;
+     color: var(--text-muted);
+     font-size: 12px;
+     line-height: 1.9;
+     font-weight: 300;
+   }
+   
+   /* ---------- About ---------- */
+   .jwp-detail-about {
+     max-width: 720px;
+     margin: 0 auto;
+     color: #5d554e;
+     font-size: 13px;
+     font-weight: 300;
+     line-height: 2.1;
+     text-align: center;
+   }
+   
+   /* ---------- Rating ---------- */
+   .jwp-planner-detail .jwp-rating-section {
+     background: #f0e9de;
+     padding-top: 0;
+   }
+   .jwp-rating-card {
+     max-width: 720px;
+     margin: 0 auto;
+     display: flex;
+     align-items: center;
+     gap: 40px;
+     padding: 44px 50px;
+     background: var(--bg-light);
+     border: 1px solid #e8dece;
+   }
+   .jwp-rating-left {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     padding-right: 40px;
+     border-right: 1px solid #e8dece;
+   }
+   .jwp-rating-score {
+     color: var(--secondary);
+     font: 600 58px 'Playfair Display', serif;
+     line-height: 1;
+     letter-spacing: -1px;
+   }
+   .jwp-rating-stars {
+     margin-top: 6px;
+     color: var(--primary);
+     font-size: 14px;
+     letter-spacing: 3px;
+   }
+   .jwp-rating-right p {
+     margin: 0 0 6px;
+     color: var(--secondary);
+     font-size: 13px;
+   }
+   .jwp-rating-right p strong {
+     font-weight: 600;
+   }
+   .jwp-rating-source {
+     color: var(--text-muted);
+     font-size: 10px;
+     letter-spacing: 0.5px;
+   }
+   
+   /* ---------- Services list ---------- */
+   .jwp-detail-services {
+     list-style: none;
+     max-width: 780px;
+     margin: 0 auto;
+     padding: 0;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 0 40px;
+     border-top: 1px solid #e8dece;
+   }
+   .jwp-detail-services li {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     padding: 18px 0;
+     color: var(--secondary);
+     border-bottom: 1px solid #e8dece;
+     font-size: 12.5px;
+   }
+   .jwp-detail-services li span {
+     color: var(--primary);
+     font-size: 14px;
+     flex-shrink: 0;
+   }
+   
+   /* ---------- Portfolio ---------- */
+   /*
+     Portfolio is already correct — .jwp-portfolio-image has a fixed height
+     and the <img> inside fills it via object-fit: cover.
+     No changes required here.
+   */
+   .jwp-portfolio-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 24px;
+   }
+   .jwp-portfolio-image {
+     position: relative;
+     height: 300px;
+     overflow: hidden;
+     background: #e9dfd1;
+   }
+   .jwp-portfolio-image img {
+     width: 100%;
+     height: 100%;
+     display: block;
+     object-fit: cover;
+     transition: transform 0.55s ease;
+   }
+   .jwp-portfolio-image:hover img {
+     transform: scale(1.055);
+   }
+   .jwp-planner-detail .jwp-image-corner {
+     position: absolute;
+     right: 14px;
+     bottom: 14px;
+     width: 34px;
+     height: 34px;
+     display: grid;
+     place-items: center;
+     color: var(--white);
+     background: var(--primary);
+     font-size: 18px;
+     z-index: 2;
+   }
+   
+   /* ---------- Planner card (signature styles) ---------- */
+   .jwp-planner-detail .jwp-planner-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 18px;
+   }
+   .jwp-planner-detail .jwp-planner-card {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     min-height: 220px;
+     padding: 34px 30px 28px;
+     background: rgba(255, 255, 255, 0.72);
+     border: 1px solid #e8dece;
+     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+   }
+   .jwp-planner-detail .jwp-planner-card:hover {
+     transform: translateY(-5px);
+     border-color: rgba(184, 134, 11, 0.55);
+     box-shadow: 0 15px 35px rgba(58, 42, 31, 0.08);
+   }
+   .jwp-planner-detail .jwp-planner-number {
+     position: absolute;
+     top: 20px;
+     right: 22px;
+     color: #d8cbb8;
+     font: 500 13px 'Playfair Display', serif;
+   }
+   .jwp-planner-detail .jwp-planner-ornament {
+     margin: 0 0 8px;
+     color: var(--primary);
+     font-size: 22px;
+   }
+   .jwp-planner-detail .jwp-planner-card h3 {
+     margin: 0;
+     color: var(--secondary);
+     font: 600 22px 'Playfair Display', serif;
+     letter-spacing: -0.3px;
+   }
+   .jwp-planner-detail .jwp-planner-card p {
+     margin: 12px 0 0;
+     color: var(--text-muted);
+     font-size: 11px;
+     line-height: 1.85;
+     font-weight: 300;
+   }
+   
+   /* ---------- Testimonials ---------- */
+   .jwp-planner-detail .jwp-testimonial-grid {
+     display: grid;
+     gap: 16px;
+   }
+   .jwp-planner-detail .jwp-testimonial-grid--two {
+     grid-template-columns: repeat(2, 1fr);
+   }
+   
+   .jwp-planner-detail .jwp-testimonial-card {
+     position: relative;
+     min-height: 220px;
+     padding: 30px 28px;
+     background: var(--bg-light);
+     border: 1px solid #eee7dc;
+   }
+   .jwp-planner-detail .jwp-stars {
+     color: var(--primary);
+     font-size: 12px;
+     letter-spacing: 3px;
+   }
+   .jwp-planner-detail .jwp-quote-mark {
+     display: block;
+     height: 36px;
+     margin-top: 8px;
+     color: #d9bd78;
+     font: 700 52px 'Playfair Display', serif;
+     line-height: 1;
+   }
+   .jwp-planner-detail .jwp-testimonial-card p {
+     margin: 7px 0 20px;
+     color: #5d554e;
+     font: italic 14px/1.9 'Playfair Display', serif;
+   }
+   .jwp-planner-detail .jwp-testimonial-card strong {
+     color: var(--secondary);
+     font-size: 10px;
+     font-weight: 600;
+   }
+   
+   /* ---------- Process ---------- */
+   .jwp-planner-detail .jwp-steps {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     margin: 0;
+     padding: 0;
+     list-style: none;
+   }
+   .jwp-planner-detail .jwp-steps li {
+     min-height: 150px;
+     padding: 15px 25px;
+     border-left: 1px solid #d9cbb7;
+   }
+   .jwp-planner-detail .jwp-steps li:last-child {
+     border-right: 1px solid #d9cbb7;
+   }
+   .jwp-planner-detail .jwp-steps li span {
+     color: var(--primary);
+     font: 500 32px 'Playfair Display', serif;
+   }
+   .jwp-planner-detail .jwp-steps li p {
+     max-width: 175px;
+     margin: 14px 0 0;
+     color: var(--secondary);
+     font: 500 14px/1.6 'Playfair Display', serif;
+   }
+   
+   /* ---------- Final CTA ---------- */
+   .jwp-planner-cta {
+     padding: 60px 25px;
+     color: #fff;
+     background: var(--secondary);
+     text-align: center;
+   }
+   .jwp-planner-cta .jwp-eyebrow {
+     color: #d8bd79;
+   }
+   .jwp-planner-cta h3 {
+     margin: 10px 0 8px;
+     font: 500 clamp(26px, 3.2vw, 38px) 'Playfair Display', serif;
+   }
+   .jwp-cta-copy {
+     max-width: 520px;
+     margin: 0 auto 26px;
+     color: rgba(255, 255, 255, 0.72);
+     font-size: 12px;
+     font-weight: 300;
+     line-height: 1.9;
+   }
+   .jwp-planner-cta > p:last-child {
+     margin: 18px 0 0;
+     color: rgba(255, 255, 255, 0.68);
+     font-size: 10px;
+     letter-spacing: 0.7px;
+   }
+   
+   /* ---------- Responsive ---------- */
+   @media (max-width: 900px) {
+     .jwp-planner-hero {
+       min-height: 560px;
+     }
+     .jwp-planner-stats-inner {
+       grid-template-columns: repeat(2, 1fr);
+       min-height: auto;
+       padding: 20px 0;
+     }
+     .jwp-stat {
+       padding: 18px 20px;
+     }
+     .jwp-stat:nth-child(3) {
+       border-left: none;
+     }
+     .jwp-detail-services {
+       grid-template-columns: 1fr;
+     }
+     .jwp-portfolio-grid {
+       grid-template-columns: 1fr 1fr;
+     }
+     .jwp-portfolio-image {
+       height: 240px;
+     }
+     .jwp-portfolio-grid > *:last-child {
+       grid-column: span 2;
+       height: 260px;
+     }
+     .jwp-planner-detail .jwp-planner-grid {
+       grid-template-columns: 1fr 1fr;
+     }
+     .jwp-planner-detail .jwp-testimonial-grid--two {
+       grid-template-columns: 1fr;
+     }
+     .jwp-planner-detail .jwp-steps {
+       grid-template-columns: repeat(2, 1fr);
+       row-gap: 22px;
+     }
+     .jwp-planner-detail .jwp-steps li:nth-child(2) {
+       border-right: 1px solid #d9cbb7;
+     }
+     .jwp-rating-card {
+       flex-direction: column;
+       align-items: flex-start;
+       gap: 20px;
+       padding: 32px;
+     }
+     .jwp-rating-left {
+       padding-right: 0;
+       border-right: none;
+     }
+   }
+   
+   @media (max-width: 600px) {
+     .jwp-planner-detail .jwp-container {
+       width: min(100% - 34px, 480px);
+     }
+     .jwp-planner-hero {
+       min-height: 560px;
+     }
+     .jwp-planner-hero-overlay {
+       /* inset is already 0 — nothing to override */
+     }
+     .jwp-planner-hero-frame {
+       inset: 10px;
+     }
+     .jwp-planner-hero-inner {
+       width: calc(100% - 52px);
+       padding: 90px 0 70px;
+     }
+     .jwp-planner-hero h1 {
+       font-size: clamp(43px, 12vw, 61px);
+     }
+     .jwp-planner-hero p {
+       font-size: 12px;
+       line-height: 1.9;
+     }
+     .jwp-planner-detail .jwp-hero-actions {
+       align-items: flex-start;
+       flex-direction: column;
+       gap: 20px;
+     }
+     .jwp-planner-detail .jwp-hero-footnote {
+       margin-top: 48px;
+       font-size: 8px;
+     }
+     .jwp-planner-detail .jwp-hero-side-note {
+       right: 17px;
+       bottom: 25px;
+       font-size: 7px;
+     }
+     .jwp-planner-detail .jwp-section {
+       padding: 72px 0;
+     }
+     .jwp-planner-detail .jwp-section-heading {
+       margin-bottom: 35px;
+     }
+     .jwp-planner-detail .jwp-section-heading h2 {
+       font-size: 34px;
+     }
+     .jwp-detail-about {
+       font-size: 12px;
+       text-align: left;
+     }
+     .jwp-planner-stats-inner {
+       grid-template-columns: 1fr 1fr;
+     }
+     .jwp-stat strong {
+       font-size: 22px;
+     }
+     .jwp-portfolio-grid {
+       grid-template-columns: 1fr;
+       gap: 13px;
+     }
+     .jwp-portfolio-grid > *:last-child {
+       grid-column: auto;
+     }
+     .jwp-portfolio-image,
+     .jwp-portfolio-grid > *:last-child {
+       height: 220px;
+     }
+     .jwp-planner-detail .jwp-planner-grid {
+       grid-template-columns: 1fr;
+       gap: 13px;
+     }
+     .jwp-planner-detail .jwp-planner-card {
+       min-height: 0;
+       padding: 28px 24px 24px;
+     }
+     .jwp-planner-detail .jwp-steps {
+       grid-template-columns: 1fr 1fr;
+       row-gap: 22px;
+     }
+     .jwp-planner-detail .jwp-steps li {
+       min-height: 125px;
+       padding: 10px 16px;
+     }
+     .jwp-planner-detail .jwp-steps li p {
+       font-size: 13px;
+     }
+     .jwp-planner-cta {
+       padding: 45px 20px;
+     }
+     .jwp-planner-cta .jwp-button {
+       width: 100%;
+       padding: 12px 15px;
+       font-size: 10px;
+       gap: 10px;
+     }
+     .jwp-rating-card {
+       padding: 26px;
+     }
+     .jwp-rating-score {
+       font-size: 46px;
+     }
+   }
+   
+   @media (prefers-reduced-motion: reduce) {
+     .jwp-planner-detail *,
+     .jwp-planner-detail *::before,
+     .jwp-planner-detail *::after {
+       transition-duration: 0.01ms !important;
+       animation-duration: 0.01ms !important;
+     }
+   }

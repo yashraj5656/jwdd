@@ -1,277 +1,530 @@
-.premium-hero {
-    padding: 100px 20px;
-    background:
-      radial-gradient(circle at top, rgba(212,175,55,0.25), transparent 60%),
-      linear-gradient(180deg, #fffaf0, #ffffff);
-    text-align: center;
-  }
+/* =========================================================
+   premium.css — Premium Listing Plan page
+   Aligned with the JaipurWeddingPlanner home page aesthetic
+   ========================================================= */
 
-  .premium-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #d4af37, #ffdf6c);
-    color: #2b1d0f;
-    padding: 6px 18px;
-    border-radius: 999px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-  }
-  
-  .premium-benefits {
-    padding: 70px 20px;
-    background: #fffaf0;
-  }
-  
-  .premium-benefits .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 26px;
-  }
-  
-  .benefit {
-    background: #fff;
-    padding: 26px;
-    border-radius: 16px;
-    box-shadow: 0 14px 40px rgba(0,0,0,.1);
-    transition: all .35s ease;
-  }
-  
-  .benefit:hover {
-    transform: translateY(-6px);
-  }
-  
-  .benefit strong {
-    display: block;
-    font-size: 1.05rem;
-    margin-bottom: 6px;
-  }
-  
-  .benefit span {
-    font-size: .9rem;
-    color: #666;
-  }
-  
-  .premium-form-section {
-    padding: 80px 20px;
-  }
-  
-  .premium-form {
-    max-width: 620px;
-    margin: auto;
-    display: grid;
-    gap: 16px;
-  }
-  
-  .premium-form input,
-  .premium-form select {
-    padding: 14px 16px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    font-size: .95rem;
-  }
-  
-  .btn-premium {
-    background: linear-gradient(135deg, #d4af37, #ffdf6c);
-    border: none;
-    padding: 16px;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all .35s ease;
-  }
-  
-  .btn-premium:hover {
-    transform: scale(1.03);
-    box-shadow: 0 20px 45px rgba(212,175,55,.45);
-  }
-  
-  .form-note {
-    text-align: center;
-    font-size: .85rem;
-    color: #777;
-  }
-  .note{
-    text-align: center;
-    margin-bottom: 2rem;
-  }
+   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap');
 
-
-  /* ===============================
-   PAYMENT CARD (STARTER)
-================================ */
-
-.payment-card {
-  max-width: 520px;
-  margin: 40px auto;
-  padding: 32px 28px;
-  border-radius: 18px;
-  background: linear-gradient(
-    145deg,
-    #ffffff,
-    #f9f9f9
-  );
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.08),
-    0 2px 6px rgba(0, 0, 0, 0.04);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  animation: fadeUp 0.5s ease;
-}
-
-/* Soft top highlight */
-.payment-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 5px;
-  width: 100%;
-  background: linear-gradient(
-    90deg,
-    #cfa44a,
-    #f2d27d,
-    #cfa44a
-  );
-}
-
-/* Note text */
-.payment-note {
-  font-size: 1.05rem;
-  color: #333;
-  margin-bottom: 22px;
-  font-weight: 500;
-}
-
-.payment-note strong {
-  color: #cfa44a;
-}
-
-/* Payment box */
-.payment-box {
-  padding: 26px 22px;
-  border-radius: 14px;
-  background: #ffffff;
-  border: 1px dashed rgba(0, 0, 0, 0.12);
-  transition: all 0.35s ease;
-}
-
-/* Hover effect */
-.payment-card:hover .payment-box {
-  border-color: #cfa44a;
-  box-shadow: 0 10px 25px rgba(207, 164, 74, 0.25);
-  transform: translateY(-2px);
-}
-
-/* Secure text */
-.secure-text {
-  margin-top: 18px;
-  font-size: 0.85rem;
-  color: #777;
-}
-
-/* Entry animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .payment-card {
-    padding: 24px 18px;
-  }
-
-  .payment-note {
-    font-size: 1rem;
-  }
-}
-
-
-/* ===============================
-   PREMIUM BADGE
-================================ */
-
-.premium-badges {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-
-  padding: 8px 18px;
-  border-radius: 999px;
-
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-
-  color: #3b2b10;
-  background: linear-gradient(
-    135deg,
-    #f7e7b4,
-    #d4af37,
-    #b8962e
-  );
-
-  border: 1px solid rgba(212, 175, 55, 0.7);
-
-  box-shadow:
-    0 6px 14px rgba(212, 175, 55, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65);
-
-  position: relative;
-  overflow: hidden;
-}
-
-/* Gold shine animation */
-.premium-badges::after {
-  content: "";
-  position: absolute;
-  top: -40%;
-  left: -60%;
-  width: 40%;
-  height: 180%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.7),
-    transparent
-  );
-  transform: rotate(25deg);
-  animation: premiumShine 3.8s ease-in-out infinite;
-}
-
-/* Hover effect */
-.premium-badges:hover {
-  transform: translateY(-1px) scale(1.05);
-  box-shadow:
-    0 10px 26px rgba(212, 175, 55, 0.55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-
-/* Animation */
-@keyframes premiumShine {
-  0% {
-    left: -60%;
-    opacity: 0;
-  }
-  35% {
-    opacity: 1;
-  }
-  70% {
-    left: 120%;
-    opacity: 0;
-  }
-  100% {
-    left: 120%;
-    opacity: 0;
-  }
-}
+   :root {
+     --primary: #b8860b;
+     --primary-dark: #8c6a08;
+     --secondary: #3a2a1f;
+     --bg-light: #faf7f2;
+     --text-dark: #222;
+     --text-muted: #666;
+     --white: #ffffff;
+   }
+   
+   .jwp-premium-page {
+     color: var(--text-dark);
+     background: var(--bg-light);
+     font-family: 'Poppins', sans-serif;
+     overflow: hidden;
+   }
+   
+   .jwp-premium-page *,
+   .jwp-premium-page *::before,
+   .jwp-premium-page *::after {
+     box-sizing: border-box;
+   }
+   
+   .jwp-premium-page .jwp-container {
+     width: min(1120px, calc(100% - 48px));
+     margin: 0 auto;
+   }
+   
+   .jwp-premium-page .jwp-eyebrow {
+     display: inline-block;
+     color: var(--primary-dark);
+     font-size: 10px;
+     font-weight: 600;
+     letter-spacing: 3px;
+     line-height: 1.8;
+     text-transform: uppercase;
+   }
+   
+   /* ---------- Hero ---------- */
+   .jwp-premium-hero {
+     position: relative;
+     min-height: 560px;
+     display: flex;
+     align-items: center;
+     color: var(--white);
+     background:
+       linear-gradient(90deg, rgba(25, 17, 12, 0.92) 0%, rgba(35, 24, 17, 0.72) 50%, rgba(35, 24, 17, 0.24) 100%),
+       linear-gradient(0deg, rgba(24, 16, 11, 0.42), transparent 45%),
+       url('/hero.jpg') center 44% / cover no-repeat,
+       var(--secondary);
+   }
+   
+   .jwp-premium-hero-overlay {
+     position: absolute;
+     inset: 22px;
+     border: 1px solid rgba(255, 255, 255, 0.25);
+     pointer-events: none;
+   }
+   
+   .jwp-premium-hero-inner {
+     position: relative;
+     z-index: 1;
+     width: min(780px, calc(100% - 64px));
+     margin: 0 auto;
+     padding: 100px 0 85px;
+   }
+   
+   .jwp-premium-page .jwp-hero-eyebrow {
+     color: #e5c77d;
+   }
+   
+   .jwp-premium-page .jwp-hero-rule {
+     display: block;
+     width: 58px;
+     height: 1px;
+     margin: 24px 0;
+     background: var(--primary);
+   }
+   
+   .jwp-premium-hero h1 {
+     margin: 0;
+     font-family: 'Playfair Display', serif;
+     font-weight: 500;
+     letter-spacing: -0.8px;
+     font-size: clamp(44px, 5.6vw, 70px);
+     line-height: 1.08;
+   }
+   
+   .jwp-premium-hero h1 em {
+     color: var(--primary);
+     font-weight: 500;
+   }
+   
+   .jwp-premium-hero p {
+     max-width: 580px;
+     margin: 24px 0 0;
+     color: rgba(255, 255, 255, 0.82);
+     font-size: 14px;
+     font-weight: 300;
+     line-height: 2;
+   }
+   
+   .jwp-premium-page .jwp-hero-actions {
+     display: flex;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 28px;
+     margin-top: 34px;
+   }
+   
+   .jwp-premium-page .jwp-hero-footnote {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     margin-top: 55px;
+     color: rgba(255, 255, 255, 0.65);
+     font-size: 9px;
+     letter-spacing: 1.2px;
+     text-transform: uppercase;
+   }
+   
+   .jwp-premium-page .jwp-hero-footnote span {
+     width: 25px;
+     height: 1px;
+     background: var(--primary);
+   }
+   
+   .jwp-premium-page .jwp-hero-side-note {
+     position: absolute;
+     right: 43px;
+     bottom: 55px;
+     color: rgba(255, 255, 255, 0.68);
+     font-size: 9px;
+     letter-spacing: 3px;
+     writing-mode: vertical-rl;
+   }
+   
+   /* ---------- Buttons ---------- */
+   .jwp-premium-page .jwp-button {
+     min-height: 52px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     gap: 20px;
+     padding: 0 25px;
+     border: 1px solid transparent;
+     text-decoration: none;
+     font: 500 11px 'Poppins', sans-serif;
+     letter-spacing: 0.7px;
+     transition: 0.25s ease;
+     cursor: pointer;
+   }
+   
+   .jwp-premium-page .jwp-button-gold {
+     color: #fff;
+     background: var(--primary);
+     border-color: var(--primary);
+   }
+   .jwp-premium-page .jwp-button-gold:hover {
+     background: var(--primary-dark);
+     border-color: var(--primary-dark);
+     transform: translateY(-2px);
+   }
+   
+   .jwp-premium-page .jwp-text-link {
+     color: #fff;
+     font-size: 11px;
+     text-decoration: none;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+     padding-bottom: 7px;
+   }
+   .jwp-premium-page .jwp-text-link span {
+     color: #e5c77d;
+     margin-left: 8px;
+   }
+   
+   /* ---------- Features strip ---------- */
+   .jwp-premium-includes {
+     background: #f0e9de;
+     border-bottom: 1px solid #e6dccd;
+   }
+   
+   .jwp-premium-includes-inner {
+     display: grid;
+     grid-template-columns: 1fr 1.4fr;
+     gap: 48px;
+     align-items: center;
+     padding: 44px 0;
+   }
+   
+   .jwp-premium-includes-head .jwp-eyebrow {
+     margin-bottom: 8px;
+   }
+   
+   .jwp-premium-includes-head h2 {
+     margin: 0;
+     color: var(--secondary);
+     font-family: 'Playfair Display', serif;
+     font-weight: 500;
+     letter-spacing: -0.5px;
+     font-size: clamp(24px, 2.6vw, 30px);
+     line-height: 1.2;
+   }
+   .jwp-premium-includes-head h2 em {
+     color: var(--primary);
+     font-weight: 500;
+   }
+   
+   .jwp-premium-includes-list {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 0 32px;
+     border-top: 1px solid #e0d4c0;
+   }
+   
+   .jwp-premium-includes-list li {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     padding: 12px 0;
+     color: var(--secondary);
+     font-size: 12px;
+     border-bottom: 1px solid #e0d4c0;
+   }
+   
+   .jwp-premium-includes-list li span {
+     color: var(--primary);
+     font-size: 13px;
+     flex-shrink: 0;
+   }
+   
+   /* ---------- Section rhythm ---------- */
+   .jwp-premium-page .jwp-section {
+     padding: 100px 0;
+   }
+   .jwp-premium-page .jwp-section-light {
+     background: var(--bg-light);
+   }
+   
+   .jwp-premium-page .jwp-section-heading {
+     max-width: 640px;
+     margin: 0 auto 48px;
+     text-align: center;
+   }
+   .jwp-premium-page .jwp-section-heading h2 {
+     margin: 12px 0 0;
+     color: var(--secondary);
+     font-family: 'Playfair Display', serif;
+     font-weight: 500;
+     letter-spacing: -0.6px;
+     font-size: clamp(30px, 3.4vw, 42px);
+     line-height: 1.2;
+   }
+   .jwp-premium-page .jwp-section-heading h2 em {
+     color: var(--primary);
+     font-weight: 500;
+   }
+   .jwp-premium-page .jwp-section-heading > p {
+     max-width: 540px;
+     margin: 14px auto 0;
+     color: var(--text-muted);
+     font-size: 12px;
+     line-height: 1.9;
+     font-weight: 300;
+   }
+   
+   /* ---------- Form ---------- */
+   .jwp-premium-form {
+     max-width: 1080px;
+     margin: 0 auto;
+   }
+   
+   .jwp-premium-form-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 0 36px;
+     padding: 40px 44px 44px;
+     background: rgba(255, 255, 255, 0.72);
+     border: 1px solid #e8dece;
+   }
+   
+   .jwp-premium-form-col {
+     display: flex;
+     flex-direction: column;
+     gap: 18px;
+     padding-top: 6px;
+   }
+   
+   .jwp-premium-form-col-title {
+     display: block;
+     margin-bottom: 2px;
+     color: var(--primary-dark);
+     font-size: 9.5px;
+     font-weight: 600;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     border-bottom: 1px solid #e8dece;
+     padding-bottom: 10px;
+   }
+   
+   .jwp-premium-field {
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+   }
+   
+   .jwp-premium-field > span {
+     color: var(--secondary);
+     font-size: 10px;
+     font-weight: 500;
+     letter-spacing: 1.4px;
+     text-transform: uppercase;
+   }
+   
+   .jwp-premium-optional {
+     color: var(--text-muted);
+     font-style: normal;
+     font-weight: 400;
+     letter-spacing: 0.4px;
+     text-transform: none;
+     font-size: 10px;
+   }
+   
+   .jwp-premium-field input,
+   .jwp-premium-field select,
+   .jwp-premium-field textarea {
+     width: 100%;
+     min-height: 48px;
+     padding: 12px 14px;
+     background: #fff;
+     border: 1px solid #ded4c6;
+     color: var(--text-dark);
+     font: 400 12.5px 'Poppins', sans-serif;
+     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+   }
+   
+   .jwp-premium-field input:focus,
+   .jwp-premium-field select:focus {
+     outline: none;
+     border-color: var(--primary);
+     box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.12);
+   }
+   
+   .jwp-premium-form-col-note {
+     margin: 4px 0 0;
+     color: var(--text-muted);
+     font-size: 10px;
+     font-weight: 300;
+     line-height: 1.7;
+   }
+   
+   .jwp-premium-form-actions {
+     margin-top: 30px;
+     text-align: center;
+   }
+   
+   .jwp-premium-form-actions .jwp-button {
+     min-width: 260px;
+   }
+   
+   .jwp-premium-form-note {
+     margin: 16px 0 0;
+     color: var(--text-muted);
+     font-size: 10px;
+     letter-spacing: 0.4px;
+   }
+   
+   /* ---------- Payment card ---------- */
+   .jwp-premium-payment-card {
+     max-width: 720px;
+     margin: 0 auto;
+     padding: 44px 44px 36px;
+     background: var(--bg-light);
+     border: 1px solid #e8dece;
+   }
+   
+   .jwp-premium-payment-head {
+     text-align: center;
+     padding-bottom: 28px;
+     margin-bottom: 28px;
+     border-bottom: 1px solid #e8dece;
+   }
+   
+   .jwp-premium-payment-head h3 {
+     margin: 10px 0 12px;
+     color: var(--secondary);
+     font-family: 'Playfair Display', serif;
+     font-weight: 500;
+     letter-spacing: -0.5px;
+     font-size: clamp(24px, 2.8vw, 32px);
+     line-height: 1.2;
+   }
+   .jwp-premium-payment-head h3 em {
+     color: var(--primary);
+     font-weight: 500;
+   }
+   .jwp-premium-payment-head p {
+     max-width: 460px;
+     margin: 0 auto;
+     color: var(--text-muted);
+     font-size: 12px;
+     font-weight: 300;
+     line-height: 1.85;
+   }
+   .jwp-premium-payment-head p strong {
+     color: var(--secondary);
+     font-weight: 600;
+   }
+   
+   .jwp-premium-payment-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /* centers children inside */
+    justify-content: center;     /* centers children vertically (if height set) */
+    max-width: 640px;            /* ← needed for margin:auto to work */
+    margin: 0 auto;              /* ← centers the box in its parent */
+    width: 100%;
+    padding: 32px 24px;
+   }
+   
+   .jwp-premium-secure {
+     margin-top: 28px;
+     padding-top: 24px;
+     border-top: 1px solid #e8dece;
+     text-align: center;
+     color: var(--text-muted);
+     font-size: 10px;
+     letter-spacing: 0.5px;
+   }
+   .jwp-premium-secure span {
+     margin-right: 6px;
+     color: var(--primary);
+   }
+   
+   /* ---------- Responsive ---------- */
+   @media (max-width: 900px) {
+     .jwp-premium-hero {
+       min-height: 520px;
+     }
+     .jwp-premium-includes-inner {
+       grid-template-columns: 1fr;
+       gap: 24px;
+       padding: 36px 0;
+     }
+     .jwp-premium-form-grid {
+       grid-template-columns: 1fr 1fr;
+       gap: 18px 24px;
+       padding: 32px;
+     }
+     .jwp-premium-form-col:nth-child(3) {
+       grid-column: 1 / -1;
+       padding-top: 12px;
+       border-top: 1px solid #e8dece;
+     }
+   }
+   
+   @media (max-width: 600px) {
+     .jwp-premium-page .jwp-container {
+       width: min(100% - 34px, 480px);
+     }
+     .jwp-premium-hero {
+       min-height: 540px;
+       background-position: 58% center;
+     }
+     .jwp-premium-hero-overlay {
+       inset: 10px;
+     }
+     .jwp-premium-hero-inner {
+       width: calc(100% - 52px);
+       padding: 88px 0 68px;
+     }
+     .jwp-premium-hero h1 {
+       font-size: clamp(38px, 10vw, 54px);
+     }
+     .jwp-premium-hero p {
+       font-size: 12px;
+       line-height: 1.9;
+     }
+     .jwp-premium-page .jwp-hero-actions {
+       align-items: flex-start;
+       flex-direction: column;
+       gap: 20px;
+     }
+     .jwp-premium-page .jwp-hero-footnote {
+       margin-top: 44px;
+       font-size: 8px;
+     }
+     .jwp-premium-page .jwp-hero-side-note {
+       right: 17px;
+       bottom: 25px;
+       font-size: 7px;
+     }
+     .jwp-premium-page .jwp-section {
+       padding: 70px 0;
+     }
+     .jwp-premium-page .jwp-section-heading {
+       margin-bottom: 32px;
+     }
+     .jwp-premium-page .jwp-section-heading h2 {
+       font-size: 32px;
+     }
+     .jwp-premium-includes-list {
+       grid-template-columns: 1fr;
+     }
+     .jwp-premium-form-grid {
+       grid-template-columns: 1fr;
+       gap: 22px 0;
+       padding: 26px 22px;
+     }
+     .jwp-premium-form-col:nth-child(3) {
+       padding-top: 20px;
+     }
+     .jwp-premium-form-actions .jwp-button {
+       width: 100%;
+       min-width: 0;
+     }
+     .jwp-premium-payment-card {
+       padding: 30px 22px 26px;
+     }
+   }

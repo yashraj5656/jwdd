@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState , useEffect} from "react";
+
 
 export default function PremiumPayment({ formData }) {
   const [loading, setLoading] = useState(false);
@@ -28,7 +29,7 @@ export default function PremiumPayment({ formData }) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        amount: 9999,
+        amount: 7999,
         formData,
       }),
     });
@@ -75,14 +76,17 @@ export default function PremiumPayment({ formData }) {
 
     setLoading(false);
   };
-
+  useEffect(() => {
+    // Scroll to top when this component mounts
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   return (
-    <button
-      className="btn-primary large"
-      onClick={handlePayment}
-      disabled={loading}
-    >
-      {loading ? "Processing..." : "Pay ₹9,999 & Activate Premium"}
-    </button>
+<button
+  className="jwp-button jwp-button-gold jwp-button-pay"
+  onClick={handlePayment}
+  disabled={loading}
+>
+  {loading ? "Processing…" : "Pay ₹9,999 & Activate Premium"}
+</button>
   );
 }

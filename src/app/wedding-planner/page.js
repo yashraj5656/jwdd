@@ -1,339 +1,226 @@
-"use client";
-import Head from "next/head";
+// src/app/wedding-planner/page.js
 import Link from "next/link";
-import './p.css';
+import { connectDB } from "@/lib/mongodb";
+import Listing from "@/models/Listing";
+import "./p.css";
 
-export default function WeddingPlannerPage() {
+export const metadata = {
+  title: "Wedding Planners in Rajasthan | Verified & Trusted Experts",
+  description:
+    "Explore verified wedding planners in Rajasthan with services, ratings, photos and direct WhatsApp contact.",
+};
+
+const toArray = (str) =>
+  (str || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+const profileHref = (listing) => `/planners/${listing.slug || listing._id}`;
+
+const waLink = (phone) => {
+  const digits = (phone || "").replace(/\D/g, "");
+  return digits ? `https://wa.me/${digits}` : null;
+};
+
+const renderStars = (rating) => {
+  const full = Math.floor(parseFloat(rating) || 0);
+  return "★★★★★".slice(0, full) + "☆☆☆☆☆".slice(0, 5 - full);
+};
+
+// ✅ async Server Component — no getServerSideProps needed
+export default async function WeddingPlannerPage() {
+  await connectDB();
+
+  const all = await Listing.aggregate([
+    { $match: { status: "paid" } },
+    {
+      $addFields: {
+        planRank: {
+          $switch: {
+            branches: [
+              { case: { $eq: ["$plan", "premium"] }, then: 1 },
+              { case: { $eq: ["$plan", "featured"] }, then: 2 },
+              { case: { $eq: ["$plan", "starter"] }, then: 3 },
+            ],
+            default: 4,
+          },
+        },
+      },
+    },
+    { $sort: { planRank: 1, createdAt: -1 } },
+  ]);
+
+    const featured = JSON.parse(
+      JSON.stringify(all.filter((l) => l.plan === "premium" || l.plan === "featured"))
+    );
+    const planners = JSON.parse(
+      JSON.stringify(all.filter((l) => l.plan === "starter"))
+    );
   return (
-    <>
-      <Head>
-        <title>Wedding Planners in Rajasthan | Verified & Trusted Experts</title>
-        <meta
-          name="description"
-          content="Explore verified wedding planners in Rajasthan with services, ratings, photos and direct WhatsApp contact."
-        />
-      </Head>
+    <div className="jwp-home jwp-planners-page">
+      <main>
+        {/* ---------- Featured planners (premium only) ---------- */}
+        <section className="jwp-section jwp-planners-section" id="featured">
+          <div className="jwp-container">
+            <div className="jwp-section-heading">
+              <span className="jwp-eyebrow">A handpicked place to begin</span>
+              <h2>
+                Featured <em>Planners</em>
+              </h2>
+              <p>
+                Handpicked premium planners trusted by couples across Rajasthan.
+              </p>
+            </div>
 
-      {/*<header className="heroo">
-        <div className="hero-contenttt">
-        <p className="hero-subtitleee"></p>
+            <div className="jwp-featured-grid">
+              {featured.map((planner, index) => {
+                const wa = waLink(planner.phone);
+                return (
+                  <article className="jwp-planner-feature" key={planner._id}>
+                    <span className="jwp-planner-number">
+                      0{index + 1}
+                    </span>
 
-          <h1>Wedding Planners in Jaipur</h1>
-          <p>
-          Compare <strong>verified wedding planners</strong> in Jaipur. View
-          services, ratings, portfolios & connect instantly.
-          </p>
+                    <div className="jwp-planner-feature-image">
+                      <img
+                        src={planner.heroImage || "/plannerhero/Atelier.jpg"}
+                        alt={`${planner.name} ${planner.city || ""}`}
+                      />
+                      <span className="jwp-image-corner">✧</span>
+                    </div>
 
+                    <div className="jwp-planner-feature-body">
+                      <div className="jwp-planner-feature-head">
+                        <span className="jwp-eyebrow">Featured Planner</span>
+                        {planner.plan === "premium" && (
+                          <span className="jwp-verified">✓ Verified</span>
+                        )}
+                      </div>
 
-        </div>
-      </header>*/}
+                      <h3>{planner.name}</h3>
 
-  <section className="planner-page">
-  <div className="container">
+                      <div className="jwp-planner-rating">
+                        <span className="jwp-stars">
+                          {renderStars(planner.rating)}
+                        </span>
+                        <span className="jwp-rating-meta">
+                          {planner.rating || "–"} ·{" "}
+                          {planner.weddingsPlanned
+                            ? `${planner.weddingsPlanned}+ weddings`
+                            : "weddings"}
+                        </span>
+                      </div>
 
+                      <p className="jwp-planner-desc">
+                        {planner.reason ||
+                          `${planner.name} is a premium wedding planner in ${
+                            planner.city || "Rajasthan"
+                          }.`}
+                      </p>
 
-    {/* =========================
-        FEATURED PLANNERS
-    ========================== */}
-    <section className="featured-section">
-      <h2 className="section-title">
-         Featured Planners
-      </h2>
-      <p className="section-subtitle">
-        Handpicked premium planners trusted by couples across Rajasthan
-      </p>
+                      <ul className="jwp-planner-services">
+                        {toArray(planner.services).map((s) => (
+                          <li key={s}>
+                            <span>✧</span> {s}
+                          </li>
+                        ))}
+                      </ul>
 
-      <div className="planner-grid featured-grid">
-        {/* FEATURED CARD */}
-        <div className="planner-card featured">
-         <span className="ribbon">Featured</span>
-
-          <div className="planner-image">
-            <img src="/plannerhero/GoldenVows.jpg" alt="GoldenVows Events Jaipur" />
+                      <div className="jwp-planner-actions">
+                        <Link
+                          href={profileHref(planner)}
+                          className="jwp-button jwp-button-gold"
+                        >
+                          View Details <span>→</span>
+                        </Link>
+                        {wa && (
+                          <a
+                            href={wa}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="jwp-button jwp-button-outline"
+                          >
+                            WhatsApp
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
           </div>
+        </section>
 
-          <div className="planner-content">
-            <div className="planner-header">
-              <h2>GoldenVows Events</h2>
-              <span className="badge verified">Verified Planner</span>
+        {/* ---------- All planners ---------- */}
+        <section className="jwp-section jwp-section-light" id="all-planners">
+          <div className="jwp-container">
+            <div className="jwp-section-heading">
+              <span className="jwp-eyebrow">Every celebration, considered</span>
+              <h2>
+                All Wedding Planners <em>in Jaipur</em>
+              </h2>
+              <p>
+                Browse the full directory of Rajasthan-based wedding planners,
+                each with their own signature style.
+              </p>
             </div>
 
-            <div className="planner-rating">
-              ★★★★★ <span>4.9 • 120+ weddings</span>
+            <div className="jwp-planner-grid">
+              {planners.map((planner, index) => (
+                <article className="jwp-planner-card" key={planner._id}>
+                  <div className="jwp-planner-number">
+                    {String(index + featured.length + 1).padStart(2, "0")}
+                  </div>
+                  <div className="jwp-planner-ornament">✧</div>
+                  <h3>{planner.name}</h3>
+
+                  <div className="jwp-planner-rating">
+                    <span className="jwp-stars">
+                      {renderStars(planner.rating)}
+                    </span>
+                    <span className="jwp-rating-meta">
+                      {planner.rating || "–"} ·{" "}
+                      {planner.weddingsPlanned
+                        ? `${planner.weddingsPlanned}+ weddings`
+                        : "weddings"}
+                    </span>
+                  </div>
+
+                  <p>
+                    {planner.reason ||
+                      `${
+                        planner.name
+                      } plans weddings in ${planner.city || "Rajasthan"}.`}
+                  </p>
+
+                  <ul className="jwp-planner-services">
+                    {toArray(planner.services).map((s) => (
+                      <li key={s}>
+                        <span>✧</span> {s}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    href={profileHref(planner)}
+                    className="jwp-card-link"
+                  >
+                    View Details <span>→</span>
+                  </Link>
+                </article>
+              ))}
             </div>
 
-            <p className="planner-desc">
-              Luxury wedding planners specializing in royal destination
-              weddings, premium décor & flawless coordination.
-            </p>
-
-            <ul className="planner-services">
-              <li>💍 Complete Wedding Planning</li>
-              <li>🎨 Theme & Décor Design</li>
-              <li>🍽 Catering Management</li>
-              <li>🎶 Entertainment</li>
-            </ul>
-
-            <div className="planner-act">
-              <Link href="/planners/GoldenVows-events" className="btn-pri">
-                View Details
-              </Link>
-              <a href="https://wa.me/91XXXXXXXXXX" className="btn-out">
-                WhatsApp
+            <div className="jwp-centered-action">
+              <a href="#featured" className="jwp-button jwp-button-outline">
+                Back to Featured <span>↑</span>
               </a>
             </div>
           </div>
-        </div>
-</div>
-
-      
-<div className="planner-grid featured-grid" style={{marginTop:'2rem'}}>
-      <div className="planner-card featured">
-         <span className="ribbon">Featured</span>
-
-          <div className="planner-image">
-            <img src="/plannerhero/Atelierhero.jpg" alt="Atelier Events Jaipur" />
-          </div>
-
-          <div className="planner-content">
-            <div className="planner-header">
-              <h2>Atelier Events</h2>
-              {/*<span className="badge verified">Verified Planner</span>*/}
-            </div>
-
-            <div className="planner-rating">
-              ★★★★★ <span>4.1 • 80+ weddings</span>
-            </div>
-
-            <p className="planner-desc">
-            Elite wedding planners crafting regal destination weddings with bespoke décor and seamless execution.
-            </p>
-
-            <ul className="planner-services">
-              <li>💍 Complete Wedding Planning</li>
-              <li>🎨 Theme & Décor Design</li>
-              <li>🍽 Catering Management</li>
-              <li>🎶 Entertainment</li>
-            </ul>
-
-            <div className="planner-act">
-              <Link href="/planners/Atelier-events" className="btn-pri">
-                View Details
-              </Link>
-              <a href="https://wa.me/91XXXXXXXXXX" className="btn-out">
-                WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        </div>
-
-    </section>
-
-
-
-    {/* =========================
-        ALL PLANNERS
-    ========================== */}
-    <section className="normal-section">
-      <h2 className="section-title">
-        All Wedding Planners in Jaipur
-      </h2>
-
-      <div className="planner-grid">
-        <div className="planner-card">
-          <div className="planner-image">
-            <img src="/plannerhero/Atelier.jpg" alt="RajViva Events" />
-          </div>
-
-          <div className="planner-content">
-            <h2>RajViva Events</h2>
-
-            <div className="planner-rating">
-              ★★★★☆ <span>3.8 • 60+ weddings</span>
-            </div>
-
-            <p className="planner-desc">
-              Creative and budget-friendly wedding planning with a focus on
-              personalization.
-            </p>
-
-            <ul className="planner-services">
-              <li>🎊 Wedding Events</li>
-              <li>🎨 Décor</li>
-              <li>📋 Vendor Management</li>
-            </ul>
-
-            <div className="planner-actions">
-              <Link href="/planners/Profile/RajViva-Events" className="btn-primary">
-                View Details
-              </Link>
-            </div>
-          </div>
-        </div>
-
-
-
-
-        <div className="planner-card">
-          <div className="planner-image">
-            <img src="/plannerhero/Atelier.jpg" alt="Shaadi Sutra Co." />
-          </div>
-
-          <div className="planner-content">
-            <h2>Shaadi Sutra Co.</h2>
-
-            <div className="planner-rating">
-              ★★★★☆ <span>3.4 • 60+ weddings</span>
-            </div>
-
-            <p className="planner-desc">
-            Specialists in luxury destination weddings, offering opulent styling and end-to-end flawless planning.
-            </p>
-
-            <ul className="planner-services">
-              <li>🎊 Wedding Events</li>
-              <li>🎨 Décor</li>
-              <li>📋 Vendor Management</li>
-            </ul>
-
-            <div className="planner-actions">
-              <Link href="/planners/Profile/Shaadi-Sutra-Co" className="btn-primary">
-                View Details
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="planner-card">
-          <div className="planner-image">
-            <img src="/plannerhero/Atelier.jpg" alt="Anantara Wedding Co." />
-          </div>
-
-          <div className="planner-content">
-            <h2>Anantara Wedding Co.</h2>
-
-            <div className="planner-rating">
-              ★★★★☆ <span>3.4 • 80+ weddings</span>
-            </div>
-
-            <p className="planner-desc">
-            Royal wedding experts delivering grand celebrations with premium décor and meticulous coordination.
-            </p>
-
-            <ul className="planner-services">
-              <li>🎊 Wedding Events</li>
-              <li>🎨 Décor</li>
-              <li>📋 Vendor Management</li>
-            </ul>
-
-            <div className="planner-actions">
-              <Link href="/planners/Profile/Anantara-Wedding-Co" className="btn-primary">
-                View Details
-              </Link>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div className="planner-card">
-          <div className="planner-image">
-            <img src="/plannerhero/Atelier.jpg" alt="Saffron Aura Events" />
-          </div>
-
-          <div className="planner-content">
-            <h2>Saffron Aura Events</h2>
-
-            <div className="planner-rating">
-              ★★★★☆ <span>3.4 • 60+ weddings</span>
-            </div>
-
-            <p className="planner-desc">
-            High-end wedding planners known for elegant destination weddings and impeccable event management.
-            </p>
-
-            <ul className="planner-services">
-              <li>🎊 Wedding Events</li>
-              <li>🎨 Décor</li>
-              <li>📋 Vendor Management</li>
-            </ul>
-
-            <div className="planner-actions">
-              <Link href="/planners/Profile/Saffron-Aura-Events" className="btn-primary">
-                View Details
-              </Link>
-            </div>
-          </div>
-        </div>
-
-
-        <div className="planner-card">
-          <div className="planner-image">
-            <img src="/plannerhero/Atelier.jpg" alt="Velvet Knot Weddings" />
-          </div>
-
-          <div className="planner-content">
-            <h2>Velvet Knot Weddings</h2>
-
-            <div className="planner-rating">
-              ★★★★☆ <span>3.4 • 60+ weddings</span>
-            </div>
-
-            <p className="planner-desc">
-            Creators of majestic weddings, blending royal aesthetics, luxury décor, and perfect execution.
-            </p>
-
-            <ul className="planner-services">
-              <li>🎊 Wedding Events</li>
-              <li>🎨 Décor</li>
-              <li>📋 Vendor Management</li>
-            </ul>
-
-            <div className="planner-actions">
-              <Link href="/planners/Profile/Velvet-Knot-Weddings" className="btn-primary">
-                View Details
-              </Link>
-            </div>
-          </div>
-        </div>
-
-
-        {/* More normal cards */}
-        <div className="planner-card">
-          <div className="planner-image">
-            <img src="/plannerhero/Atelier.jpg" alt="Mandap & Memories" />
-          </div>
-
-          <div className="planner-content">
-            <h2>Mandap & Memories</h2>
-
-            <div className="planner-rating">
-              ★★★★☆ <span>3.8 • 60+ weddings</span>
-            </div>
-
-            <p className="planner-desc">
-            Premium wedding planning services focused on destination weddings with refined décor and precision.
-            </p>
-
-            <ul className="planner-services">
-              <li>🎊 Wedding Events</li>
-              <li>🎨 Décor</li>
-              <li>📋 Vendor Management</li>
-            </ul>
-
-            <div className="planner-actions">
-              <Link href="/planners/Profile/Mandap-&-Memories" className="btn-primary">
-                View Details
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</section>
-
-    </>
+        </section>
+      </main>
+    </div>
   );
 }

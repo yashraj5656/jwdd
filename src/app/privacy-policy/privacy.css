@@ -1,0 +1,406 @@
+/* =========================================================
+   privacy.css — Privacy Policy page
+   Aligned with the JaipurWeddingPlanner home page aesthetic
+   ========================================================= */
+
+   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap');
+
+   :root {
+     --primary: #b8860b;
+     --primary-dark: #8c6a08;
+     --secondary: #3a2a1f;
+     --bg-light: #faf7f2;
+     --text-dark: #222;
+     --text-muted: #666;
+     --white: #ffffff;
+   }
+   
+   .jwp-privacy-page {
+     color: var(--text-dark);
+     background: var(--bg-light);
+     font-family: 'Poppins', sans-serif;
+     overflow: hidden;
+   }
+   
+   .jwp-privacy-page *,
+   .jwp-privacy-page *::before,
+   .jwp-privacy-page *::after {
+     box-sizing: border-box;
+   }
+   
+   .jwp-privacy-page .jwp-container {
+     width: min(1120px, calc(100% - 48px));
+     margin: 0 auto;
+   }
+   
+   .jwp-privacy-page .jwp-eyebrow {
+     display: inline-block;
+     color: var(--primary-dark);
+     font-size: 10px;
+     font-weight: 600;
+     letter-spacing: 3px;
+     line-height: 1.8;
+     text-transform: uppercase;
+   }
+   
+   /* ---------- Hero ---------- */
+   .jwp-privacy-hero {
+     position: relative;
+     min-height: 460px;
+     display: flex;
+     align-items: center;
+     color: var(--white);
+     background:
+       linear-gradient(90deg, rgba(25, 17, 12, 0.92) 0%, rgba(35, 24, 17, 0.74) 50%, rgba(35, 24, 17, 0.28) 100%),
+       linear-gradient(0deg, rgba(24, 16, 11, 0.42), transparent 45%),
+       url('/hero.jpg') center 44% / cover no-repeat,
+       var(--secondary);
+   }
+   
+   .jwp-privacy-hero-overlay {
+     position: absolute;
+     inset: 22px;
+     border: 1px solid rgba(255, 255, 255, 0.22);
+     pointer-events: none;
+   }
+   
+   .jwp-privacy-hero-inner {
+     position: relative;
+     z-index: 1;
+     width: min(720px, calc(100% - 64px));
+     margin: 0 auto;
+     padding: 90px 0 78px;
+   }
+   
+   .jwp-privacy-page .jwp-hero-eyebrow {
+     color: #e5c77d;
+   }
+   
+   .jwp-privacy-page .jwp-hero-rule {
+     display: block;
+     width: 58px;
+     height: 1px;
+     margin: 22px 0;
+     background: var(--primary);
+   }
+   
+   .jwp-privacy-hero h1 {
+     margin: 0;
+     font-family: 'Playfair Display', serif;
+     font-weight: 500;
+     letter-spacing: -0.8px;
+     font-size: clamp(42px, 5.2vw, 64px);
+     line-height: 1.08;
+   }
+   
+   .jwp-privacy-hero h1 em {
+     color: var(--primary);
+     font-weight: 500;
+   }
+   
+   .jwp-privacy-hero p {
+     max-width: 520px;
+     margin: 20px 0 0;
+     color: rgba(255, 255, 255, 0.82);
+     font-size: 13.5px;
+     font-weight: 300;
+     line-height: 1.95;
+   }
+   
+   /* ---------- Section rhythm ---------- */
+   .jwp-privacy-page .jwp-section {
+     padding: 90px 0 100px;
+   }
+   .jwp-privacy-page .jwp-section-light {
+     background: var(--bg-light);
+   }
+   
+   /* ---------- Content column ---------- */
+   .jwp-privacy-content {
+     max-width: 740px;
+     margin: 0 auto;
+   }
+   
+   /* ---------- Policy block ---------- */
+   .jwp-privacy-block {
+     padding: 0 0 44px;
+     margin-bottom: 40px;
+     border-bottom: 1px solid #e8dece;
+   }
+   
+   .jwp-privacy-block:last-of-type {
+     padding-bottom: 0;
+     margin-bottom: 44px;
+     border-bottom: none;
+   }
+   
+   .jwp-privacy-block-head {
+     display: flex;
+     align-items: baseline;
+     gap: 20px;
+     margin-bottom: 20px;
+   }
+   
+   .jwp-privacy-index {
+     color: var(--primary);
+     font-family: 'Playfair Display', serif;
+     font-size: 15px;
+     font-weight: 600;
+     letter-spacing: 0.5px;
+     flex-shrink: 0;
+     padding-top: 4px;
+   }
+   
+   .jwp-privacy-block h2 {
+     margin: 0;
+     color: var(--secondary);
+     font-family: 'Playfair Display', serif;
+     font-weight: 500;
+     letter-spacing: -0.5px;
+     font-size: clamp(24px, 2.6vw, 30px);
+     line-height: 1.25;
+   }
+   
+   .jwp-privacy-block h2 em {
+     color: var(--primary);
+     font-weight: 500;
+   }
+   
+   /* ---------- Paragraphs ---------- */
+   .jwp-privacy-para {
+     margin: 0;
+     color: #5d554e;
+     font-family: 'Poppins', sans-serif;
+     font-size: 13px;
+     font-weight: 300;
+     line-height: 2;
+     padding-left: 34px;
+   }
+   
+   /* ---------- Lists ---------- */
+   .jwp-privacy-list {
+     list-style: none;
+     margin: 0;
+     padding: 0 0 0 34px;
+     display: flex;
+     flex-direction: column;
+     gap: 0;
+   }
+   
+   .jwp-privacy-list li {
+     display: flex;
+     align-items: flex-start;
+     gap: 12px;
+     padding: 11px 0;
+     color: #5d554e;
+     font-size: 13px;
+     font-weight: 300;
+     line-height: 1.85;
+     border-bottom: 1px solid #f0e9de;
+   }
+   
+   .jwp-privacy-list li:last-child {
+     border-bottom: none;
+   }
+   
+   .jwp-privacy-list li span {
+     color: var(--primary);
+     font-size: 14px;
+     flex-shrink: 0;
+     line-height: 1.7;
+   }
+   
+   /* ---------- Contact card ---------- */
+   .jwp-privacy-contact-card {
+     display: flex;
+     align-items: center;
+     gap: 18px;
+     margin: 20px 0 0 34px;
+     padding: 20px 24px;
+     background: rgba(255, 255, 255, 0.72);
+     border: 1px solid #e8dece;
+     text-decoration: none;
+     transition: border-color 0.25s ease, transform 0.25s ease,
+       box-shadow 0.25s ease;
+   }
+   
+   .jwp-privacy-contact-card:hover {
+     border-color: rgba(184, 134, 11, 0.55);
+     transform: translateY(-2px);
+     box-shadow: 0 10px 25px rgba(58, 42, 31, 0.08);
+   }
+   
+   .jwp-privacy-contact-icon {
+     width: 40px;
+     height: 40px;
+     display: grid;
+     place-items: center;
+     flex-shrink: 0;
+     color: var(--primary-dark);
+     border: 1px solid #d9c18b;
+     font-family: 'Playfair Display', serif;
+     font-size: 18px;
+   }
+   
+   .jwp-privacy-contact-text {
+     display: flex;
+     flex-direction: column;
+     gap: 4px;
+     flex: 1;
+     min-width: 0;
+   }
+   
+   .jwp-privacy-contact-text strong {
+     color: var(--secondary);
+     font-family: 'Poppins', sans-serif;
+     font-size: 13.5px;
+     font-weight: 600;
+     word-break: break-all;
+   }
+   
+   .jwp-privacy-contact-text em {
+     color: var(--text-muted);
+     font-style: normal;
+     font-size: 10px;
+     letter-spacing: 1.2px;
+     text-transform: uppercase;
+   }
+   
+   .jwp-privacy-contact-arrow {
+     color: var(--primary);
+     font-size: 16px;
+     flex-shrink: 0;
+     transition: transform 0.25s ease;
+   }
+   
+   .jwp-privacy-contact-card:hover .jwp-privacy-contact-arrow {
+     transform: translate(2px, -2px);
+   }
+   
+   /* ---------- Footnote ---------- */
+   .jwp-privacy-footnote {
+     margin-top: 20px;
+     padding-top: 32px;
+     border-top: 1px solid #e8dece;
+     text-align: center;
+   }
+   
+   .jwp-privacy-footnote-rule {
+     display: block;
+     width: 40px;
+     height: 1px;
+     margin: 0 auto 20px;
+     background: var(--primary);
+   }
+   
+   .jwp-privacy-footnote p {
+     margin: 0 auto 14px;
+     max-width: 480px;
+     color: var(--text-muted);
+     font-size: 11.5px;
+     font-weight: 300;
+     line-height: 1.9;
+   }
+   
+   .jwp-privacy-page .jwp-text-link--dark {
+     color: var(--primary-dark);
+     font-size: 10px;
+     font-weight: 600;
+     letter-spacing: 0.5px;
+     text-decoration: none;
+     border-bottom: 1px solid #d7c18d;
+     padding-bottom: 5px;
+     display: inline-block;
+     transition: color 0.2s ease;
+   }
+   
+   .jwp-privacy-page .jwp-text-link--dark:hover {
+     color: var(--primary);
+   }
+   
+   .jwp-privacy-page .jwp-text-link--dark span {
+     margin-left: 8px;
+     color: var(--primary);
+   }
+   
+   /* ---------- Responsive ---------- */
+   @media (max-width: 900px) {
+     .jwp-privacy-hero {
+       min-height: 420px;
+     }
+   }
+   
+   @media (max-width: 600px) {
+     .jwp-privacy-page .jwp-container {
+       width: min(100% - 34px, 480px);
+     }
+     .jwp-privacy-hero {
+       min-height: 440px;
+       background-position: 58% center;
+     }
+     .jwp-privacy-hero-overlay {
+       inset: 10px;
+     }
+     .jwp-privacy-hero-inner {
+       width: calc(100% - 52px);
+       padding: 84px 0 66px;
+     }
+     .jwp-privacy-hero h1 {
+       font-size: clamp(36px, 10vw, 50px);
+     }
+     .jwp-privacy-hero p {
+       font-size: 12px;
+       line-height: 1.9;
+     }
+     .jwp-privacy-page .jwp-section {
+       padding: 66px 0 72px;
+     }
+     .jwp-privacy-block {
+       padding-bottom: 32px;
+       margin-bottom: 28px;
+     }
+     .jwp-privacy-block-head {
+       gap: 14px;
+       margin-bottom: 16px;
+     }
+     .jwp-privacy-block h2 {
+       font-size: 22px;
+     }
+     .jwp-privacy-index {
+       font-size: 13px;
+     }
+     .jwp-privacy-para,
+     .jwp-privacy-list {
+       padding-left: 0;
+       font-size: 12.5px;
+     }
+     .jwp-privacy-list li {
+       font-size: 12.5px;
+       padding: 10px 0;
+     }
+     .jwp-privacy-contact-card {
+       margin-left: 0;
+       padding: 16px 18px;
+       gap: 14px;
+     }
+     .jwp-privacy-contact-text strong {
+       font-size: 12.5px;
+     }
+     .jwp-privacy-contact-icon {
+       width: 34px;
+       height: 34px;
+       font-size: 16px;
+     }
+     .jwp-privacy-footnote {
+       padding-top: 26px;
+     }
+   }
+   
+   @media (prefers-reduced-motion: reduce) {
+     .jwp-privacy-page *,
+     .jwp-privacy-page *::before,
+     .jwp-privacy-page *::after {
+       transition-duration: 0.01ms !important;
+       animation-duration: 0.01ms !important;
+     }
+   }

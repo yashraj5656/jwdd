@@ -1,0 +1,50 @@
+/* --- Destination page additions (append to shared home CSS) --- */
+
+/* 5-step process row (home used 4) */
+.jwp-steps--five { grid-template-columns: repeat(5, 1fr); }
+
+/* Inline quote inside the "why" split layout */
+.jwp-destination-quote--inline {
+  margin: 24px 0 0;
+  padding-left: 18px;
+  border-left: 2px solid var(--primary);
+  color: rgba(255, 255, 255, 0.8);
+  font: italic 14px/1.8 'Playfair Display', serif;
+}
+
+/* Services rendered as planner-style cards: keep them compact */
+.jwp-services-as-cards .jwp-planner-card { min-height: 200px; }
+
+/* Inquiry form footnote */
+.jwp-form-note {
+  margin: 18px 0 0;
+  color: var(--text-muted);
+  font-size: 10px;
+  letter-spacing: 0.7px;
+}
+
+/* Responsive: 5 steps → 2 per row on mobile, 3 on tablet */
+@media (max-width: 900px) {
+  .jwp-steps--five { grid-template-columns: repeat(2, 1fr); row-gap: 22px; }
+}
+@media (max-width: 600px) {
+  .jwp-steps--five { grid-template-columns: 1fr; }
+  .jwp-steps--five li { border-right: 1px solid #d9cbb7; }
+}
+/* Price / cost card — bold price line inside planner cards */
+.jwp-price-card .jwp-price,
+.jwp-planner-card .jwp-price {
+  display: block;
+  margin: 6px 0 10px;
+  color: var(--primary-dark);
+  font: 600 14px/1.5 'Playfair Display', serif;
+  letter-spacing: 0.2px;
+}
+
+/* Slightly emphasize the price card so it reads as a "tier" */
+.jwp-price-card {
+  border-color: #e2cf9e;
+}
+.jwp-price-card:hover {
+  border-color: var(--primary);
+}

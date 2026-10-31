@@ -1,56 +1,125 @@
+// pages/list-your-business.jsx
 "use client";
-import Head from "next/head";
-import './lyb.css';
-import { useEffect, useState } from "react";
 
+import Head from "next/head";
+import { useEffect, useState } from "react";
+import "./lyb.css";
 
 export default function ListYourBusiness() {
-  const [visibility, setVisibility] = useState(10000);
+  const [visibility, setVisibility] = useState(100000);
 
-useEffect(() => {
-  let start = 100000;
-  const end = 199000;
-  const interval = setInterval(() => {
-    start += 30;
-    setVisibility(start);
+  useEffect(() => {
+    let start = 100000;
+    const end = 199000;
+    const interval = setInterval(() => {
+      start += 30;
+      setVisibility(start);
+      if (start >= end) clearInterval(interval);
+    }, 900);
+    return () => clearInterval(interval);
+  }, []);
 
-    if (start >= end) {
-      clearInterval(interval);
-    }
-  }, 900); // speed (ms)
+  const metrics = [
+    {
+      value: "3–5x",
+      title: "More Leads",
+      description:
+        "Get direct calls & WhatsApp inquiries from couples actively searching for wedding planners in Rajasthan.",
+    },
+    {
+      value: `${visibility.toLocaleString()}+`,
+      title: "Monthly Visibility",
+      description:
+        "Your business is showcased to thousands of high-intent couples every month.",
+    },
+    {
+      value: "High ROI",
+      title: "Maximum Returns",
+      description:
+        "One-time yearly listing fee. No commissions. Keep 100% of your booking revenue.",
+    },
+  ];
 
-  return () => clearInterval(interval);
-}, []);
+  const benefits = [
+    {
+      icon: "✧",
+      title: "High-Intent Leads",
+      description:
+        "Couples visiting our platform are actively planning their wedding — not casual browsers.",
+    },
+    {
+      icon: "⌖",
+      title: "Rajasthan-Focused Exposure",
+      description:
+        "Rank for local searches like “Wedding Planner in Jaipur” without heavy ad spending.",
+    },
+    {
+      icon: "✓",
+      title: "Verified Planner Badge",
+      description:
+        "Build instant trust with a verified listing that stands out from competitors.",
+    },
+    {
+      icon: "₹",
+      title: "No Commission",
+      description:
+        "One simple listing fee. You keep 100% of your booking revenue.",
+    },
+  ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const plans = [
+    {
+      name: "Starter",
+      price: "₹999",
+      period: "Per Year",
+      features: [
+        "Basic business listing",
+        "Business name & city",
+        "Listed under Rajasthan planners",
+        "Business Profile Page",
+      ],
+      cta: "Get Started",
+      href: "/list-your-business/starter",
+      featured: false,
+    },
+    {
+      name: "Featured",
+      price: "₹3,499",
+      period: "Per Year",
+      features: [
+        "Featured placement in listings",
+        "Featured planner badge",
+        "WhatsApp & call inquiries",
+        "Portfolio & gallery section",
+        "Priority support",
+      ],
+      cta: "Get Featured",
+      href: "/list-your-business/featured",
+      featured: true,
+    },
+    {
+      name: "Premium",
+      price: "₹7,999",
+      period: "Per Year",
+      features: [
+        "Top placement on homepage",
+        "Featured + Verified badge",
+        "Priority WhatsApp Leads",
+        "SEO-optimized profile page",
+        "First Recommended",
+      ],
+      cta: "Go Premium",
+      href: "/list-your-business/premium",
+      featured: false,
+    },
+  ];
 
-    const form = e.target;
-    const business = form.business.value;
-    const name = form.name.value;
-    const phone = form.phone.value;
-    const city = form.city.value;
-    const experience = form.experience.value;
-
-    const message = `
-Wedding Planner Listing Request 📋
-
-🏢 Business Name: ${business}
-👤 Contact Person: ${name}
-📞 Phone: ${phone}
-📍 City: ${city}
-🎯 Experience: ${experience}
-
-From: JaipurWeddingPlanner.in
-    `;
-
-    const whatsappNumber = "91";
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      message
-    )}`;
-
-    window.open(url, "_blank");
-  };
+  const steps = [
+    "Submit your business details",
+    "We verify your profile & services",
+    "Your listing goes live on our platform",
+    "Receive direct calls & WhatsApp inquiries",
+  ];
 
   return (
     <>
@@ -60,248 +129,175 @@ From: JaipurWeddingPlanner.in
           name="description"
           content="List your wedding planning business on JaipurWeddingPlanner.in and get high-quality leads from couples planning weddings in Rajasthan."
         />
+        <meta name="theme-color" content="#faf7f2" />
       </Head>
 
-
-      <header className="heroo">
-        <div className="hero-contenttt">
-          <p className="hero-subtitleee">Experience Royalty on Your Special Day</p>
-          <h1>List Your Wedding Planning Business</h1>
-          <p>
-          Get discovered by couples actively looking for <strong>wedding planners</strong> in
-          Rajasthan. No commissions. Direct inquiries. Real leads.
-          </p>
-          <div className="hero-actionsss">
-          <a href="#plans" className="btn-primaryyy">
-              List Your Business
-            </a>
-          </div>
-        </div>
-      </header>
-     
- 
-{/* VALUE METRICS STRIP */}
-<section className="value-metrics">
-  <div className="container metrics-grid">
-    
-    <div className="metric-card">
-      <span className="metric-number">3–5x</span>
-      <h3>More Leads</h3>
-      <p>
-        Get direct calls & WhatsApp inquiries from couples actively searching
-        for wedding planners in Rajasthan.
-      </p>
-    </div>
-
-    <div className="metric-card">
-  <span className="metric-number">
-    {visibility.toLocaleString()}+
-  </span>
-  <h3>Monthly Visibility</h3>
-  <p>
-    Your business is showcased to thousands of high-intent couples every
-    month.
-  </p>
-</div>
-
-
-    <div className="metric-card">
-      <span className="metric-number">High ROI</span>
-      <h3>Maximum Returns</h3>
-      <p>
-        One-time yearly listing fee. No commissions. Keep 100% of your booking
-        revenue.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-      <section id="plans" className="pricing-sectionn">
-  <div className="container">
-    <h2>Listing Plans for Wedding Planners</h2>
-    <p className="pricing-introo">
-      Choose a plan that fits your business size. No commissions. No hidden
-      charges.
-    </p>
-
-    <div className="pricing-gridd">
-      {/* Starter */}
-      <div className="pricing-cardd">
-        <h3>Starter</h3>
-        <p className="pricee">₹799</p>
-        <p className="price-notee">Per Month</p>
-
-        <ul className="pricing-featuress">
-          <li>Basic business listing</li>
-          <li>Business name & city</li>
-          <li>Listed under Rajasthan planners</li>
-          <li>Business Profile Page</li>
-        </ul>
-
-        <a href="/list-your-business/starter" className="btn-outlinee">
-          Get Started
-        </a>
-      </div>
-
-      {/* Featured */}
-      <div className="pricing-cardd featuredd">
-        <span className="popular-tag">Most Popular</span>
-        <h3>Featured</h3>
-        <p className="pricee">₹4,999</p>
-        <p className="price-notee">Per Month</p>
-
-        <ul className="pricing-featuress">
-          <li>Featured placement in listings</li>
-          <li>Featured planner badge</li>
-          <li>WhatsApp & call inquiries</li>
-          <li>Portfolio & gallery section</li>
-          <li>Priority support</li>
-        </ul>
-
-        <a href="/list-your-business/featured" className="btn-primary">
-          Get Featured
-        </a>
-      </div>
-
-      {/* Premium */}
-      <div className="pricing-cardd">
-        <h3>Premium</h3>
-        <p className="pricee">₹9,999</p>
-        <p className="price-notee">Per Month</p>
-
-        <ul className="pricing-featuress">
-          <li>Top placement on homepage</li>
-          <li>Featured + Verified badge</li>
-          <li>Priority WhatsApp Leads</li>
-          <li>SEO-optimized profile page</li>
-          <li>First Recommended</li>
-        </ul>
-
-        <a href="/list-your-business/premium" className="btn-outlinee">
-          Go Premium
-        </a>
-      </div>
-    </div>
-    {/*<p className="pricing-footer">
-      Not sure which plan is right?{" "}
-      <a href="/list-your-business">Talk to us on WhatsApp</a>
-    </p>*/}
-  </div>
-</section>
-
-
-      {/* Benefits */}
-      <section className="section">
-        <div className="container">
-          <h2>Why List With Us?</h2>
-
-          <div className="benefit-grid">
-            <div className="benefit-card">
-              🎯
-              <h3>High-Intent Leads</h3>
-              <p>
-                Couples visiting our platform are actively planning their
-                wedding — not casual browsers.
-              </p>
-            </div>
-
-            <div className="benefit-card">
-              📍
-              <h3>Rajasthan-Focused Exposure</h3>
-              <p>
-                Rank for local searches like “Wedding Planner in Jaipur” without
-                heavy ad spending.
-              </p>
-            </div>
-
-            <div className="benefit-card">
-              ✅
-              <h3>Verified Planner Badge</h3>
-              <p>
-                Build instant trust with a verified listing that stands out from
-                competitors.
-              </p>
-            </div>
-
-            <div className="benefit-card">
-              💰
-              <h3>No Commission</h3>
-              <p>
-                One simple listing fee. You keep 100% of your booking revenue.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* How it works for planners */}
-      <section className="section light">
-        <div className="container">
-          <h2>How It Works for Planners</h2>
-
-          <ol className="steps">
-            <li>Submit your business details</li>
-            <li>We verify your profile & services</li>
-            <li>Your listing goes live on our platform</li>
-            <li>Receive direct calls & WhatsApp inquiries</li>
-          </ol>
-        </div>
-      </section>
-
-      {/* Form */}{/*}
-      <section className="section" id="apply">
-        <div className="container">
-          <h2>Apply for Listing</h2>
-
-          <form className="form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="business"
-              placeholder="Business Name"
-              required
-            />
-            <input
-              type="text"
-              name="name"
-              placeholder="Contact Person Name"
-              required
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone / WhatsApp Number"
-              required
-            />
-            <input
-              type="text"
-              name="city"
-              placeholder="City (Jaipur / Udaipur etc.)"
-              required
-            />
-            <select name="experience" required>
-              <option value="">Years of Experience</option>
-              <option>0–2 Years</option>
-              <option>3–5 Years</option>
-              <option>5–10 Years</option>
-              <option>10+ Years</option>
-            </select>
-
-            <button type="submit" className="btn-primary">
-              Apply via WhatsApp
-            </button>
-
-            <p className="form-note">
-              Limited planner slots available to maintain quality.
+      <div className="jwp-home jwp-lyb-page">
+        {/* ---------- Hero ---------- */}
+        <header className="jwp-lyb-hero">
+          <div className="jwp-lyb-hero-overlay" />
+          <div className="jwp-container jwp-lyb-hero-inner">
+            <span className="jwp-eyebrow jwp-hero-eyebrow">
+              For Rajasthan’s wedding professionals
+            </span>
+            <span className="jwp-hero-rule" />
+            <h1>
+              List Your Wedding <em>Planning Business</em>
+            </h1>
+            <p>
+              Get discovered by couples actively looking for wedding planners in
+              Rajasthan. No commissions. Direct inquiries. Real leads.
             </p>
-          </form>
-        </div>
-      </section>*/}
+            <div className="jwp-hero-actions">
+              <a href="#plans" className="jwp-button jwp-button-gold">
+                List Your Business <span>↗</span>
+              </a>
+              <a href="#why" className="jwp-text-link">
+                Why list with us <span>↓</span>
+              </a>
+            </div>
+            <div className="jwp-hero-footnote">
+              <span /> Curated listings · No commission · Rajasthan focused
+            </div>
+          </div>
+          <div className="jwp-hero-side-note">
+            PLANNERS · RAJASTHAN · 2025
+          </div>
+        </header>
+
+        <main>
+          {/* ---------- Metrics strip ---------- */}
+          <section className="jwp-lyb-metrics">
+            <div className="jwp-container jwp-lyb-metrics-inner">
+              {metrics.map((metric) => (
+                <div className="jwp-lyb-metric" key={metric.title}>
+                  <span className="jwp-lyb-metric-value">{metric.value}</span>
+                  <h3>{metric.title}</h3>
+                  <p>{metric.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ---------- Pricing ---------- */}
+          <section className="jwp-section jwp-lyb-pricing-section" id="plans">
+            <div className="jwp-container">
+              <div className="jwp-section-heading">
+                <span className="jwp-eyebrow">Simple, transparent plans</span>
+                <h2>
+                  Listing Plans for <em>Wedding Planners</em>
+                </h2>
+                <p>
+                  Choose a plan that fits your business size. No commissions. No
+                  hidden charges.
+                </p>
+              </div>
+
+              <div className="jwp-lyb-pricing-grid">
+                {plans.map((plan) => (
+                  <article
+                    className={`jwp-lyb-plan${
+                      plan.featured ? " jwp-lyb-plan--featured" : ""
+                    }`}
+                    key={plan.name}
+                  >
+                    {plan.featured && (
+                      <span className="jwp-lyb-plan-tag">Most Popular</span>
+                    )}
+                    <div className="jwp-lyb-plan-head">
+                      <span className="jwp-eyebrow">{plan.name}</span>
+                      <h3>
+                        {plan.price}
+                        <span className="jwp-lyb-plan-period">
+                          {plan.period}
+                        </span>
+                      </h3>
+                    </div>
+                    <ul className="jwp-lyb-plan-features">
+                      {plan.features.map((f) => (
+                        <li key={f}>
+                          <span>✧</span> {f}
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href={plan.href}
+                      className={`jwp-button ${
+                        plan.featured
+                          ? "jwp-button-gold"
+                          : "jwp-button-outline"
+                      }`}
+                    >
+                      {plan.cta} <span>→</span>
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ---------- Benefits ---------- */}
+          <section className="jwp-section jwp-section-light" id="why">
+            <div className="jwp-container">
+              <div className="jwp-section-heading">
+                <span className="jwp-eyebrow">A simpler way to grow</span>
+                <h2>
+                  Why <em>List With Us?</em>
+                </h2>
+                <p>
+                  We help Rajasthan-based wedding planners get discovered by
+                  couples who are actively planning their wedding — not just
+                  browsing.
+                </p>
+              </div>
+              <div className="jwp-lyb-benefit-grid">
+                {benefits.map((b) => (
+                  <article className="jwp-lyb-benefit-card" key={b.title}>
+                    <span className="jwp-lyb-benefit-icon">{b.icon}</span>
+                    <h3>{b.title}</h3>
+                    <p>{b.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ---------- How it works ---------- */}
+          <section className="jwp-section jwp-lyb-process-section">
+            <div className="jwp-container">
+              <div className="jwp-section-heading">
+                <span className="jwp-eyebrow">Your growth starts here</span>
+                <h2>
+                  How It Works <em>for Planners</em>
+                </h2>
+              </div>
+              <ol className="jwp-steps">
+                {steps.map((step, index) => (
+                  <li key={step}>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <p>{step}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </section>
+
+          {/* ---------- Final CTA ---------- */}
+          <section className="jwp-section jwp-section-light">
+            <div className="jwp-container">
+              <div className="jwp-planner-cta">
+                <span className="jwp-eyebrow">Grow your wedding business</span>
+                <h3>Let more couples discover your work.</h3>
+
+                <a href="#plans" className="jwp-button jwp-button-gold">
+                  List Your Business <span>↗</span>
+                </a>
+                <p>✓ No commission · Direct leads · Rajasthan focused</p>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
     </>
   );
 }

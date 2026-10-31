@@ -85,7 +85,7 @@ export default function PremiumPayment({ formData }) {
       onClick={handlePayment}
       disabled={loading}
     >
-      {loading ? "Processing..." : "Pay ₹4,999 & Activate Featured"}
+      {loading ? "Processing..." : "Pay ₹3,499 & Activate Featured"}
     </button>
   );
 }
